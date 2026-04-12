@@ -6,6 +6,7 @@ import {
   DollarSign,
   Siren,
 } from "lucide-react";
+import Image from "next/image";
 import SectionLogo from "@/components/ui/SectionLogo";
 import Button from "@/components/ui/Button";
 import { siteConfig } from "@/data/site-config";
@@ -91,13 +92,16 @@ export default function WhyChooseUs() {
             </div>
           </div>
 
-          {/* Right — Sticky image placeholder */}
+          {/* Right — Sticky image */}
           <div className="relative lg:sticky lg:top-24">
-            <div className="bg-navy-100 aspect-[3/4] flex items-center justify-center">
-              <div className="text-center p-8">
-                <p className="text-navy-500 font-medium">Professional Team Photo</p>
-                <p className="text-navy-400 text-sm mt-1">Team in action or group shot</p>
-              </div>
+            <div className="relative aspect-[3/4] overflow-hidden">
+              <Image
+                src="https://images.pexels.com/photos/8486923/pexels-photo-8486923.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800"
+                alt="Professional plumber in safety gear holding a wrench"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </div>
             {/* Accent block */}
             <div className="absolute -bottom-3 -right-3 w-24 h-24 bg-orange-500/10 pointer-events-none" />

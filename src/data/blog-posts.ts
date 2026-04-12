@@ -14,7 +14,7 @@ export const blogPosts: BlogPost[] = [
     date: "2025-01-15",
     excerpt:
       "Some plumbing issues can wait — but these seven warning signs mean you should pick up the phone right away to prevent costly damage.",
-    image: "/images/blog-placeholder-1.jpg",
+    image: "https://images.pexels.com/photos/14953886/pexels-photo-14953886.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
     content: `
 Not every plumbing issue is an emergency, but ignoring the wrong signs can turn a small problem into a major disaster. Here are seven warning signs that mean you should call a professional plumber immediately.
 
@@ -57,7 +57,7 @@ If you notice any of these signs, don't wait. Call a licensed plumber to assess 
     date: "2025-02-01",
     excerpt:
       "Choosing between a tankless and tank water heater? We break down the costs, benefits, and best use cases for each type.",
-    image: "/images/blog-placeholder-2.jpg",
+    image: "https://images.pexels.com/photos/11658940/pexels-photo-11658940.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
     content: `
 When it's time to replace your water heater, one of the biggest decisions you'll face is whether to go with a traditional tank or a modern tankless system. Here's what you need to know.
 
@@ -108,7 +108,7 @@ Our team can evaluate your home's hot water needs, existing plumbing setup, and 
     date: "2025-03-10",
     excerpt:
       "Frozen pipes can burst and cause thousands in water damage. Learn the simple steps you can take to protect your plumbing this winter.",
-    image: "/images/blog-placeholder-3.jpg",
+    image: "https://images.pexels.com/photos/35016079/pexels-photo-35016079.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
     content: `
 While Southern California winters are mild compared to much of the country, freezing temperatures do occur — especially in foothill communities like Altadena, La Cañada Flintridge, and Sierra Madre. A single frozen pipe can burst and cause thousands of dollars in water damage.
 

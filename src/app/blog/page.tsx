@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { CalendarDays, ArrowRight } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 import { blogPosts } from "@/data/blog-posts";
@@ -30,8 +31,14 @@ export default function BlogPage() {
                 href={`/blog/${post.slug}`}
                 className="group bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow"
               >
-                <div className="bg-gradient-to-br from-navy-100 to-navy-200 aspect-video flex items-center justify-center">
-                  <p className="text-navy-500 text-sm">Featured Image</p>
+                <div className="relative aspect-video overflow-hidden">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">

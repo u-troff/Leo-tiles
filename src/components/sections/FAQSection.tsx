@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionLogo from "@/components/ui/SectionLogo";
 import AccordionItem from "@/components/ui/AccordionItem";
 import Button from "@/components/ui/Button";
@@ -19,12 +20,15 @@ export default function FAQSection({
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
-          {/* Left — Photo placeholder */}
-          <div className="bg-navy-100 aspect-[4/3] flex items-center justify-center lg:sticky lg:top-24">
-            <div className="text-center p-8">
-              <p className="text-navy-500 font-medium">Professional Photo</p>
-              <p className="text-navy-400 text-sm mt-1">Team member or work in progress</p>
-            </div>
+          {/* Left — Photo */}
+          <div className="relative aspect-[4/3] overflow-hidden lg:sticky lg:top-24">
+            <Image
+              src="https://images.pexels.com/photos/8486927/pexels-photo-8486927.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+              alt="Professional plumber in safety gear ready for work"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </div>
 
           {/* Right Content */}

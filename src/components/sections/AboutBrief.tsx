@@ -1,4 +1,5 @@
 import { Phone, CheckCircle } from "lucide-react";
+import Image from "next/image";
 import SectionLogo from "@/components/ui/SectionLogo";
 import Button from "@/components/ui/Button";
 import { siteConfig } from "@/data/site-config";
@@ -54,13 +55,16 @@ export default function AboutBrief() {
             </Button>
           </div>
 
-          {/* Right — Decorative placeholder */}
+          {/* Right — Team photo */}
           <div className="relative">
-            <div className="bg-navy-100 aspect-[4/3] flex items-center justify-center">
-              <div className="text-center p-8">
-                <p className="text-navy-500 font-medium">Team at Work</p>
-                <p className="text-navy-400 text-sm mt-1">Professional photo of team on a job site</p>
-              </div>
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image
+                src="https://images.pexels.com/photos/6419128/pexels-photo-6419128.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+                alt="Plumber's hands installing steel pipe fittings on a job site"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </div>
             {/* Accent corner block */}
             <div className="absolute -bottom-3 -right-3 w-20 h-20 bg-orange-500/15 pointer-events-none" />

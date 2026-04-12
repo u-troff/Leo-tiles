@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionLogo from "@/components/ui/SectionLogo";
 import Button from "@/components/ui/Button";
 import { siteConfig } from "@/data/site-config";
@@ -8,16 +9,16 @@ export default function FounderStory() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* Left — Owner photo placeholder */}
+          {/* Left — Owner photo */}
           <div className="relative order-2 lg:order-1">
-            <div className="bg-navy-100 aspect-[3/4] flex items-center justify-center max-w-sm">
-              <div className="text-center p-8">
-                <div className="w-24 h-24 bg-navy-200 mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-3xl text-navy-500">👤</span>
-                </div>
-                <p className="text-navy-500 font-medium text-sm">Owner Photo</p>
-                <p className="text-navy-400 text-xs mt-1">Professional or candid portrait</p>
-              </div>
+            <div className="relative aspect-[3/4] max-w-sm overflow-hidden">
+              <Image
+                src="https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800"
+                alt="Plumber in uniform working on a pipe repair with a wrench"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </div>
             {/* Accent block */}
             <div className="absolute -top-3 -left-3 w-16 h-16 bg-orange-500/15 pointer-events-none" />
