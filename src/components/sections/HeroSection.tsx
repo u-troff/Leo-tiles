@@ -12,16 +12,16 @@ export default function HeroSection() {
       {/* ── Background ─────────────────────────────────────── */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero-bg.png"
-          alt="Plumbing technician at work"
+          src="https://images.pexels.com/photos/37345805/pexels-photo-37345805.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1080&w=1920"
+          alt="Stack of handmade terracotta tiles in warm clay tones"
           fill
           className="object-cover object-center"
           priority
           quality={90}
         />
         {/* Layered gradient for depth */}
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-900/95 via-navy-900/80 to-navy-900/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-900/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-clay-900/95 via-clay-900/80 to-clay-900/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-clay-900/60 via-transparent to-transparent" />
       </div>
 
       {/* ── Content ─────────────────────────────────────────── */}
@@ -32,19 +32,19 @@ export default function HeroSection() {
           <div className="animate-fade-in-up">
             {/* Eyebrow */}
             <div className="flex items-center gap-3 mb-6">
-              <div className="h-px w-8 bg-orange-500" />
-              <span className="text-orange-400 text-[11px] font-semibold uppercase tracking-[0.22em]">
-                License #{siteConfig.license} · {siteConfig.differentiatorLabel}
+              <div className="h-px w-8 bg-rust-500" />
+              <span className="text-rust-400 text-[11px] font-semibold uppercase tracking-[0.22em]">
+                50+ Years of Craft · {siteConfig.differentiatorLabel}
               </span>
             </div>
 
             {/* Headline */}
             <h1 className="font-serif text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-5 leading-[1.05]">
-              Trusted{" "}
-              <em className="not-italic text-orange-400">Plumbing</em>
+              Handmade.
               <br />
-              Across{" "}
-              <span className="text-white/80">{siteConfig.region}</span>
+              <em className="not-italic text-rust-400">Kiln-Fired.</em>
+              <br />
+              <span className="text-white/80">Yours.</span>
             </h1>
 
             <p className="text-base text-white/65 mb-8 max-w-md leading-relaxed">
@@ -56,10 +56,10 @@ export default function HeroSection() {
               {[
                 { value: `${siteConfig.ratings.google}★`, label: "Google Rating" },
                 { value: `${siteConfig.ratings.reviewCount}+`, label: "Verified Reviews" },
-                { value: "24/7", label: "Emergency Service" },
+                { value: "50+", label: "Years of Craft" },
               ].map((stat) => (
                 <div key={stat.label} className="flex flex-col">
-                  <span className="font-serif text-2xl font-bold text-orange-400 leading-none">
+                  <span className="font-serif text-2xl font-bold text-rust-400 leading-none">
                     {stat.value}
                   </span>
                   <span className="text-white/50 text-xs mt-0.5 uppercase tracking-widest">
@@ -71,9 +71,9 @@ export default function HeroSection() {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-3">
-              <Button href="/contact-us" variant="primary" size="lg">
+              <Button href="/get-a-quote" variant="primary" size="lg">
                 <CalendarDays className="w-4 h-4 mr-2" />
-                Schedule Free Quote
+                Get a Quote
               </Button>
               <Button href={`tel:${siteConfig.phoneRaw}`} variant="secondary" size="lg">
                 <Phone className="w-4 h-4 mr-2" />
@@ -108,7 +108,7 @@ export default function HeroSection() {
                 <div className="pb-1">
                   <div className="flex gap-0.5 mb-1">
                     {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-orange-400 text-orange-400" />
+                      <Star key={i} className="w-3.5 h-3.5 fill-rust-400 text-rust-400" />
                     ))}
                   </div>
                   <p className="text-white/40 text-xs">out of 5.0</p>
@@ -136,7 +136,7 @@ export default function HeroSection() {
                 <div className="pb-1">
                   <div className="flex gap-0.5 mb-1">
                     {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-orange-400 text-orange-400" />
+                      <Star key={i} className="w-3.5 h-3.5 fill-rust-400 text-rust-400" />
                     ))}
                   </div>
                   <p className="text-white/40 text-xs">out of 5.0</p>
@@ -146,9 +146,9 @@ export default function HeroSection() {
 
             {/* Trust badge */}
             <div className="flex items-center gap-2.5 max-w-sm w-full px-1">
-              <ShieldCheck className="w-4 h-4 text-orange-400 flex-shrink-0" />
+              <ShieldCheck className="w-4 h-4 text-rust-400 flex-shrink-0" />
               <p className="text-white/45 text-xs">
-                Licensed, bonded, and insured — serving {siteConfig.region} since 2018.
+                Family-owned and craft-certified — handmade in Cape Town since the 1970s.
               </p>
             </div>
           </div>
@@ -157,39 +157,39 @@ export default function HeroSection() {
         {/* ── Inline Quote Form ────────────────────────────── */}
         <div className="mt-16 bg-white/8 backdrop-blur-md border border-white/15 p-8 animate-fade-in-up delay-300">
           <div className="flex items-center gap-3 mb-6">
-            <div className="h-px w-8 bg-orange-500" />
-            <h3 className="text-white font-semibold text-base tracking-wide">Request a Free Quote</h3>
+            <div className="h-px w-8 bg-rust-500" />
+            <h3 className="text-white font-semibold text-base tracking-wide">Request a Quote</h3>
           </div>
 
           <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3">
             <input
               type="text"
               placeholder="Your Name"
-              className="px-4 py-3 bg-white/8 border border-white/15 text-white placeholder-white/35 text-sm focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+              className="px-4 py-3 bg-white/8 border border-white/15 text-white placeholder-white/35 text-sm focus:outline-none focus:ring-1 focus:ring-rust-500 focus:border-rust-500 transition-colors"
             />
             <input
               type="tel"
               placeholder="Phone Number"
-              className="px-4 py-3 bg-white/8 border border-white/15 text-white placeholder-white/35 text-sm focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+              className="px-4 py-3 bg-white/8 border border-white/15 text-white placeholder-white/35 text-sm focus:outline-none focus:ring-1 focus:ring-rust-500 focus:border-rust-500 transition-colors"
             />
             <input
               type="email"
               placeholder="Email Address"
-              className="px-4 py-3 bg-white/8 border border-white/15 text-white placeholder-white/35 text-sm focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+              className="px-4 py-3 bg-white/8 border border-white/15 text-white placeholder-white/35 text-sm focus:outline-none focus:ring-1 focus:ring-rust-500 focus:border-rust-500 transition-colors"
             />
-            <select className="px-4 py-3 bg-white/8 border border-white/15 text-white/50 text-sm focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500 transition-colors">
-              <option value="">Service Area</option>
-              {siteConfig.serviceAreas.map((area) => (
-                <option key={area} value={area} className="text-navy-800 bg-white">
-                  {area}
+            <select className="px-4 py-3 bg-white/8 border border-white/15 text-white/50 text-sm focus:outline-none focus:ring-1 focus:ring-rust-500 focus:border-rust-500 transition-colors">
+              <option value="">Tile Product</option>
+              {["Batavian Floor Tiles", "Dutch Klompies", "Hexagon Tiles", "Wine Coolers", "Clay Pellets", "Custom Order"].map((product) => (
+                <option key={product} value={product} className="text-clay-800 bg-white">
+                  {product}
                 </option>
               ))}
             </select>
             <button
               type="submit"
-              className="bg-orange-500 text-white px-6 py-3 font-semibold text-sm hover:bg-orange-600 transition-colors"
+              className="bg-rust-500 text-white px-6 py-3 font-semibold text-sm hover:bg-rust-600 transition-colors"
             >
-              Get Free Quote
+              Get a Quote
             </button>
           </form>
         </div>

@@ -25,11 +25,11 @@ export default function Button({
 
   const variants = {
     primary:
-      "bg-orange-500 text-white hover:bg-orange-600 focus:ring-orange-500 shadow-md hover:shadow-lg hover:-translate-y-px",
+      "bg-rust-500 text-white hover:bg-rust-600 focus:ring-rust-500 shadow-md hover:shadow-lg hover:-translate-y-px",
     secondary:
-      "bg-navy-800 text-white hover:bg-navy-900 focus:ring-navy-800 shadow-md hover:shadow-lg hover:-translate-y-px",
+      "bg-clay-800 text-white hover:bg-clay-900 focus:ring-clay-800 shadow-md hover:shadow-lg hover:-translate-y-px",
     outline:
-      "border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white focus:ring-orange-500",
+      "border border-rust-500 text-rust-500 hover:bg-rust-500 hover:text-white focus:ring-rust-500",
   };
 
   const sizes = {

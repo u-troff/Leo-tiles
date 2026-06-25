@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Phone, CalendarDays, Star, Shield, Award, CheckCircle, Building2 } from "lucide-react";
+import { Phone, CalendarDays, Star, Shield, Truck, CheckCircle, Building2 } from "lucide-react";
 import Button from "@/components/ui/Button";
 import SectionLogo from "@/components/ui/SectionLogo";
 import ServiceCard from "@/components/ui/ServiceCard";
@@ -11,46 +11,46 @@ import { commercialServices } from "@/data/services-commercial";
 import { commercialFAQs } from "@/data/faqs";
 
 export const metadata: Metadata = {
-  title: `Commercial Plumbing Services in ${siteConfig.region}`,
-  description: `Trusted commercial plumbing services in ${siteConfig.region}. Restaurants, offices, retail — licensed & insured. Call ${siteConfig.phone}.`,
+  title: "Accessories, Materials & Installation Services",
+  description: `Adhesive, sealant, grout, cleaning products, bespoke orders, and nationwide delivery from ${siteConfig.businessName}. Call ${siteConfig.phone}.`,
 };
 
 export default function CommercialPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-navy-50 to-white py-16 lg:py-24">
+      <section className="bg-gradient-to-br from-clay-50 to-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-navy-100 text-navy-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
+            <div className="inline-flex items-center gap-2 bg-clay-100 text-clay-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
               <Building2 className="w-4 h-4" />
-              Commercial Services
+              Accessories & Services
             </div>
-            <h1 className="text-4xl lg:text-5xl font-bold text-navy-800 mb-6">
-              Trusted Commercial Plumbing Services in {siteConfig.region}
+            <h1 className="text-4xl lg:text-5xl font-bold text-clay-800 mb-6">
+              Accessories, Materials & Installation Services
             </h1>
             <p className="text-xl text-gray-600 mb-4">
-              Reliable Solutions to Keep Your Business Running
+              Everything You Need for a Complete Terracotta Project
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              Commercial plumbing problems don&apos;t just cause inconvenience — they halt operations,
-              drive away customers, and create liability risks. Your business needs a plumbing partner
-              who understands the urgency and complexity of commercial systems.
+              Buying the tile is only part of the job. Adhesive, sealant, grout, and installation
+              all need to be matched correctly to handmade terracotta — get any of them wrong and
+              the finished floor suffers.
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              {siteConfig.businessName} delivers professional <strong>commercial plumbing services in{" "}
-              {siteConfig.address.city}, {siteConfig.address.state}</strong> for restaurants, offices,
-              retail spaces, and industrial facilities. We minimize downtime and maximize reliability
-              so you can focus on running your business.
+              {siteConfig.businessName} supplies <strong>everything needed alongside your tile
+              order in {siteConfig.address.city}, {siteConfig.address.state}</strong> — adhesive,
+              colour-matched grout, penetrating sealant, cleaning products, and our own
+              installation team for projects that need it.
             </p>
             <p className="text-gray-600 mb-8 leading-relaxed">
-              From preventive maintenance programs to emergency repairs, our licensed commercial
-              plumbers are equipped to handle projects of any scale.
+              We also handle bespoke and custom orders, plus nationwide delivery via specialist
+              ceramic freight.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="/contact-us" variant="primary" size="lg">
+              <Button href="/get-a-quote" variant="primary" size="lg">
                 <CalendarDays className="w-5 h-5 mr-2" />
-                Get Started
+                Get a Quote
               </Button>
               <Button href={`tel:${siteConfig.phoneRaw}`} variant="secondary" size="lg">
                 <Phone className="w-5 h-5 mr-2" />
@@ -68,12 +68,12 @@ export default function CommercialPage() {
             <div className="flex justify-center">
               <SectionLogo />
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-navy-800 mb-4">
-              Our Commercial Plumbing Services
+            <h2 className="text-3xl lg:text-4xl font-bold text-clay-800 mb-4">
+              Accessories & Services
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Comprehensive commercial plumbing solutions designed to keep your business operating
-              efficiently and in compliance.
+              The materials and services that complete a terracotta project, all matched
+              specifically to handmade clay tile.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -96,33 +96,33 @@ export default function CommercialPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <SectionLogo />
-              <h2 className="text-3xl lg:text-4xl font-bold text-navy-800 mb-6">
-                Why Professional Commercial Plumbing Matters
+              <h2 className="text-3xl lg:text-4xl font-bold text-clay-800 mb-6">
+                Why Matching Materials Matters
               </h2>
               <p className="text-gray-600 mb-4 leading-relaxed">
-                Commercial plumbing failures cost more than repair bills — they cost you revenue,
-                reputation, and regulatory standing. A single plumbing emergency can shut down
-                operations, violate health codes, and damage customer trust.
+                Standard tile adhesive, white grout, and generic floor cleaners are built for
+                factory tile, not handmade terracotta. Used on the wrong material, they cause
+                staining, poor adhesion, and a finish that fights the warmth of the tile instead of
+                complementing it.
               </p>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Proactive maintenance and professional service ensure your plumbing infrastructure
-                supports your business goals rather than undermining them. Our commercial team
-                understands the unique demands of business plumbing.
+                We supply the exact products our own installation team uses, so architects,
+                designers, and DIY installers alike get the same result every time.
               </p>
               <div className="grid grid-cols-2 gap-4">
-                {["Minimize Business Downtime", "Health Code Compliance", "Energy Cost Savings", "Business Continuity"].map(
+                {["Colour-Matched Grout", "Terracotta-Safe Sealant", "Bespoke Sizing Available", "Nationwide Freight"].map(
                   (benefit) => (
                     <div key={benefit} className="flex items-center gap-2">
                       <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                      <span className="text-navy-800 font-medium text-sm">{benefit}</span>
+                      <span className="text-clay-800 font-medium text-sm">{benefit}</span>
                     </div>
                   )
                 )}
               </div>
             </div>
-            <div className="bg-gradient-to-br from-navy-100 to-navy-200 rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center">
+            <div className="bg-gradient-to-br from-clay-100 to-clay-200 overflow-hidden aspect-[4/3] flex items-center justify-center">
               <div className="text-center p-8">
-                <p className="text-navy-600 font-medium">Commercial Work Photo</p>
+                <p className="text-clay-600 font-medium">Materials & Accessories Photo</p>
               </div>
             </div>
           </div>
@@ -133,31 +133,31 @@ export default function CommercialPage() {
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <SectionLogo />
-          <h2 className="text-3xl lg:text-4xl font-bold text-navy-800 mb-8">
-            Why Businesses Choose {siteConfig.businessName}
+          <h2 className="text-3xl lg:text-4xl font-bold text-clay-800 mb-8">
+            Why Architects & Developers Choose {siteConfig.businessName}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
             {[
-              { icon: Shield, title: "Commercially Licensed", desc: "Full commercial plumbing license with comprehensive insurance and bonding." },
-              { icon: Star, title: "After-Hours Service", desc: "We work around your schedule — evenings, weekends, and holidays available." },
-              { icon: Award, title: "Maintenance Programs", desc: "Preventive maintenance plans that keep your plumbing running and compliant." },
+              { icon: Shield, title: "Heritage Restoration Specialists", desc: "We match original terracotta for Cape Dutch, Victorian, and mid-century restorations." },
+              { icon: Star, title: "Trade Accounts Available", desc: "Samples, technical data sheets, and bulk pricing for design professionals." },
+              { icon: Truck, title: "Nationwide Delivery", desc: "Specialist ceramic freight, carefully packed to reach you anywhere in South Africa." },
             ].map((item) => (
-              <div key={item.title} className="bg-white rounded-xl shadow-md p-8 border border-gray-100">
-                <item.icon className="w-10 h-10 text-orange-500 mx-auto mb-4" />
-                <h3 className="font-bold text-navy-800 text-lg mb-2">{item.title}</h3>
+              <div key={item.title} className="bg-white shadow-md p-8 border border-gray-100">
+                <item.icon className="w-10 h-10 text-rust-500 mx-auto mb-4" />
+                <h3 className="font-bold text-clay-800 text-lg mb-2">{item.title}</h3>
                 <p className="text-gray-600 text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
-          <Button href="/contact-us" variant="primary" size="lg">
-            Schedule a Consultation
+          <Button href="/get-a-quote" variant="primary" size="lg">
+            Request a Quote
           </Button>
         </div>
       </section>
 
       <ReviewsCarousel />
       <ServiceAreas />
-      <FAQSection faqs={commercialFAQs} title="Commercial Plumbing FAQs" subtitle="Common Questions from Business Owners" />
+      <FAQSection faqs={commercialFAQs} title="Accessories & Services FAQs" subtitle="Common Questions from Architects & Project Managers" />
     </>
   );
 }

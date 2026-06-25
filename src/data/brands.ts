@@ -4,13 +4,11 @@ export interface Brand {
 }
 
 export const brands: Brand[] = [
-  { name: "Moen", slug: "moen" },
-  { name: "Delta", slug: "delta" },
-  { name: "Kohler", slug: "kohler" },
-  { name: "American Standard", slug: "american-standard" },
-  { name: "Rheem", slug: "rheem" },
-  { name: "AO Smith", slug: "ao-smith" },
-  { name: "InSinkErator", slug: "insinkerator" },
-  { name: "Rinnai", slug: "rinnai" },
-  { name: "Bradford White", slug: "bradford-white" },
+  { name: "Handmade Clay", slug: "handmade-clay" },
+  { name: "Kiln-Fired", slug: "kiln-fired" },
+  { name: "Since 1970s", slug: "since-1970s" },
+  { name: "Cape Town Made", slug: "cape-town-made" },
+  { name: "Bespoke Orders", slug: "bespoke-orders" },
+  { name: "Nationwide Delivery", slug: "nationwide-delivery" },
+  { name: "Heritage Restoration", slug: "heritage-restoration" },
 ];

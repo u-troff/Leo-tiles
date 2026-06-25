@@ -52,11 +52,11 @@ export default async function BlogPostPage({
 
   return (
     <>
-      <section className="bg-gradient-to-br from-navy-50 to-white py-12 lg:py-16">
+      <section className="bg-gradient-to-br from-clay-50 to-white py-12 lg:py-16">
         <div className="max-w-3xl mx-auto px-4">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-orange-500 hover:text-orange-600 font-medium mb-6"
+            className="inline-flex items-center gap-2 text-rust-500 hover:text-rust-600 font-medium mb-6"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Blog
@@ -73,7 +73,7 @@ export default async function BlogPostPage({
               </time>
             </div>
           )}
-          <h1 className="text-3xl lg:text-4xl font-bold text-navy-800">{post.title}</h1>
+          <h1 className="text-3xl lg:text-4xl font-bold text-clay-800">{post.title}</h1>
         </div>
       </section>
 
@@ -98,16 +98,16 @@ export default async function BlogPostPage({
             components={{
               block: {
                 h2: ({ children }) => (
-                  <h2 className="text-2xl font-bold text-navy-800 mt-10 mb-4">{children}</h2>
+                  <h2 className="text-2xl font-bold text-clay-800 mt-10 mb-4">{children}</h2>
                 ),
                 h3: ({ children }) => (
-                  <h3 className="text-xl font-bold text-navy-800 mt-8 mb-3">{children}</h3>
+                  <h3 className="text-xl font-bold text-clay-800 mt-8 mb-3">{children}</h3>
                 ),
                 normal: ({ children }) => (
                   <p className="text-gray-600 leading-relaxed mb-4">{children}</p>
                 ),
                 blockquote: ({ children }) => (
-                  <blockquote className="border-l-4 border-orange-500 pl-4 italic text-gray-500 my-6">
+                  <blockquote className="border-l-4 border-rust-500 pl-4 italic text-gray-500 my-6">
                     {children}
                   </blockquote>
                 ),
@@ -121,7 +121,7 @@ export default async function BlogPostPage({
                 ),
               },
               marks: {
-                strong: ({ children }) => <strong className="font-semibold text-navy-800">{children}</strong>,
+                strong: ({ children }) => <strong className="font-semibold text-clay-800">{children}</strong>,
                 em: ({ children }) => <em>{children}</em>,
               },
               types: {
@@ -143,9 +143,9 @@ export default async function BlogPostPage({
 
       <section className="py-12 lg:py-16 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold text-navy-800 mb-4">Need Professional Plumbing Help?</h2>
+          <h2 className="text-2xl font-bold text-clay-800 mb-4">Need Help with Your Tile Project?</h2>
           <p className="text-gray-600 mb-6">
-            Our licensed plumbers are ready to help with any plumbing issue. Call us today for a free quote.
+            Our team is ready to help with sizing, sealant, and installation advice. Call us today for a quote.
           </p>
           <Button href={`tel:${siteConfig.phoneRaw}`} variant="primary" size="lg">
             <Phone className="w-5 h-5 mr-2" />

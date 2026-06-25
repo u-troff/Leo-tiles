@@ -9,10 +9,10 @@ import { siteConfig } from "@/data/site-config";
 
 export const metadata: Metadata = {
   title: {
-    default: `${siteConfig.businessName} | Trusted Plumbing Services in ${siteConfig.region}`,
+    default: `${siteConfig.businessName} | Handmade Terracotta Tiles in ${siteConfig.region}`,
     template: `%s | ${siteConfig.businessName}`,
   },
-  description: `${siteConfig.businessName} provides trusted residential & commercial plumbing services across ${siteConfig.region}. Licensed, insured, and ${siteConfig.differentiator}. Call ${siteConfig.phone} for a free quote.`,
+  description: `${siteConfig.businessName} manufactures handmade, kiln-fired terracotta tiles across ${siteConfig.region}. ${siteConfig.differentiatorLabel}, 50+ years of craft. Call ${siteConfig.phone} for a quote.`,
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -41,9 +41,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "LocalBusiness",
+              "@type": "Store",
               name: siteConfig.businessName,
-              description: `Plumbing services in ${siteConfig.region}`,
+              description: `Handmade, kiln-fired terracotta tile manufacturer in ${siteConfig.region}`,
               url: siteConfig.url,
               telephone: siteConfig.phoneRaw,
               email: siteConfig.email,
@@ -53,11 +53,10 @@ export default function RootLayout({
                 addressLocality: siteConfig.address.city,
                 addressRegion: siteConfig.address.state,
                 postalCode: siteConfig.address.zip,
-                addressCountry: "US",
+                addressCountry: "ZA",
               },
               areaServed: siteConfig.serviceAreas,
-              priceRange: "$$",
-              openingHours: "Mo-Su 00:00-23:59",
+              priceRange: "R800–R3,500/m²",
               aggregateRating: {
                 "@type": "AggregateRating",
                 ratingValue: siteConfig.ratings.google.toString(),

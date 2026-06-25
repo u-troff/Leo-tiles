@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Phone, CalendarDays, Star, Shield, Award, CheckCircle } from "lucide-react";
+import { Phone, CalendarDays, Star, Flame, Ruler, CheckCircle } from "lucide-react";
 import Button from "@/components/ui/Button";
 import SectionLogo from "@/components/ui/SectionLogo";
 import ServiceCard from "@/components/ui/ServiceCard";
@@ -11,46 +11,46 @@ import { residentialServices } from "@/data/services-residential";
 import { residentialFAQs } from "@/data/faqs";
 
 export const metadata: Metadata = {
-  title: `Residential Plumbing Services in ${siteConfig.region}`,
-  description: `Expert residential plumbing services in ${siteConfig.region}. Drain cleaning, water heater installation, pipe repair, and more. Licensed & insured. Call ${siteConfig.phone}.`,
+  title: "Our Terracotta Tile Products",
+  description: `Handmade, kiln-fired terracotta tile products from ${siteConfig.businessName}. Batavian floor tiles, klompies, hexagon tiles, and custom orders. Call ${siteConfig.phone}.`,
 };
 
 export default function ResidentialPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-navy-50 to-white py-16 lg:py-24">
+      <section className="bg-gradient-to-br from-clay-50 to-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
+            <div className="inline-flex items-center gap-2 bg-rust-100 text-rust-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
               <Star className="w-4 h-4" />
-              Residential Services
+              Our Products
             </div>
-            <h1 className="text-4xl lg:text-5xl font-bold text-navy-800 mb-6">
-              Your Trusted Residential Plumbing Services in {siteConfig.region}
+            <h1 className="text-4xl lg:text-5xl font-bold text-clay-800 mb-6">
+              Our Terracotta Tile Products
             </h1>
             <p className="text-xl text-gray-600 mb-4">
-              Expert Solutions for a Safe and Efficient Home
+              Handmade. Kiln-Fired. Built to Last.
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              Your home&apos;s plumbing is the backbone of daily comfort — from morning showers to evening
-              dishwashing. When something goes wrong, you need a licensed professional who can diagnose
-              the problem fast and fix it right the first time.
+              Every tile we produce starts as raw clay, shaped by hand, and finished in our own
+              kiln in Kraaifontein. No two tiles are identical — the natural variation in tone and
+              texture is what gives handmade terracotta its character.
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              {siteConfig.businessName} provides comprehensive residential plumbing services across{" "}
-              {siteConfig.region}. Our experienced <strong>plumbers in {siteConfig.address.city},{" "}
-              {siteConfig.address.state}</strong> handle everything from routine repairs to complex
-              installations with the care and attention your home deserves.
+              {siteConfig.businessName} supplies handmade terracotta across{" "}
+              {siteConfig.region}. Our experienced <strong>tile makers in {siteConfig.address.city},{" "}
+              {siteConfig.address.state}</strong> produce everything from standard floor tiles to
+              fully bespoke sizes for restoration projects.
             </p>
             <p className="text-gray-600 mb-8 leading-relaxed">
-              Every job comes with transparent pricing, professional service, and our satisfaction guarantee.
-              We treat your home like our own.
+              Every order comes with honest lead times, transparent pricing, and the option of
+              professional installation by our own team.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="/contact-us" variant="primary" size="lg">
+              <Button href="/get-a-quote" variant="primary" size="lg">
                 <CalendarDays className="w-5 h-5 mr-2" />
-                Get Started
+                Get a Quote
               </Button>
               <Button href={`tel:${siteConfig.phoneRaw}`} variant="secondary" size="lg">
                 <Phone className="w-5 h-5 mr-2" />
@@ -68,12 +68,12 @@ export default function ResidentialPage() {
             <div className="flex justify-center">
               <SectionLogo />
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-navy-800 mb-4">
-              Our Residential Plumbing Services
+            <h2 className="text-3xl lg:text-4xl font-bold text-clay-800 mb-4">
+              Our Terracotta Tile Products
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              From minor repairs to major installations, we provide the full range of residential
-              plumbing services your home needs.
+              From signature floor tiles to bespoke heritage sizes, this is the full range of what
+              comes out of our kiln.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -96,33 +96,34 @@ export default function ResidentialPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <SectionLogo />
-              <h2 className="text-3xl lg:text-4xl font-bold text-navy-800 mb-6">
-                The Importance of Professional Plumbing Services
+              <h2 className="text-3xl lg:text-4xl font-bold text-clay-800 mb-6">
+                Why Handmade Terracotta Is Different
               </h2>
               <p className="text-gray-600 mb-4 leading-relaxed">
-                Professional plumbing isn&apos;t a luxury — it&apos;s a safeguard for your home, your family&apos;s
-                health, and your investment. Licensed plumbers ensure every repair and installation meets
-                building codes, uses proper materials, and is built to last.
+                Factory tiles are stamped from a mould — every piece identical, every batch the
+                same. Handmade terracotta is shaped, dried, and fired one piece at a time, which is
+                exactly why it develops the warmth and character that factory tiles cannot replicate.
               </p>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                DIY plumbing mistakes can lead to water damage, mold growth, and code violations that
-                cost far more to fix than the original problem. Trust a professional to get it right
-                the first time and protect your home&apos;s value.
+                Choosing the wrong tile or the wrong installer can lead to uneven grout lines,
+                staining, and a floor that never quite looks right. Working directly with the
+                people who made your tiles means every detail — sizing, sealant, and grout — is
+                handled correctly the first time.
               </p>
               <div className="grid grid-cols-2 gap-4">
-                {["Safety & Code Compliance", "Cost Savings Long-Term", "Property Value Protection", "Expert Diagnostics"].map(
+                {["Genuine Handmade Character", "Custom Sizes Available", "Heritage Restoration Matching", "Expert Installation Available"].map(
                   (benefit) => (
                     <div key={benefit} className="flex items-center gap-2">
                       <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                      <span className="text-navy-800 font-medium text-sm">{benefit}</span>
+                      <span className="text-clay-800 font-medium text-sm">{benefit}</span>
                     </div>
                   )
                 )}
               </div>
             </div>
-            <div className="bg-gradient-to-br from-navy-100 to-navy-200 rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center">
+            <div className="bg-gradient-to-br from-clay-100 to-clay-200 overflow-hidden aspect-[4/3] flex items-center justify-center">
               <div className="text-center p-8">
-                <p className="text-navy-600 font-medium">Professional Work Photo</p>
+                <p className="text-clay-600 font-medium">Tile Production Photo</p>
               </div>
             </div>
           </div>
@@ -133,31 +134,31 @@ export default function ResidentialPage() {
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <SectionLogo />
-          <h2 className="text-3xl lg:text-4xl font-bold text-navy-800 mb-8">
+          <h2 className="text-3xl lg:text-4xl font-bold text-clay-800 mb-8">
             Why Choose {siteConfig.businessName}?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
             {[
-              { icon: Shield, title: "Licensed & Insured", desc: `License# ${siteConfig.license} — fully insured for your protection.` },
+              { icon: Flame, title: "Made in Our Own Kiln", desc: "Every tile is shaped and fired in our Kraaifontein facility — from raw clay to finished product." },
               { icon: Star, title: `${siteConfig.ratings.google}-Star Rated`, desc: `${siteConfig.ratings.reviewCount}+ five-star reviews from real customers.` },
-              { icon: Award, title: siteConfig.differentiatorLabel, desc: "Built on integrity, discipline, and genuine care for our community." },
+              { icon: Ruler, title: "Custom Sizes to Specification", desc: "Any size, any shape — manufactured to order for your exact project." },
             ].map((item) => (
-              <div key={item.title} className="bg-white rounded-xl shadow-md p-8 border border-gray-100">
-                <item.icon className="w-10 h-10 text-orange-500 mx-auto mb-4" />
-                <h3 className="font-bold text-navy-800 text-lg mb-2">{item.title}</h3>
+              <div key={item.title} className="bg-white shadow-md p-8 border border-gray-100">
+                <item.icon className="w-10 h-10 text-rust-500 mx-auto mb-4" />
+                <h3 className="font-bold text-clay-800 text-lg mb-2">{item.title}</h3>
                 <p className="text-gray-600 text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
-          <Button href="/contact-us" variant="primary" size="lg">
-            Schedule Your Service
+          <Button href="/get-a-quote" variant="primary" size="lg">
+            Start Your Order
           </Button>
         </div>
       </section>
 
       <ReviewsCarousel />
       <ServiceAreas />
-      <FAQSection faqs={residentialFAQs} title="Residential Plumbing FAQs" subtitle="Common Questions from Homeowners" />
+      <FAQSection faqs={residentialFAQs} title="Tile Product FAQs" subtitle="Common Questions from Homeowners" />
     </>
   );
 }

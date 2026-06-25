@@ -4,7 +4,7 @@ interface SectionLogoProps {
 }
 
 export default function SectionLogo({
-  label = "Acme Plumbing",
+  label = "Leo Tiles",
   align = "left",
 }: SectionLogoProps) {
   return (
@@ -13,11 +13,11 @@ export default function SectionLogo({
         align === "center" ? "justify-center" : ""
       }`}
     >
-      <div className="h-px w-8 bg-orange-500 flex-shrink-0" />
-      <span className="text-orange-500 text-[11px] font-semibold uppercase tracking-[0.22em] whitespace-nowrap">
+      <div className="h-px w-8 bg-rust-500 flex-shrink-0" />
+      <span className="text-rust-500 text-[11px] font-semibold uppercase tracking-[0.22em] whitespace-nowrap">
         {label}
       </span>
-      <div className="h-px w-8 bg-orange-500 flex-shrink-0" />
+      <div className="h-px w-8 bg-rust-500 flex-shrink-0" />
     </div>
   );
 }

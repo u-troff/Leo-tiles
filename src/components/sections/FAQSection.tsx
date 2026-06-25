@@ -12,19 +12,19 @@ interface FAQSectionProps {
 
 export default function FAQSection({
   faqs,
-  title = "Questions & Answers for Your Plumbing Queries",
-  subtitle = "Reliable Experts for All Your Plumbing Issues",
+  title = "Questions & Answers About Handmade Terracotta",
+  subtitle = "Reliable Answers from South Africa's Original Tile Makers",
 }: FAQSectionProps) {
   return (
-    <section className="py-16 lg:py-24 bg-cream-100">
+    <section className="py-16 lg:py-24 bg-stone-100">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
           {/* Left — Photo */}
           <div className="relative aspect-[4/3] overflow-hidden lg:sticky lg:top-24">
             <Image
-              src="https://images.pexels.com/photos/8486927/pexels-photo-8486927.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
-              alt="Professional plumber in safety gear ready for work"
+              src="https://images.pexels.com/photos/6010260/pexels-photo-6010260.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+              alt="Warm terracotta-tiled interior with handmade clay pottery"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -34,14 +34,14 @@ export default function FAQSection({
           {/* Right Content */}
           <div>
             <SectionLogo label="FAQs" />
-            <h2 className="font-serif text-3xl lg:text-4xl font-bold text-navy-900 mb-2 leading-tight">
+            <h2 className="font-serif text-3xl lg:text-4xl font-bold text-clay-900 mb-2 leading-tight">
               {title}
             </h2>
-            <p className="text-orange-500 font-medium text-sm mb-8 uppercase tracking-wider">
+            <p className="text-rust-500 font-medium text-sm mb-8 uppercase tracking-wider">
               {subtitle}
             </p>
 
-            <div className="space-y-0 border-t border-cream-300">
+            <div className="space-y-0 border-t border-stone-300">
               {faqs.map((faq, index) => (
                 <AccordionItem key={index} question={faq.question} answer={faq.answer} />
               ))}

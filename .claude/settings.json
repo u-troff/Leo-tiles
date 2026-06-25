@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wait)",
+      "Bash(python3 -c ':*)",
+      "Bash(firecrawl scrape:*)",
+      "Bash(ls -la .firecrawl/google*.md)",
+      "Skill(firecrawl-search)",
+      "Skill(firecrawl-search:*)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(r.get\\('title',''\\), '|', r.get\\('url',''\\), '\\\\n', r.get\\('description',''\\)[:200]\\) for r in d.get\\('data',{}\\).get\\('web',[]\\)[:5]]\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(r.get\\('title',''\\), '|', r.get\\('url',''\\), '\\\\n', r.get\\('description',''\\)[:200]\\) for r in d.get\\('data',{}\\).get\\('web',[]\\)[:5]]\" echo \"---\" cat .firecrawl/owner5-drainright.json)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(r.get\\('title',''\\), '\\\\n', r.get\\('description',''\\)[:250], '\\\\n'\\) for r in d.get\\('data',{}\\).get\\('web',[]\\)[:5]]\")"
+    ]
+  }
+}

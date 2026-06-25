@@ -1,3 +1,4 @@
+// TODO: Add blog posts via Sanity Studio at /studio before going live
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,7 +9,7 @@ import { urlFor } from "@/sanity/lib/image";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: `Plumbing tips, advice, and news from ${siteConfig.businessName}. Learn how to maintain your plumbing and when to call a professional.`,
+  description: `Tile care tips, restoration advice, and news from ${siteConfig.businessName}. Learn how to maintain handmade terracotta and when to call a professional.`,
 };
 
 const postsQuery = `*[_type == "post"] | order(publishedAt desc) {
@@ -25,11 +26,11 @@ export default async function BlogPage() {
 
   return (
     <>
-      <section className="bg-gradient-to-br from-navy-50 to-white py-12 lg:py-16">
+      <section className="bg-gradient-to-br from-clay-50 to-white py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-4xl lg:text-5xl font-bold text-navy-800 mb-4">Blog</h1>
+          <h1 className="text-4xl lg:text-5xl font-bold text-clay-800 mb-4">Blog</h1>
           <p className="text-xl text-gray-600">
-            Plumbing tips, advice, and insights from the {siteConfig.businessName} team.
+            Tile care tips, restoration advice, and insights from the {siteConfig.businessName} team.
           </p>
         </div>
       </section>
@@ -77,13 +78,13 @@ export default async function BlogPage() {
                         </time>
                       </div>
                     )}
-                    <h2 className="text-lg font-bold text-navy-800 mb-2 group-hover:text-orange-500 transition-colors">
+                    <h2 className="text-lg font-bold text-clay-800 mb-2 group-hover:text-rust-500 transition-colors">
                       {post.title}
                     </h2>
                     {post.excerpt && (
                       <p className="text-gray-600 text-sm leading-relaxed mb-4">{post.excerpt}</p>
                     )}
-                    <span className="inline-flex items-center gap-1 text-orange-500 font-semibold text-sm group-hover:gap-2 transition-all">
+                    <span className="inline-flex items-center gap-1 text-rust-500 font-semibold text-sm group-hover:gap-2 transition-all">
                       Read More <ArrowRight className="w-4 h-4" />
                     </span>
                   </div>

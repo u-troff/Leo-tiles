@@ -13,17 +13,17 @@ export default function AccordionItem({ question, answer }: AccordionItemProps) 
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-cream-300">
+    <div className="border-b border-stone-300">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between py-4 text-left group"
       >
-        <span className="font-semibold text-navy-800 group-hover:text-orange-500 transition-colors pr-4 text-[15px]">
+        <span className="font-semibold text-clay-800 group-hover:text-rust-500 transition-colors pr-4 text-[15px]">
           {question}
         </span>
         <ChevronDown
           className={cn(
-            "w-4 h-4 text-orange-500 transition-transform duration-200 flex-shrink-0",
+            "w-4 h-4 text-rust-500 transition-transform duration-200 flex-shrink-0",
             isOpen && "rotate-180"
           )}
         />
