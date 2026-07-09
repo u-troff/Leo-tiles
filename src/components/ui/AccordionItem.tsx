@@ -7,10 +7,11 @@ import { cn } from "@/lib/utils";
 interface AccordionItemProps {
   question: string;
   answer: string;
+  defaultOpen?: boolean;
 }
 
-export default function AccordionItem({ question, answer }: AccordionItemProps) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function AccordionItem({ question, answer, defaultOpen = false }: AccordionItemProps) {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
     <div className="border-b border-stone-300">

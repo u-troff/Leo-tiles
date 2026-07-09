@@ -1,34 +1,31 @@
 import HeroSection from "@/components/sections/HeroSection";
-import ReviewsCarousel from "@/components/sections/ReviewsCarousel";
-import AboutBrief from "@/components/sections/AboutBrief";
-import FounderStory from "@/components/sections/FounderStory";
-import ServicesOverview from "@/components/sections/ServicesOverview";
+import AuthenticityStrip from "@/components/sections/AuthenticityStrip";
+import ProductsGrid from "@/components/sections/ProductsGrid";
 import ProcessSteps from "@/components/sections/ProcessSteps";
 import WorkGallery from "@/components/sections/WorkGallery";
-import PainPoints from "@/components/sections/PainPoints";
-import WhyChooseUs from "@/components/sections/WhyChooseUs";
-import ServiceAreas from "@/components/sections/ServiceAreas";
-import FAQSection from "@/components/sections/FAQSection";
-import BrandLogos from "@/components/sections/BrandLogos";
-import ContactSection from "@/components/sections/ContactSection";
-import { homepageFAQs } from "@/data/faqs";
+import AboutStory from "@/components/sections/AboutStory";
+import ProblemsSolved from "@/components/sections/ProblemsSolved";
+import WhyChooseUsGrid from "@/components/sections/WhyChooseUsGrid";
+import ReviewsGrid from "@/components/sections/ReviewsGrid";
+import FAQAccordion from "@/components/sections/FAQAccordion";
+import QuoteFormSection from "@/components/sections/QuoteFormSection";
+import GetInTouchPanel from "@/components/sections/GetInTouchPanel";
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <ReviewsCarousel />
-      <AboutBrief />
-      <FounderStory />
-      <ServicesOverview />
+      <AuthenticityStrip />
+      <ProductsGrid />
       <ProcessSteps />
       <WorkGallery />
-      <PainPoints />
-      <WhyChooseUs />
-      <ServiceAreas />
-      <FAQSection faqs={homepageFAQs} />
-      <BrandLogos />
-      <ContactSection />
+      <AboutStory />
+      <ProblemsSolved />
+      <WhyChooseUsGrid />
+      <ReviewsGrid />
+      <FAQAccordion />
+      <QuoteFormSection />
+      <GetInTouchPanel />
     </>
   );
 }

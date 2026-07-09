@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  html { background: #ded0b8; }
+  body { margin: 0; font-family: 'Libre Franklin', sans-serif; }
+  a { color: #b5502f; }
+  a:hover { color: #7a3a24; }
+  @keyframes kenburns { 0% { transform: scale(1.0) translate(0,0); } 100% { transform: scale(1.09) translate(-1%,-1%); } }
+  @keyframes heroFade1 { 0%,38%,100% { opacity: 1; } 46%,92% { opacity: 0; } }
+  @keyframes heroFade2 { 0%,38%,100% { opacity: 0; } 46%,92% { opacity: 1; } }
+  ::selection { background: #b5502f; color: #f4e8d8; }
+</style>
+</helmet>
+
+<div style="width:1440px; margin:0 auto; background:#f4e8d8; font-family:'Libre Franklin',sans-serif;">
+
+  <!-- NAV -->
+  <div style="position:sticky; top:0; z-index:5; background:#241a12; display:flex; align-items:center; justify-content:space-between; padding:20px 56px; box-sizing:border-box;">
+    <div style="color:#f4e8d8; font-size:20px; font-weight:700; letter-spacing:0.5px;">Leo Tiles</div>
+    <div style="display:flex; gap:32px; align-items:center;">
+      <a href="#products" style="color:#f4e8d8; text-decoration:none; font-size:14.5px; font-weight:500; opacity:0.92;">Products</a>
+      <a href="#work" style="color:#f4e8d8; text-decoration:none; font-size:14.5px; font-weight:500; opacity:0.92;">Our Work</a>
+      <a href="#about" style="color:#f4e8d8; text-decoration:none; font-size:14.5px; font-weight:500; opacity:0.92;">About Us</a>
+      <a href="#faq" style="color:#f4e8d8; text-decoration:none; font-size:14.5px; font-weight:500; opacity:0.92;">FAQs</a>
+      <a href="#contact" style="color:#f4e8d8; text-decoration:none; font-size:14.5px; font-weight:500; opacity:0.92;">Contact</a>
+      <span style="color:#e7a97e; font-size:14px; font-weight:600;">+27 79 150 0160</span>
+      <a href="#quote" style="color:#241a12; background:#f4e8d8; text-decoration:none; font-size:14px; font-weight:600; padding:10px 18px; border-radius:2px;">Get a Quote</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div style="position:relative; height:820px; overflow:hidden; background:#241a12;">
+    <img src="images/pool-deck.jpg" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; animation:kenburns 22s ease-in-out infinite alternate, heroFade1 16s ease-in-out infinite;" />
+    <img src="images/terrace.jpg" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; animation:kenburns 22s ease-in-out infinite alternate-reverse, heroFade2 16s ease-in-out infinite;" />
+    <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,13,8,0.35) 0%, rgba(20,13,8,0) 30%, rgba(20,13,8,0.15) 55%, rgba(20,13,8,0.78) 100%);"></div>
+    <div style="position:absolute; left:56px; right:56px; bottom:64px;">
+      <div style="color:#e7c9a5; font-size:13.5px; letter-spacing:2px; text-transform:uppercase; font-weight:600; margin-bottom:16px;">50+ Years of Craft · Family-Owned</div>
+      <h1 style="margin:0; color:#f9f1e6; font-size:58px; line-height:1.08; font-weight:700; letter-spacing:-0.5px; max-width:760px;">Handmade. <em style="font-style:italic; color:#e7a97e;">Kiln-Fired.</em> Yours.</h1>
+      <p style="margin:18px 0 32px; color:#f0dfc7; opacity:0.88; font-size:18px; font-weight:500; line-height:1.4; max-width:620px;">South Africa's original handmade terracotta tile makers — crafted by hand since the 1970s.</p>
+      <div style="display:flex; align-items:center; gap:40px; flex-wrap:wrap;">
+        <a href="#quote" style="background:#f4e8d8; color:#241a12; text-decoration:none; font-weight:700; font-size:15.5px; padding:17px 30px; border-radius:2px;">Get a Quote</a>
+        <a href="tel:+27791500160" style="color:#f4e8d8; text-decoration:none; font-weight:700; font-size:15.5px; border-bottom:2px solid #f4e8d8; padding-bottom:4px;">Call Now →</a>
+        <div style="display:flex; gap:32px; margin-left:12px;">
+          <div><div style="color:#f9f1e6; font-size:22px; font-weight:700;">4.8★</div><div style="color:#d9c7ae; font-size:12.5px;">Google Rating</div></div>
+          <div><div style="color:#f9f1e6; font-size:22px; font-weight:700;">40+</div><div style="color:#d9c7ae; font-size:12.5px;">Verified Reviews</div></div>
+          <div><div style="color:#f9f1e6; font-size:22px; font-weight:700;">50+</div><div style="color:#d9c7ae; font-size:12.5px;">Years of Craft</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUTHENTICITY STRIP -->
+  <div style="display:grid; grid-template-columns:1.3fr 1fr; align-items:center; background:#ead6bd;">
+    <div style="padding:70px 64px;">
+      <p style="margin:0; font-size:29px; line-height:1.4; font-weight:500; color:#241a12; max-width:560px;">Family-owned and craft-certified — handmade in Cape Town since the 1970s.</p>
+    </div>
+    <div style="height:320px; overflow:hidden;">
+      <img src="images/stacked-tiles.jpg" style="width:100%; height:100%; object-fit:cover; display:block;" />
+    </div>
+  </div>
+
+  <!-- PRODUCTS & SERVICES -->
+  <div id="products" style="padding:96px 56px; background:#f4e8d8;">
+    <div style="color:#7a6a4e; font-size:12.5px; letter-spacing:2px; text-transform:uppercase; font-weight:700; margin-bottom:14px;">Our Services</div>
+    <h2 style="margin:0 0 12px; font-size:34px; font-weight:700; color:#241a12; max-width:760px;">Handmade terracotta tiles &amp; everything you need to install them</h2>
+    <p style="margin:0 0 48px; font-size:16px; color:#5c4632; max-width:640px; line-height:1.6;">From signature floor tiles to the adhesive, grout and sealant that complete the job — all sourced from one kiln.</p>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:28px;">
+      <div style="background:#ead6bd; padding:32px;">
+        <div style="width:44px; height:44px; border-radius:50%; background:#b5502f; margin-bottom:20px;"></div>
+        <div style="font-size:19px; font-weight:700; color:#241a12; margin-bottom:10px;">Batavian Floor Tiles</div>
+        <p style="margin:0; font-size:15px; line-height:1.6; color:#5c4632;">Classic Dutch-heritage terracotta floor tiles, handmade to order.</p>
+      </div>
+      <div style="background:#ead6bd; padding:32px;">
+        <div style="width:44px; height:44px; border-radius:50%; background:#b5502f; margin-bottom:20px;"></div>
+        <div style="font-size:19px; font-weight:700; color:#241a12; margin-bottom:10px;">Dutch Style Klompies</div>
+        <p style="margin:0; font-size:15px; line-height:1.6; color:#5c4632;">Traditional small-format clay pavers, perfect for courtyards and pathways.</p>
+      </div>
+      <div style="background:#ead6bd; padding:32px;">
+        <div style="width:44px; height:44px; border-radius:50%; background:#b5502f; margin-bottom:20px;"></div>
+        <div style="font-size:19px; font-weight:700; color:#241a12; margin-bottom:10px;">Hexagon Shaped Tiles</div>
+        <p style="margin:0; font-size:15px; line-height:1.6; color:#5c4632;">Handmade hexagonal terracotta tiles for statement floors and feature walls.</p>
+      </div>
+      <div style="background:#f4e8d8; padding:32px; border:1px solid #cbb693;">
+        <div style="width:44px; height:44px; border-radius:50%; background:#7a6a4e; margin-bottom:20px;"></div>
+        <div style="font-size:19px; font-weight:700; color:#241a12; margin-bottom:10px;">Fired Clay Wine Coolers</div>
+        <p style="margin:0; font-size:15px; line-height:1.6; color:#5c4632;">Handcrafted terracotta wine coolers — a unique artisan product.</p>
+      </div>
+      <div style="background:#f4e8d8; padding:32px; border:1px solid #cbb693;">
+        <div style="width:44px; height:44px; border-radius:50%; background:#7a6a4e; margin-bottom:20px;"></div>
+        <div style="font-size:19px; font-weight:700; color:#241a12; margin-bottom:10px;">Fired Clay Pellets</div>
+        <p style="margin:0; font-size:15px; line-height:1.6; color:#5c4632;">Kiln-fired clay aggregate for drainage, horticulture and construction.</p>
+      </div>
+      <div style="background:#f4e8d8; padding:32px; border:1px solid #cbb693;">
+        <div style="width:44px; height:44px; border-radius:50%; background:#7a6a4e; margin-bottom:20px;"></div>
+        <div style="font-size:19px; font-weight:700; color:#241a12; margin-bottom:10px;">Professional Tile Installation</div>
+        <p style="margin:0; font-size:15px; line-height:1.6; color:#5c4632;">Expert installation by our own team — we know our tiles better than anyone.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <div style="padding:96px 56px; background:#241a12;">
+    <div style="color:#e7a97e; font-size:12.5px; letter-spacing:2px; text-transform:uppercase; font-weight:700; margin-bottom:14px;">Our Process</div>
+    <h2 style="margin:0 0 48px; font-size:34px; font-weight:700; color:#f4e8d8; max-width:700px;">A straightforward process for your tile order</h2>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:32px;">
+      <div>
+        <div style="font-size:15px; font-weight:700; color:#b5502f; margin-bottom:16px;">01</div>
+        <div style="font-size:19px; font-weight:700; color:#f4e8d8; margin-bottom:10px;">Enquire</div>
+        <p style="margin:0; font-size:15px; line-height:1.6; color:#b39d80;">Reach out by phone or online form. We confirm feasibility and lead times.</p>
+      </div>
+      <div>
+        <div style="font-size:15px; font-weight:700; color:#b5502f; margin-bottom:16px;">02</div>
+        <div style="font-size:19px; font-weight:700; color:#f4e8d8; margin-bottom:10px;">Sample &amp; Specify</div>
+        <p style="margin:0; font-size:15px; line-height:1.6; color:#b39d80;">We confirm sizing, quantity and finish — sending samples where needed.</p>
+      </div>
+      <div>
+        <div style="font-size:15px; font-weight:700; color:#b5502f; margin-bottom:16px;">03</div>
+        <div style="font-size:19px; font-weight:700; color:#f4e8d8; margin-bottom:10px;">Production</div>
+        <p style="margin:0; font-size:15px; line-height:1.6; color:#b39d80;">Your tiles are shaped, dried and kiln-fired by hand in our Cape Town facility.</p>
+      </div>
+      <div>
+        <div style="font-size:15px; font-weight:700; color:#b5502f; margin-bottom:16px;">04</div>
+        <div style="font-size:19px; font-weight:700; color:#f4e8d8; margin-bottom:10px;">Delivery &amp; Installation</div>
+        <p style="margin:0; font-size:15px; line-height:1.6; color:#b39d80;">We carefully pack and deliver, with professional installation available.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <div id="work" style="padding:96px 56px 20px; background:#f4e8d8;">
+    <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom:40px;">
+      <div>
+        <div style="color:#7a6a4e; font-size:12.5px; letter-spacing:2px; text-transform:uppercase; font-weight:700; margin-bottom:14px;">Our Work</div>
+        <h2 style="margin:0; font-size:34px; font-weight:700; color:#241a12;">Our work speaks for itself</h2>
+      </div>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(6,1fr); grid-template-rows:220px 220px; gap:12px;">
+      <div style="grid-column:span 3; grid-row:span 2; overflow:hidden; position:relative;">
+        <img src="images/courtyard.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/>
+        <div style="position:absolute; left:16px; bottom:16px; color:#f4e8d8;"><div style="font-size:12px; text-transform:uppercase; letter-spacing:1px; opacity:0.85;">Residential</div><div style="font-size:17px; font-weight:700;">Batavian Floor Installation</div></div>
+        <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,13,8,0) 55%, rgba(20,13,8,0.6) 100%);"></div>
+      </div>
+      <div style="grid-column:span 3; overflow:hidden; position:relative;">
+        <img src="images/kitchen.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/>
+        <div style="position:absolute; left:16px; bottom:16px; color:#f4e8d8;"><div style="font-size:12px; text-transform:uppercase; letter-spacing:1px; opacity:0.85;">Residential</div><div style="font-size:17px; font-weight:700;">Kitchen Floor Detail</div></div>
+        <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,13,8,0) 55%, rgba(20,13,8,0.6) 100%);"></div>
+      </div>
+      <div style="grid-column:span 3; overflow:hidden; position:relative;">
+        <img src="images/dining-room-2.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/>
+        <div style="position:absolute; left:16px; bottom:16px; color:#f4e8d8;"><div style="font-size:12px; text-transform:uppercase; letter-spacing:1px; opacity:0.85;">Restoration</div><div style="font-size:17px; font-weight:700;">Heritage Restoration</div></div>
+        <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,13,8,0) 55%, rgba(20,13,8,0.6) 100%);"></div>
+      </div>
+      <div style="grid-column:span 2; overflow:hidden; position:relative;">
+        <img src="images/terrace.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/>
+        <div style="position:absolute; left:14px; bottom:14px; color:#f4e8d8;"><div style="font-size:11.5px; text-transform:uppercase; letter-spacing:1px; opacity:0.85;">Outdoor</div><div style="font-size:15.5px; font-weight:700;">Courtyard Klompies Paving</div></div>
+        <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,13,8,0) 55%, rgba(20,13,8,0.6) 100%);"></div>
+      </div>
+      <div style="grid-column:span 2; overflow:hidden; position:relative;">
+        <img src="images/dining-room.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/>
+        <div style="position:absolute; left:14px; bottom:14px; color:#f4e8d8;"><div style="font-size:11.5px; text-transform:uppercase; letter-spacing:1px; opacity:0.85;">Commercial</div><div style="font-size:15.5px; font-weight:700;">Wine Estate Entrance</div></div>
+        <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,13,8,0) 55%, rgba(20,13,8,0.6) 100%);"></div>
+      </div>
+      <div style="grid-column:span 2; overflow:hidden; position:relative;">
+        <img src="images/herringbone-install.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/>
+        <div style="position:absolute; left:14px; bottom:14px; color:#f4e8d8;"><div style="font-size:11.5px; text-transform:uppercase; letter-spacing:1px; opacity:0.85;">Craft</div><div style="font-size:15.5px; font-weight:700;">Clay Production Process</div></div>
+        <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,13,8,0) 55%, rgba(20,13,8,0.6) 100%);"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div id="about" style="display:grid; grid-template-columns:1fr 1fr; background:#241a12; margin-top:96px;">
+    <div style="overflow:hidden;"><img src="images/herringbone-install.jpg" style="width:100%; height:100%; object-fit:cover; display:block; min-height:620px;"/></div>
+    <div style="padding:72px 60px; color:#f4e8d8;">
+      <div style="color:#e7a97e; font-size:13px; letter-spacing:2px; text-transform:uppercase; font-weight:600; margin-bottom:18px;">Our story</div>
+      <h2 style="margin:0 0 22px; font-size:30px; font-weight:700; color:#f4e8d8; line-height:1.3;">A family-owned kiln, rooted in craft</h2>
+      <p style="font-size:16px; line-height:1.75; color:#d9c7ae; margin:0 0 16px;">Leo Tiles began in Kraaifontein with little more than a kiln, a passion for clay, and Mark Kelly's determination to do things the hard, honest way. What started as a small workshop has grown into South Africa's most trusted source for handmade terracotta — but the process has never changed.</p>
+      <p style="font-size:16px; line-height:1.75; color:#d9c7ae; margin:0 0 16px;">Mark has spent over 50 years perfecting the art of handmade terracotta tile manufacturing — bespoke, kiln-fired terracotta used in homes, heritage restorations and architectural projects across the country and abroad.</p>
+      <p style="font-size:16px; line-height:1.75; color:#d9c7ae; margin:0 0 16px;">Today, Leo Tiles supplies homeowners, architects and restoration projects across Cape Town, Johannesburg, Pretoria, Durban, Stellenbosch and beyond — every tile still shaped and fired by hand in the same Cape Town kiln.</p>
+      <ul style="margin:22px 0 0; padding:0 0 0 20px; color:#d9c7ae; font-size:15px; line-height:1.9;">
+        <li>Handmade from raw clay since the 1970s</li>
+        <li>Kiln-fired in our own Cape Town facility</li>
+        <li>Custom sizes manufactured to specification</li>
+        <li>Supply and installation available nationwide</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROBLEMS -->
+  <div style="padding:96px 56px; background:#ead6bd;">
+    <div style="color:#7a6a4e; font-size:12.5px; letter-spacing:2px; text-transform:uppercase; font-weight:700; margin-bottom:14px;">Common Problems</div>
+    <h2 style="margin:0 0 48px; font-size:34px; font-weight:700; color:#241a12; max-width:760px;">Tile problems solved with care and craft</h2>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:28px 40px;">
+      <div><div style="font-size:18px; font-weight:700; color:#241a12; margin-bottom:8px;">Factory tiles lack character</div><p style="margin:0; font-size:15px; line-height:1.6; color:#5c4632;">Mass-produced tiles look identical. Handmade terracotta develops warmth, variation and patina that no factory can replicate.</p></div>
+      <div><div style="font-size:18px; font-weight:700; color:#241a12; margin-bottom:8px;">Long lead times catch people off guard</div><p style="margin:0; font-size:15px; line-height:1.6; color:#5c4632;">Handmade tiles take time. We're upfront about production schedules — contact us early in your project.</p></div>
+      <div><div style="font-size:18px; font-weight:700; color:#241a12; margin-bottom:8px;">Wrong installer ruins the result</div><p style="margin:0; font-size:15px; line-height:1.6; color:#5c4632;">Non-standard sizing requires specialist installation. Our own team has installed thousands of square metres of our tiles.</p></div>
+      <div><div style="font-size:18px; font-weight:700; color:#241a12; margin-bottom:8px;">Unsealed tiles stain permanently</div><p style="margin:0; font-size:15px; line-height:1.6; color:#5c4632;">Terracotta must be sealed correctly before and after grouting. We supply the right sealant and advise on process.</p></div>
+      <div><div style="font-size:18px; font-weight:700; color:#241a12; margin-bottom:8px;">Custom size quotes take weeks</div><p style="margin:0; font-size:15px; line-height:1.6; color:#5c4632;">We respond to custom enquiries fast. Tell us your project dimensions and we'll confirm feasibility and pricing quickly.</p></div>
+      <div><div style="font-size:18px; font-weight:700; color:#241a12; margin-bottom:8px;">Grout that clashes visually</div><p style="margin:0; font-size:15px; line-height:1.6; color:#5c4632;">White grout kills the warmth of terracotta. We supply colour-matched grout in natural tones.</p></div>
+    </div>
+  </div>
+
+  <!-- WHY CHOOSE US -->
+  <div style="padding:96px 56px; background:#f4e8d8;">
+    <div style="color:#7a6a4e; font-size:12.5px; letter-spacing:2px; text-transform:uppercase; font-weight:700; margin-bottom:14px;">Why Choose Us</div>
+    <h2 style="margin:0 0 48px; font-size:34px; font-weight:700; color:#241a12; max-width:760px;">What makes Leo Tiles special?</h2>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:28px;">
+      <div style="border-top:2px solid #b5502f; padding-top:20px;"><div style="font-size:18px; font-weight:700; color:#241a12; margin-bottom:8px;">Made in Our Own Kiln</div><p style="margin:0; font-size:15px; line-height:1.6; color:#5c4632;">Every tile is produced in our Kraaifontein facility. We control the entire process from raw clay to finished product.</p></div>
+      <div style="border-top:2px solid #b5502f; padding-top:20px;"><div style="font-size:18px; font-weight:700; color:#241a12; margin-bottom:8px;">Custom Sizes to Specification</div><p style="margin:0; font-size:15px; line-height:1.6; color:#5c4632;">We manufacture to order. Any size, any shape — specify what your project needs and we'll produce it.</p></div>
+      <div style="border-top:2px solid #b5502f; padding-top:20px;"><div style="font-size:18px; font-weight:700; color:#241a12; margin-bottom:8px;">50+ Years of Craft</div><p style="margin:0; font-size:15px; line-height:1.6; color:#5c4632;">More than five decades of refining the art of handmade terracotta. Our experience shows in every tile.</p></div>
+      <div style="border-top:2px solid #b5502f; padding-top:20px;"><div style="font-size:18px; font-weight:700; color:#241a12; margin-bottom:8px;">Heritage Restoration Specialists</div><p style="margin:0; font-size:15px; line-height:1.6; color:#5c4632;">We've matched original terracotta for Cape Dutch, Victorian and mid-century restorations across South Africa.</p></div>
+      <div style="border-top:2px solid #b5502f; padding-top:20px;"><div style="font-size:18px; font-weight:700; color:#241a12; margin-bottom:8px;">Nationwide Delivery</div><p style="margin:0; font-size:15px; line-height:1.6; color:#5c4632;">We deliver carefully packed tiles to any province. Ceramic freight specialists handle every shipment.</p></div>
+      <div style="border-top:2px solid #b5502f; padding-top:20px;"><div style="font-size:18px; font-weight:700; color:#241a12; margin-bottom:8px;">Direct from the Maker</div><p style="margin:0; font-size:15px; line-height:1.6; color:#5c4632;">No middlemen. When you call Leo Tiles, you speak to the people who made your tiles.</p></div>
+    </div>
+  </div>
+
+  <!-- REVIEWS -->
+  <div id="reviews" style="background:#241a12; padding:80px 56px 104px;">
+    <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:40px; flex-wrap:wrap; margin-bottom:44px;">
+      <div>
+        <div style="font-size:12.5px; letter-spacing:2px; text-transform:uppercase; color:#e7a97e; font-weight:700; margin-bottom:14px;">Customer Reviews</div>
+        <h2 style="margin:0; font-size:28px; font-weight:700; color:#f4e8d8;">What our customers say</h2>
+      </div>
+      <div style="display:flex; align-items:center; gap:24px;">
+        <div style="display:flex; align-items:center; gap:8px;"><span style="color:#b5502f; font-size:16px;">★★★★★</span><span style="font-size:14px; color:#d9c7ae;">4.8 Google · 40+ reviews</span></div>
+        <div style="display:flex; align-items:center; gap:8px;"><span style="color:#b5502f; font-size:16px;">★★★★★</span><span style="font-size:14px; color:#d9c7ae;">4.7 Facebook</span></div>
+      </div>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:32px 40px;">
+      <div style="border-top:1px solid #40301f; padding-top:24px;">
+        <span style="color:#b5502f; font-size:13px; letter-spacing:1.5px;">★★★★★</span>
+        <p style="margin:16px 0 18px; font-size:15.5px; line-height:1.6; font-style:italic; color:#f0dfc7;">"We used Leo Tiles for a full kitchen and courtyard renovation. The quality is unlike anything available in the big tile stores. Mark was incredibly helpful guiding us on sizing and sealant."</p>
+        <div style="font-size:13.5px; color:#b39d80;"><span style="font-weight:600; color:#e7c9a5;">Anita van der Berg</span> — Google · 4.8</div>
+      </div>
+      <div style="border-top:1px solid #40301f; padding-top:24px;">
+        <span style="color:#b5502f; font-size:13px; letter-spacing:1.5px;">★★★★★</span>
+        <p style="margin:16px 0 18px; font-size:15.5px; line-height:1.6; font-style:italic; color:#f0dfc7;">"Restoring a 1930s Cape Dutch home and needed tiles that matched the original terracotta. Leo Tiles produced custom-sized tiles indistinguishable from the originals."</p>
+        <div style="font-size:13.5px; color:#b39d80;"><span style="font-weight:600; color:#e7c9a5;">James Oosterbroek</span> — Google · 4.8</div>
+      </div>
+      <div style="border-top:1px solid #40301f; padding-top:24px;">
+        <span style="color:#b5502f; font-size:13px; letter-spacing:1.5px;">★★★★★</span>
+        <p style="margin:16px 0 18px; font-size:15.5px; line-height:1.6; font-style:italic; color:#f0dfc7;">"Ordered hexagon tiles for our bathroom and they are absolutely beautiful. The handmade quality gives them a warmth no factory tile can replicate."</p>
+        <div style="font-size:13.5px; color:#b39d80;"><span style="font-weight:600; color:#e7c9a5;">Sarah Mitchell</span> — Facebook · 4.7</div>
+      </div>
+      <div style="border-top:1px solid #40301f; padding-top:24px;">
+        <span style="color:#b5502f; font-size:13px; letter-spacing:1.5px;">★★★★★</span>
+        <p style="margin:16px 0 18px; font-size:15.5px; line-height:1.6; font-style:italic; color:#f0dfc7;">"As an architect I've specified Leo Tiles on three projects now. Lead times are honest and the product is consistent in quality."</p>
+        <div style="font-size:13.5px; color:#b39d80;"><span style="font-weight:600; color:#e7c9a5;">Rudi Swanepoel</span> — Google · 4.8</div>
+      </div>
+      <div style="border-top:1px solid #40301f; padding-top:24px;">
+        <span style="color:#b5502f; font-size:13px; letter-spacing:1.5px;">★★★★★</span>
+        <p style="margin:16px 0 18px; font-size:15.5px; line-height:1.6; font-style:italic; color:#f0dfc7;">"Mark and his team installed our Batavian floor tiles and the standard of workmanship was excellent — perfect alignment, correct grout, proper sealing."</p>
+        <div style="font-size:13.5px; color:#b39d80;"><span style="font-weight:600; color:#e7c9a5;">Charlene Fortuin</span> — Facebook · 4.7</div>
+      </div>
+      <div style="border-top:1px solid #40301f; padding-top:24px;">
+        <span style="color:#b5502f; font-size:13px; letter-spacing:1.5px;">★★★★★</span>
+        <p style="margin:16px 0 18px; font-size:15.5px; line-height:1.6; font-style:italic; color:#f0dfc7;">"Bought Klompies for our driveway and garden path. A year later they look even better — beautiful weathering on the clay surface."</p>
+        <div style="font-size:13.5px; color:#b39d80;"><span style="font-weight:600; color:#e7c9a5;">Thomas Hendricks</span> — Google · 4.8</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div id="faq" style="padding:96px 56px; background:#f4e8d8;">
+    <div style="color:#7a6a4e; font-size:12.5px; letter-spacing:2px; text-transform:uppercase; font-weight:700; margin-bottom:14px;">FAQs</div>
+    <h2 style="margin:0 0 48px; font-size:34px; font-weight:700; color:#241a12; max-width:760px;">Questions &amp; answers about handmade terracotta</h2>
+    <div style="max-width:880px;">
+      <sc-for list="{{ faqs }}" as="item" hint-placeholder-count="7">
+        <div style="border-bottom:1px solid #cbb693; padding:22px 0;">
+          <div onClick="{{ item.toggle }}" style="display:flex; justify-content:space-between; align-items:center; cursor:pointer; gap:20px;">
+            <span style="font-size:18px; font-weight:600; color:#241a12;">{{ item.q }}</span>
+            <span style="font-size:24px; color:#b5502f; flex:none; width:24px; text-align:center;">{{ item.icon }}</span>
+          </div>
+          <sc-if value="{{ item.open }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:14px 0 0; font-size:15.5px; line-height:1.7; color:#5c4632; max-width:760px;">{{ item.a }}</p>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- QUOTE FORM -->
+  <div id="quote" style="background:#ead6bd; padding:96px 56px;">
+    <div style="max-width:640px; margin:0 auto 48px; text-align:center;">
+      <h2 style="margin:0 0 14px; font-size:34px; font-weight:700; color:#241a12;">We're here to help</h2>
+      <p style="margin:0; font-size:16px; color:#5c4632; line-height:1.6;">Send us a message and we'll get back to you within 24 hours with a quote and lead time.</p>
+    </div>
+    <div style="max-width:760px; margin:0 auto; background:#f4e8d8; padding:44px; box-sizing:border-box; display:grid; grid-template-columns:1fr 1fr; gap:28px;">
+      <div style="grid-column:1/-1; display:grid; grid-template-columns:1fr 1fr; gap:22px;">
+        <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12;">Full Name
+          <input type="text" style="font:inherit; font-weight:400; padding:12px 14px; border:1px solid #cbb693; background:#fff; font-size:15px;" />
+        </label>
+        <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12;">Email
+          <input type="text" style="font:inherit; font-weight:400; padding:12px 14px; border:1px solid #cbb693; background:#fff; font-size:15px;" />
+        </label>
+        <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12;">Phone
+          <input type="text" style="font:inherit; font-weight:400; padding:12px 14px; border:1px solid #cbb693; background:#fff; font-size:15px;" />
+        </label>
+        <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12;">Product of Interest
+          <select style="font:inherit; font-weight:400; padding:12px 14px; border:1px solid #cbb693; background:#fff; font-size:15px;">
+            <option>Batavian Floor Tiles</option>
+            <option>Dutch Klompies</option>
+            <option>Hexagon Tiles</option>
+            <option>Wine Coolers</option>
+            <option>Clay Pellets</option>
+            <option>Custom Order</option>
+          </select>
+        </label>
+        <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12; grid-column:1/-1;">Message
+          <textarea rows="3" placeholder="Tell us about your project…" style="font:inherit; font-weight:400; padding:12px 14px; border:1px solid #cbb693; background:#fff; font-size:15px; resize:vertical;"></textarea>
+        </label>
+        <button style="grid-column:1/-1; margin-top:4px; background:#b5502f; color:#f4e8d8; border:none; font:inherit; font-weight:700; font-size:15.5px; padding:16px 32px; cursor:pointer;">Send Message</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT / GET IN TOUCH -->
+  <div id="contact" style="background:#f4e8d8; padding:0 56px 96px;">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; max-width:1328px; margin:0 auto;">
+      <div>
+        <div style="color:#7a6a4e; font-size:12.5px; letter-spacing:2px; text-transform:uppercase; font-weight:700; margin-bottom:14px;">Get in Touch</div>
+        <h2 style="margin:0 0 28px; font-size:28px; font-weight:700; color:#241a12;">Ready to start your tile order?</h2>
+        <div style="display:flex; flex-direction:column; gap:18px; font-size:16px; color:#3a2b1c; line-height:1.6;">
+          <div><span style="font-weight:700;">Our Address</span><br/>30 Industrial Road, Kraaifontein Industria, Cape Town, 7570</div>
+          <div><span style="font-weight:700;">Phone</span><br/><a href="tel:+27791500160" style="color:#b5502f; text-decoration:none;">+27 79 150 0160</a></div>
+          <div><span style="font-weight:700;">Email</span><br/><a href="mailto:mark@leotiles.co.za" style="color:#b5502f; text-decoration:none;">mark@leotiles.co.za</a></div>
+        </div>
+      </div>
+      <div style="height:280px; background:#ead6bd; display:flex; align-items:center; justify-content:center; color:#8a7660; font-size:13px; letter-spacing:1px; text-transform:uppercase; font-family:monospace;">[ map embed — Kraaifontein, Cape Town ]</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="background:#241a12; color:#d9c7ae; padding:64px 56px 40px;">
+    <div style="display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:44px; border-bottom:1px solid #40301f;">
+      <div>
+        <div style="color:#f4e8d8; font-size:20px; font-weight:700; margin-bottom:14px;">Leo Tiles</div>
+        <p style="font-size:14.5px; line-height:1.7; margin:0 0 16px; color:#b39d80;">A family-owned, kiln-fired terracotta tile manufacturer proudly crafting in Kraaifontein, Cape Town and delivering nationwide.</p>
+        <div style="display:flex; gap:16px; font-size:13.5px;"><a href="https://www.facebook.com/" style="color:#d9c7ae;">Facebook</a><a href="https://www.instagram.com/leotiles/" style="color:#d9c7ae;">Instagram</a></div>
+      </div>
+      <div>
+        <div style="font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:#e7a97e; font-weight:700; margin-bottom:14px;">Quick Links</div>
+        <p style="font-size:14.5px; line-height:1.9; margin:0;"><a href="#products" style="color:#d9c7ae;">Products</a><br/><a href="#work" style="color:#d9c7ae;">Our Work</a><br/><a href="#about" style="color:#d9c7ae;">About Us</a><br/><a href="#faq" style="color:#d9c7ae;">FAQs</a><br/><a href="#quote" style="color:#d9c7ae;">Get a Quote</a></p>
+      </div>
+      <div>
+        <div style="font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:#e7a97e; font-weight:700; margin-bottom:14px;">Products</div>
+        <p style="font-size:14.5px; line-height:1.9; margin:0; color:#d9c7ae;">Batavian Floor Tiles<br/>Dutch Style Klompies<br/>Hexagon Shaped Tiles<br/>Fired Clay Wine Coolers<br/>Fired Clay Pellets<br/>Tile Installation</p>
+      </div>
+      <div>
+        <div style="font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:#e7a97e; font-weight:700; margin-bottom:14px;">Contact</div>
+        <p style="font-size:14.5px; line-height:1.8; margin:0;">30 Industrial Road<br/>Kraaifontein Industria<br/>Cape Town, 7570<br/><a href="tel:+27791500160" style="color:#d9c7ae;">+27 79 150 0160</a><br/><a href="mailto:mark@leotiles.co.za" style="color:#d9c7ae;">mark@leotiles.co.za</a></p>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:space-between; padding-top:22px; font-size:13px; color:#8a7660; flex-wrap:wrap; gap:10px;">
+      <div>© 2026 Leo Tiles. All rights reserved.</div>
+      <div style="display:flex; gap:20px;"><a href="#" style="color:#8a7660;">Privacy Policy</a><a href="#" style="color:#8a7660;">Terms of Service</a></div>
+    </div>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { openFaq: 0 };
+
+  renderVals() {
+    const faqData = [
+      { q: "What makes Leo Tiles different from other tile suppliers?", a: "Every tile we produce is handmade from raw clay and kiln-fired in our own facility in Kraaifontein. Unlike factory tiles, no two Leo Tiles are identical — the variation in tone and texture is what gives them their character and warmth. We have been doing this for over 50 years." },
+      { q: "How long does it take to produce a custom order?", a: "Standard production takes 4–8 weeks depending on order size. In winter, the clay drying process takes longer, which can extend lead times. We always confirm estimated production time when you place your order — contact us as early as possible in your project timeline." },
+      { q: "Do you deliver outside of Cape Town?", a: "Yes, we deliver nationwide across South Africa via specialist ceramic freight. We pack tiles carefully to minimise breakage during transit. Delivery cost is quoted per order based on volume and destination." },
+      { q: "Do the tiles need to be sealed?", a: "Yes — all terracotta tiles must be sealed before and after grouting to prevent staining and to enhance the natural colour. We supply our recommended penetrating sealant and can advise on the correct process for your application." },
+      { q: "Can you manufacture tiles to a custom size?", a: "Yes, this is one of our most-requested services. We can produce tiles in virtually any size to order. This makes us especially popular with architects, interior designers and heritage restoration projects. Contact us with your specifications." },
+      { q: "Do you offer installation?", a: "Yes, our own installation team is available primarily in the Western Cape. Because our tiles have non-standard sizing and require specialist grouting technique, we always recommend using experienced installers familiar with handmade terracotta. Tiles and installation are quoted separately." },
+      { q: "What is your minimum order quantity?", a: "There is no strict minimum for standard products — we can supply from a small quantity upward. For custom sizes, minimum quantities depend on the format. Contact us to discuss your specific project." }
+    ];
+
+    const faqs = faqData.map((f, i) => {
+      const open = this.state.openFaq === i;
+      return {
+        q: f.q,
+        a: f.a,
+        open,
+        icon: open ? "\u2212" : "+",
+        toggle: () => this.setState(s => ({ openFaq: s.openFaq === i ? -1 : i }))
+      };
+    });
+
+    return { faqs };
+  }
+}
+</script>
+</body>
+</html>

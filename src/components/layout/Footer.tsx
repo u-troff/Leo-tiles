@@ -31,9 +31,8 @@ export default function Footer() {
             </div>
 
             <p className="text-white/50 text-sm mb-6 leading-relaxed">
-              A {siteConfig.differentiator}, kiln-fired terracotta tile manufacturer proudly
-              crafting in {siteConfig.address.city}, {siteConfig.address.state} and delivering
-              nationwide.
+              Handmade terracotta, fired in {siteConfig.address.city}, {siteConfig.address.state}, South
+              Africa since {siteConfig.establishedYear}.
             </p>
 
             {/* Social icons */}
@@ -79,6 +78,14 @@ export default function Footer() {
               <Phone className="w-4 h-4" />
               {siteConfig.phone}
             </a>
+
+            <p className="text-white/40 text-xs mt-4 leading-relaxed">
+              Office {siteConfig.officePhone}
+              <br />
+              <a href={`mailto:${siteConfig.secondaryEmail}`} className="hover:text-rust-400 transition-colors">
+                {siteConfig.secondaryEmail}
+              </a>
+            </p>
           </div>
 
           {/* ── Quick Links ────────────────────────────────── */}
@@ -90,8 +97,12 @@ export default function Footer() {
               {[
                 { label: "Products", href: "/residential" },
                 { label: "Accessories & Services", href: "/commercial" },
+                { label: "Guide Hub", href: "/guides" },
+                { label: "Work Gallery", href: "/work-gallery" },
                 { label: "About Us", href: "/about-us" },
                 { label: "Blog", href: "/blog" },
+                { label: "Wine Farms", href: "/wine-farms" },
+                { label: "Designer Collaborations", href: "/designer-collaborations" },
                 { label: "Get a Quote", href: "/get-a-quote" },
                 { label: "Contact Us", href: "/contact-us" },
               ].map((item) => (
@@ -151,7 +162,8 @@ export default function Footer() {
       <div className="border-t border-white/8">
         <div className="max-w-7xl mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/30">
           <p>
-            &copy; {new Date().getFullYear()} {siteConfig.businessName}. All rights reserved.
+            &copy; {siteConfig.establishedYear}–{new Date().getFullYear()} {siteConfig.businessName}. Made
+            by hand in Cape Town.
           </p>
           <div className="flex items-center gap-5">
             <Link href="/privacy-policy" className="hover:text-rust-400 transition-colors">

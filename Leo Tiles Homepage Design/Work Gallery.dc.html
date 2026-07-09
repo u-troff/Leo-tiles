@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  html { background: #f4e8d8; }
+  body { margin: 0; font-family: 'Libre Franklin', sans-serif; }
+  ::selection { background: #b5502f; color: #f4e8d8; }
+  @media (max-width: 1100px) { .lt-masonry { column-count: 2 !important; } }
+  @media (max-width: 640px) { .lt-masonry { column-count: 1 !important; } }
+</style>
+</helmet>
+
+<div style="background:#f4e8d8; min-height:100vh;">
+
+  <!-- NAV -->
+  <div style="display:flex; align-items:center; justify-content:space-between; padding:30px 56px; box-sizing:border-box; background:#241a12;">
+    <a href="Leo Tiles Homepage.dc.html" style="color:#f4e8d8; font-size:20px; font-weight:700; letter-spacing:0.5px; text-decoration:none;">Leo Tiles</a>
+    <div style="display:flex; gap:36px; align-items:center;">
+      <span style="color:#e7a97e; text-decoration:none; font-size:14.5px; font-weight:600; border-bottom:2px solid #e7a97e; padding-bottom:2px;">Work</span>
+      <a href="#" style="color:#f4e8d8; text-decoration:none; font-size:14.5px; font-weight:500; opacity:0.9;">Guides</a>
+      <a href="#" style="color:#f4e8d8; text-decoration:none; font-size:14.5px; font-weight:500; opacity:0.9;">About</a>
+      <a href="Leo Tiles Homepage.dc.html#1a-quote" style="color:#241a12; background:#f4e8d8; text-decoration:none; font-size:14px; font-weight:600; padding:9px 18px; border-radius:2px;">Enquire</a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <div style="padding:88px 56px 56px; max-width:900px;">
+    <div style="color:#b5502f; font-size:13px; letter-spacing:2px; text-transform:uppercase; font-weight:700; margin-bottom:16px;">Selected projects</div>
+    <h1 style="margin:0 0 20px; font-size:48px; line-height:1.1; font-weight:700; letter-spacing:-0.5px; color:#241a12;">The work</h1>
+    <p style="margin:0; font-size:18px; line-height:1.65; color:#5c4632; max-width:640px;">A running record of floors, decks and courtyards we've fired and laid across Cape Town and beyond — alongside a look at how each tile is made, from wet clay to kiln.</p>
+  </div>
+
+  <!-- FILTER BAR -->
+  <div style="display:flex; gap:12px; padding:0 56px 44px; flex-wrap:wrap;">
+    <button style="{{ allBtnStyle }}" onClick="{{ setFilterAll }}">All</button>
+    <button style="{{ flooringBtnStyle }}" onClick="{{ setFilterFlooring }}">Flooring</button>
+    <button style="{{ outdoorBtnStyle }}" onClick="{{ setFilterOutdoor }}">Outdoor &amp; Pools</button>
+    <button style="{{ craftBtnStyle }}" onClick="{{ setFilterCraft }}">Craft &amp; Process</button>
+  </div>
+
+  <!-- MASONRY GALLERY -->
+  <div class="lt-masonry" style="column-count:3; column-gap:14px; padding:0 56px 100px;">
+    <sc-for list="{{ items }}" as="item" hint-placeholder-count="9">
+      <div onClick="{{ item.open }}" style="break-inside:avoid; margin-bottom:14px; cursor:zoom-in; position:relative;">
+        <img src="{{ item.src }}" style="width:100%; display:block;" />
+        <div style="padding:10px 2px 0; font-size:13px; color:#5c4632; line-height:1.4;">{{ item.caption }}</div>
+      </div>
+    </sc-for>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <sc-if value="{{ lightboxOpen }}">
+    <div onClick="{{ lightboxClose }}" style="position:fixed; inset:0; background:rgba(20,13,8,0.94); z-index:50; display:flex; align-items:center; justify-content:center; padding:48px;">
+      <button onClick="{{ lightboxClose }}" style="position:absolute; top:28px; right:36px; background:none; border:none; color:#f4e8d8; font-size:32px; line-height:1; cursor:pointer; font-family:inherit;">×</button>
+      <button onClick="{{ lightboxPrev }}" style="position:absolute; left:24px; top:50%; transform:translateY(-50%); background:none; border:none; color:#f4e8d8; font-size:40px; line-height:1; cursor:pointer; font-family:inherit; opacity:0.75; padding:12px;">‹</button>
+      <button onClick="{{ lightboxNext }}" style="position:absolute; right:24px; top:50%; transform:translateY(-50%); background:none; border:none; color:#f4e8d8; font-size:40px; line-height:1; cursor:pointer; font-family:inherit; opacity:0.75; padding:12px;">›</button>
+      <div onClick="{{ stopClick }}" style="max-width:1100px; max-height:88vh; display:flex; flex-direction:column; align-items:center; gap:16px;">
+        <img src="{{ lightboxItem.src }}" style="max-width:100%; max-height:78vh; object-fit:contain; display:block;" />
+        <div style="color:#e7c9a5; font-size:15px; text-align:center;">{{ lightboxItem.caption }}</div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- FOOTER -->
+  <div style="background:#241a12; color:#d9c7ae; padding:64px 56px 40px;">
+    <div style="display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:44px; border-bottom:1px solid #40301f;">
+      <div>
+        <div style="color:#f4e8d8; font-size:20px; font-weight:700; margin-bottom:14px;">Leo Tiles</div>
+        <p style="font-size:14.5px; line-height:1.7; margin:0; color:#b39d80;">Handmade terracotta, fired in Cape Town, South Africa since 1975.</p>
+      </div>
+      <div>
+        <div style="font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:#e7a97e; font-weight:700; margin-bottom:14px;">Factory</div>
+        <p style="font-size:14.5px; line-height:1.8; margin:0;">Cape Town, South Africa<br/>Office +27 (0)21 988 9491<br/>Mobile +27 (0)79 150 0160</p>
+      </div>
+      <div>
+        <div style="font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:#e7a97e; font-weight:700; margin-bottom:14px;">Contact</div>
+        <p style="font-size:14.5px; line-height:1.8; margin:0;">Mark Kelly<br/>mark@leotiles.co.za<br/>admin@mktrust.co.za</p>
+      </div>
+      <div>
+        <div style="font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:#e7a97e; font-weight:700; margin-bottom:14px;">Explore</div>
+        <p style="font-size:14.5px; line-height:1.8; margin:0;"><a href="#" style="color:#d9c7ae;">Guide hub</a><br/><a href="#" style="color:#d9c7ae;">Product range</a><br/><a href="#" style="color:#d9c7ae;">Instagram</a></p>
+      </div>
+    </div>
+    <div style="padding-top:22px; font-size:13px; color:#8a7660;">© 1975–2026 Leo Tiles. Made by hand in Cape Town.</div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { filter: 'all', lightboxPos: null };
+
+  allItems = [
+    { id: 'pool-deck',  src: 'images/pool-deck.jpg',  cat: 'outdoor',  caption: 'Poolside deck, Constantia — 300×300mm Batavian, 25mm joint' },
+    { id: 'courtyard',  src: 'images/courtyard.jpg',  cat: 'outdoor',  caption: 'Courtyard, Cape Town — hand-laid terracotta with planted borders' },
+    { id: 'kitchen',    src: 'images/kitchen.jpg',    cat: 'flooring', caption: 'Kitchen floor — natural red terracotta, tight joint' },
+    { id: 'herringbone-install', src: 'images/herringbone-install.jpg', cat: 'flooring', caption: 'Herringbone installation, in progress' },
+    { id: 'stacked-tiles', src: 'images/stacked-tiles.jpg', cat: 'craft', caption: 'Freshly fired tiles, stacked and cooling at the factory' },
+    { id: 'dining-room', src: 'images/dining-room.jpg', cat: 'flooring', caption: 'Dining room floor — wide joint, reclaimed look' },
+    { id: 'terrace',    src: 'images/terrace.jpg',    cat: 'outdoor',  caption: 'Garden terrace — hand-laid terracotta pavers' },
+    { id: 'tile-texture', src: 'images/tile-texture.jpg', cat: 'craft', caption: 'Close-up: natural clay texture and tone variation' },
+    { id: 'dining-room-2', src: 'images/dining-room-2.jpg', cat: 'flooring', caption: 'Dining room, detail — tone variation tile to tile' },
+  ];
+
+  btnStyle(active) {
+    return active
+      ? 'font:inherit; font-weight:700; font-size:14px; padding:10px 20px; border-radius:20px; border:none; cursor:pointer; background:#b5502f; color:#f4e8d8;'
+      : 'font:inherit; font-weight:600; font-size:14px; padding:10px 20px; border-radius:20px; border:1px solid #d9c19c; cursor:pointer; background:transparent; color:#5c4632;';
+  }
+
+  setFilter(f) { this.setState({ filter: f, lightboxPos: null }); }
+
+  renderVals() {
+    const filtered = this.allItems.filter(it => this.state.filter === 'all' || it.cat === this.state.filter);
+    const items = filtered.map((it, idx) => ({
+      ...it,
+      open: () => this.setState({ lightboxPos: idx }),
+    }));
+    const pos = this.state.lightboxPos;
+    const lightboxOpen = pos !== null && pos >= 0 && pos < filtered.length;
+    const lightboxItem = lightboxOpen ? filtered[pos] : { src: '', caption: '' };
+
+    return {
+      items,
+      lightboxOpen,
+      lightboxItem,
+      allBtnStyle: this.btnStyle(this.state.filter === 'all'),
+      flooringBtnStyle: this.btnStyle(this.state.filter === 'flooring'),
+      outdoorBtnStyle: this.btnStyle(this.state.filter === 'outdoor'),
+      craftBtnStyle: this.btnStyle(this.state.filter === 'craft'),
+      setFilterAll: () => this.setFilter('all'),
+      setFilterFlooring: () => this.setFilter('flooring'),
+      setFilterOutdoor: () => this.setFilter('outdoor'),
+      setFilterCraft: () => this.setFilter('craft'),
+      lightboxClose: () => this.setState({ lightboxPos: null }),
+      lightboxPrev: () => this.setState(s => ({ lightboxPos: (s.lightboxPos - 1 + filtered.length) % filtered.length })),
+      lightboxNext: () => this.setState(s => ({ lightboxPos: (s.lightboxPos + 1) % filtered.length })),
+      stopClick: (e) => e.stopPropagation(),
+    };
+  }
+}
+
+</script>
+</body>
+</html>

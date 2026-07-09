@@ -9,7 +9,11 @@
       "Skill(firecrawl-search:*)",
       "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(r.get\\('title',''\\), '|', r.get\\('url',''\\), '\\\\n', r.get\\('description',''\\)[:200]\\) for r in d.get\\('data',{}\\).get\\('web',[]\\)[:5]]\")",
       "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(r.get\\('title',''\\), '|', r.get\\('url',''\\), '\\\\n', r.get\\('description',''\\)[:200]\\) for r in d.get\\('data',{}\\).get\\('web',[]\\)[:5]]\" echo \"---\" cat .firecrawl/owner5-drainright.json)",
-      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(r.get\\('title',''\\), '\\\\n', r.get\\('description',''\\)[:250], '\\\\n'\\) for r in d.get\\('data',{}\\).get\\('web',[]\\)[:5]]\")"
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(r.get\\('title',''\\), '\\\\n', r.get\\('description',''\\)[:250], '\\\\n'\\) for r in d.get\\('data',{}\\).get\\('web',[]\\)[:5]]\")",
+      "Bash(mkdir -p \"/Users/utroff/Desktop/portfolio/trust-blueprint/src/app/guides/[slug]\" \"/Users/utroff/Desktop/portfolio/trust-blueprint/src/app/products/[slug]\" \"/Users/utroff/Desktop/portfolio/trust-blueprint/src/app/work-gallery\" \"/Users/utroff/Desktop/portfolio/trust-blueprint/src/app/wine-farms\" \"/Users/utroff/Desktop/portfolio/trust-blueprint/src/app/designer-collaborations\")"
+    ],
+    "additionalDirectories": [
+      "/Users/utroff/Desktop/portfolio/trust-blueprint/src/app/guides"
     ]
   }
 }

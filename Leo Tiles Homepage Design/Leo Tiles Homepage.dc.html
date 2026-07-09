@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  html { background: #ded0b8; }
+  body { margin: 0; font-family: 'Libre Franklin', sans-serif; }
+  @keyframes kenburns { 0% { transform: scale(1.0) translate(0,0); } 100% { transform: scale(1.09) translate(-1%,-1%); } }
+  @keyframes heroFade1 { 0%,38%,100% { opacity: 1; } 46%,92% { opacity: 0; } }
+  @keyframes heroFade2 { 0%,38%,100% { opacity: 0; } 46%,92% { opacity: 1; } }
+  ::selection { background: #b5502f; color: #f4e8d8; }
+</style>
+</helmet>
+
+<div style="min-width:4620px; padding:64px 60px 140px; box-sizing:border-box; background:#ded0b8;">
+
+  <div style="display:flex; align-items:baseline; gap:16px; margin-bottom:36px;">
+    <span style="font-size:13px; letter-spacing:2px; text-transform:uppercase; color:#5c4632; font-weight:600;">Leo Tiles — Homepage options</span>
+    <span style="font-size:13px; color:#8a7660;">Turn 1 · pan/zoom to compare · reply with an id (1a / 1b / 1c) or "combine 1a hero + 1c gallery"</span>
+  </div>
+
+  <div style="display:flex; gap:60px; align-items:flex-start;">
+
+    <!-- ============================================================ -->
+    <!-- OPTION 1A — IMMERSIVE PARALLAX / KEN-BURNS HERO -->
+    <!-- ============================================================ -->
+    <section id="1a" style="width:1440px; flex:none; background:#f4e8d8; box-shadow:0 30px 80px rgba(40,25,15,0.25);">
+
+      <div style="position:sticky; top:0; z-index:2; display:inline-block;">
+        <span style="position:absolute; top:22px; left:28px; background:#b5502f; color:#f4e8d8; font-size:12px; font-weight:700; letter-spacing:1px; padding:5px 11px; border-radius:3px; z-index:5;">1A — Immersive</span>
+      </div>
+
+      <!-- NAV -->
+      <div style="position:relative; z-index:3;">
+        <div style="position:absolute; top:0; left:0; right:0; display:flex; align-items:center; justify-content:space-between; padding:34px 56px 0; box-sizing:border-box;">
+          <div style="color:#f4e8d8; font-size:20px; font-weight:700; letter-spacing:0.5px;">Leo Tiles</div>
+          <div style="display:flex; gap:36px; align-items:center;">
+            <a href="#1a-gallery" style="color:#f4e8d8; text-decoration:none; font-size:14.5px; font-weight:500; opacity:0.92;">Work</a>
+            <a href="#1a-guides" style="color:#f4e8d8; text-decoration:none; font-size:14.5px; font-weight:500; opacity:0.92;">Guides</a>
+            <a href="#1a-about" style="color:#f4e8d8; text-decoration:none; font-size:14.5px; font-weight:500; opacity:0.92;">About</a>
+            <a href="#1a-quote" style="color:#241a12; background:#f4e8d8; text-decoration:none; font-size:14px; font-weight:600; padding:9px 18px; border-radius:2px;">Enquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERO -->
+      <div style="position:relative; height:860px; overflow:hidden; background:#241a12;">
+        <img src="images/pool-deck.jpg" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; animation:kenburns 22s ease-in-out infinite alternate, heroFade1 16s ease-in-out infinite;" />
+        <img src="images/terrace.jpg" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; animation:kenburns 22s ease-in-out infinite alternate-reverse, heroFade2 16s ease-in-out infinite;" />
+        <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,13,8,0.35) 0%, rgba(20,13,8,0) 30%, rgba(20,13,8,0.15) 60%, rgba(20,13,8,0.72) 100%);"></div>
+        <div style="position:absolute; left:56px; right:56px; bottom:56px; display:flex; align-items:flex-end; justify-content:space-between; gap:40px;">
+          <div style="max-width:640px;">
+            <div style="color:#e7c9a5; font-size:13.5px; letter-spacing:2px; text-transform:uppercase; font-weight:600; margin-bottom:14px;">Pool deck · Constantia, Cape Town</div>
+            <h1 style="margin:0; color:#f9f1e6; font-size:52px; line-height:1.08; font-weight:700; letter-spacing:-0.5px;">Turning your house into a picturesque home.</h1>
+            <p style="margin:16px 0 0; color:#f0dfc7; opacity:0.85; font-size:17px; font-weight:500; line-height:1.4;">Every tile shaped by hand — worth the wait.</p>
+          </div>
+          <a href="#1a-quote" style="flex:none; background:#f4e8d8; color:#241a12; text-decoration:none; font-weight:700; font-size:15.5px; padding:17px 30px; border-radius:2px; white-space:nowrap;">Get a Quote Now</a>
+        </div>
+      </div>
+
+      <!-- AUTHENTICITY STRIP -->
+      <div style="display:grid; grid-template-columns:1.3fr 1fr; align-items:center; background:#ead6bd;">
+        <div style="padding:70px 64px;">
+          <p style="margin:0; font-size:29px; line-height:1.4; font-weight:500; color:#241a12; max-width:520px;">Handmade in Cape Town since 1975 — every tile mixed, pressed and shaped by hand before it ever sees the kiln.</p>
+        </div>
+        <div style="height:320px; overflow:hidden;">
+          <img src="images/stacked-tiles.jpg" style="width:100%; height:100%; object-fit:cover; display:block;" />
+        </div>
+      </div>
+
+      <!-- GALLERY -->
+      <div id="1a-gallery" style="padding:96px 56px 20px; background:#f4e8d8;">
+        <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom:40px;">
+          <h2 style="margin:0; font-size:34px; font-weight:700; color:#241a12;">Recent floors</h2>
+          <a href="#" style="color:#b5502f; text-decoration:none; font-weight:600; font-size:15px;">View full gallery →</a>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(6,1fr); grid-template-rows:220px 220px; gap:12px;">
+          <div style="grid-column:span 3; grid-row:span 2; overflow:hidden;"><img src="images/courtyard.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+          <div style="grid-column:span 3; overflow:hidden;"><img src="images/kitchen.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+          <div style="grid-column:span 3; overflow:hidden; position:relative;">
+            <img src="images/dining-room-2.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/>
+            <div style="position:absolute; inset:0; background:rgba(36,26,18,0.45); display:flex; align-items:center; justify-content:center;">
+              <span style="color:#f4e8d8; font-weight:700; font-size:17px;">View full gallery →</span>
+            </div>
+          </div>
+          <div style="grid-column:span 2; overflow:hidden;"><img src="images/terrace.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+          <div style="grid-column:span 2; overflow:hidden;"><img src="images/dining-room.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+          <div style="grid-column:span 2; overflow:hidden;"><img src="images/herringbone-install.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+        </div>
+      </div>
+
+      <!-- ABOUT -->
+      <div id="1a-about" style="display:grid; grid-template-columns:1fr 1fr; background:#241a12; margin-top:96px;">
+        <div style="overflow:hidden;"><img src="images/herringbone-install.jpg" style="width:100%; height:100%; object-fit:cover; display:block; min-height:560px;"/></div>
+        <div style="padding:72px 60px; color:#f4e8d8;">
+          <div style="color:#e7a97e; font-size:13px; letter-spacing:2px; text-transform:uppercase; font-weight:600; margin-bottom:18px;">Our story</div>
+          <p style="font-size:22px; line-height:1.5; font-weight:500; margin:0 0 22px; font-style:italic; color:#f0dfc7;">"Warm hearts make warm hands, make warm tiles."</p>
+          <p style="font-size:16px; line-height:1.75; color:#d9c7ae; margin:0 0 16px;">Leo Tiles has been a family business on the edge of Cape Town since 1975 — eighteen people strong, still making tiles to order. Founder Pat Kelly's son Mark took over in 2012, moving his architectural practice onto the factory floor so design and production sit side by side.</p>
+          <p style="font-size:16px; line-height:1.75; color:#d9c7ae; margin:0 0 16px;">Our clay is African earth: feldspar, iron oxide and quartz washed from Cape granite over thousands of years. It's hand mixed, pressed, shaped at the table, air-dried up to two weeks, then hand-packed into the kiln to fire into terracotta.</p>
+          <p style="font-size:16px; line-height:1.75; color:#d9c7ae; margin:0 0 16px;">That slowness is the point. A tile forced out of the kiln too soon cracks, warps or fades early — ours don't, because every batch gets the full time it needs to dry evenly and fire through. It's why a floor we made in 1975 still looks the way it did on day one.</p>
+          <p style="font-size:15px; line-height:1.7; color:#b39d80; margin:22px 0 0; border-left:2px solid #b5502f; padding-left:16px;">"You bought tiles from your Dad, Pat, way back — they're stunning, our house still looks amazing." — a returning client, ordering for a new addition</p>
+        </div>
+      </div>
+
+      <!-- GUIDES -->
+      <div id="1a-guides" style="padding:96px 56px; background:#f4e8d8;">
+        <h2 style="margin:0 0 40px; font-size:34px; font-weight:700; color:#241a12;">From the guide hub</h2>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+          <a href="#" style="text-decoration:none; color:#241a12;">
+            <div style="height:200px; overflow:hidden; margin-bottom:18px;"><img src="images/courtyard.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+            <div style="font-size:12.5px; letter-spacing:1.5px; text-transform:uppercase; color:#b5502f; font-weight:700; margin-bottom:8px;">Inspiration</div>
+            <div style="font-size:19px; font-weight:600; line-height:1.35;">Pairing terracotta with a Cape courtyard garden</div>
+          </a>
+          <a href="#" style="text-decoration:none; color:#241a12;">
+            <div style="height:200px; overflow:hidden; margin-bottom:18px;"><img src="images/kitchen.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+            <div style="font-size:12.5px; letter-spacing:1.5px; text-transform:uppercase; color:#b5502f; font-weight:700; margin-bottom:8px;">Inspiration</div>
+            <div style="font-size:19px; font-weight:600; line-height:1.35;">Kitchen floors that only get better with age</div>
+          </a>
+          <a href="#" style="text-decoration:none; color:#241a12;">
+            <div style="height:200px; overflow:hidden; margin-bottom:18px;"><img src="images/herringbone-install.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+            <div style="font-size:12.5px; letter-spacing:1.5px; text-transform:uppercase; color:#7a6a4e; font-weight:700; margin-bottom:8px;">Technical guide</div>
+            <div style="font-size:19px; font-weight:600; line-height:1.35;">Choosing the right joint width for outdoor terracotta</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- TRUST & REVIEWS -->
+      <div id="1a-trust" style="background:#f4e8d8; padding:80px 56px 104px;">
+        <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:40px; flex-wrap:wrap; margin-bottom:44px;">
+          <div>
+            <div style="font-size:12.5px; letter-spacing:2px; text-transform:uppercase; color:#7a6a4e; font-weight:700; margin-bottom:14px;">Reviews</div>
+            <h2 style="margin:0; font-size:28px; font-weight:700; color:#241a12;">What our clients say</h2>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span style="color:#b5502f; font-size:17px; letter-spacing:1px;">★★★★★</span>
+            <span style="font-size:15px; color:#5c4632;">4.9 out of 5 — 186 reviews on Google</span>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; gap:10px 0; padding:18px 0; border-top:1px solid #cbb693; border-bottom:1px solid #cbb693; margin-bottom:56px;">
+          <div style="padding-right:28px; margin-right:28px; border-right:1px solid #cbb693; font-size:14px; color:#5c4632;">Handmade since 1975</div>
+          <div style="padding-right:28px; margin-right:28px; border-right:1px solid #cbb693; font-size:14px; color:#5c4632;">Family-run, two generations</div>
+          <div style="padding-right:28px; margin-right:28px; border-right:1px solid #cbb693; font-size:14px; color:#5c4632;">18 makers, one factory floor</div>
+          <div style="font-size:14px; color:#5c4632;">Projects across the Cape Winelands and beyond</div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(3,1fr);">
+          <div style="padding-right:40px;">
+            <span style="color:#b5502f; font-size:13px; letter-spacing:1.5px;">★★★★★</span>
+            <p style="margin:16px 0 18px; font-size:16.5px; line-height:1.6; font-style:italic; color:#3a2b1c;">"Our patio floor gets more compliments than the pool. Five years on and it's only getting better with age."</p>
+            <div style="font-size:13.5px; color:#8a7660;"><span style="font-weight:600; color:#5c4632;">Claire V.</span> — Constantia</div>
+          </div>
+          <div style="padding:0 40px; border-left:1px solid #cbb693; border-right:1px solid #cbb693;">
+            <span style="color:#b5502f; font-size:13px; letter-spacing:1.5px;">★★★★★</span>
+            <p style="margin:16px 0 18px; font-size:16.5px; line-height:1.6; font-style:italic; color:#3a2b1c;">"Mark talked us through joint widths and colour blends before we'd even placed an order. That kind of care is rare."</p>
+            <div style="font-size:13.5px; color:#8a7660;"><span style="font-weight:600; color:#5c4632;">Daniel R.</span> — Franschhoek</div>
+          </div>
+          <div style="padding-left:40px;">
+            <span style="color:#b5502f; font-size:13px; letter-spacing:1.5px;">★★★★★</span>
+            <p style="margin:16px 0 18px; font-size:16.5px; line-height:1.6; font-style:italic; color:#3a2b1c;">"Ordered a small batch to restore a kitchen floor and they matched the old tile almost exactly. Genuinely impressed."</p>
+            <div style="font-size:13.5px; color:#8a7660;"><span style="font-weight:600; color:#5c4632;">Priya N.</span> — Somerset West</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUOTE FORM -->
+      <div id="1a-quote" style="background:#ead6bd; padding:96px 56px;">
+        <div style="max-width:640px; margin:0 auto 48px; text-align:center;">
+          <h2 style="margin:0 0 14px; font-size:34px; font-weight:700; color:#241a12;">Tell us about your floor</h2>
+          <p style="margin:0; font-size:16px; color:#5c4632; line-height:1.6;">A few details and we'll come back with a quote and lead time. No obligation — just a starting point.</p>
+          <p style="margin:14px 0 0; font-size:14.5px; color:#8a7660; line-height:1.6;">Because every order is handmade to your specification, please allow 6–8 weeks for production.</p>
+        </div>
+        <div style="max-width:760px; margin:0 auto; background:#f4e8d8; padding:44px; box-sizing:border-box;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:22px;">
+            <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12;">Square meterage
+              <input type="text" placeholder="e.g. 45 m²" style="font:inherit; font-weight:400; padding:12px 14px; border:1px solid #cbb693; background:#fff; font-size:15px;" />
+              <span style="font-weight:400; font-size:12.5px; color:#8a7660;">≈ 9 tiles per m² at 300×300mm with a 25mm joint</span>
+            </label>
+            <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12;">Tile style
+              <select style="font:inherit; font-weight:400; padding:12px 14px; border:1px solid #cbb693; background:#fff; font-size:15px;">
+                <option>Batavian</option>
+                <option>Standard 300×300</option>
+                <option>Herringbone-cut</option>
+                <option>Custom / bespoke pattern</option>
+              </select>
+            </label>
+            <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12;">Colour
+              <div style="display:flex; gap:10px; padding-top:4px;">
+                <span title="Natural red" style="width:34px; height:34px; border-radius:50%; background:#b5502f; border:2px solid #241a12; cursor:pointer;"></span>
+                <span title="Dark fired" style="width:34px; height:34px; border-radius:50%; background:#7a3a24; border:2px solid transparent; cursor:pointer;"></span>
+                <span title="Mid tone" style="width:34px; height:34px; border-radius:50%; background:#96603f; border:2px solid transparent; cursor:pointer;"></span>
+                <span title="Light sand-fired" style="width:34px; height:34px; border-radius:50%; background:#c98a5e; border:2px solid transparent; cursor:pointer;"></span>
+              </div>
+              <span style="font-weight:400; font-size:12.5px; color:#8a7660;">Natural tone variation is part of a handmade floor</span>
+            </label>
+            <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12;">Joint size
+              <select style="font:inherit; font-weight:400; padding:12px 14px; border:1px solid #cbb693; background:#fff; font-size:15px;">
+                <option>10mm</option>
+                <option>15mm</option>
+                <option>20mm</option>
+                <option selected>25mm (recommended)</option>
+              </select>
+            </label>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:22px;">
+            <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12;">Name
+              <input type="text" style="font:inherit; font-weight:400; padding:12px 14px; border:1px solid #cbb693; background:#fff; font-size:15px;" />
+            </label>
+            <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12;">Email or phone
+              <input type="text" style="font:inherit; font-weight:400; padding:12px 14px; border:1px solid #cbb693; background:#fff; font-size:15px;" />
+            </label>
+          </div>
+          <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12; margin-top:22px;">Anything else?
+            <textarea rows="3" placeholder="Project location, timeline, reference photos…" style="font:inherit; font-weight:400; padding:12px 14px; border:1px solid #cbb693; background:#fff; font-size:15px; resize:vertical;"></textarea>
+          </label>
+          <button style="margin-top:26px; background:#b5502f; color:#f4e8d8; border:none; font:inherit; font-weight:700; font-size:15.5px; padding:16px 32px; cursor:pointer;">Send enquiry</button>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <div style="background:#241a12; color:#d9c7ae; padding:64px 56px 40px;">
+        <div style="display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:44px; border-bottom:1px solid #40301f;">
+          <div>
+            <div style="color:#f4e8d8; font-size:20px; font-weight:700; margin-bottom:14px;">Leo Tiles</div>
+            <p style="font-size:14.5px; line-height:1.7; margin:0; color:#b39d80;">Handmade terracotta, fired in Cape Town, South Africa since 1975.</p>
+          </div>
+          <div>
+            <div style="font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:#e7a97e; font-weight:700; margin-bottom:14px;">Factory</div>
+            <p style="font-size:14.5px; line-height:1.8; margin:0;">Cape Town, South Africa<br/>Office +27 (0)21 988 9491<br/>Mobile +27 (0)79 150 0160</p>
+          </div>
+          <div>
+            <div style="font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:#e7a97e; font-weight:700; margin-bottom:14px;">Contact</div>
+            <p style="font-size:14.5px; line-height:1.8; margin:0;">Mark Kelly<br/>mark@leotiles.co.za<br/>admin@mktrust.co.za</p>
+          </div>
+          <div>
+            <div style="font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:#e7a97e; font-weight:700; margin-bottom:14px;">Explore</div>
+            <p style="font-size:14.5px; line-height:1.8; margin:0;"><a href="#1a-guides" style="color:#d9c7ae;">Guide hub</a><br/><a href="#" style="color:#d9c7ae;">Product range</a><br/><a href="#" style="color:#d9c7ae;">Instagram</a></p>
+          </div>
+        </div>
+        <div style="padding-top:22px; font-size:13px; color:#8a7660;">© 1975–2026 Leo Tiles. Made by hand in Cape Town.</div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- OPTION 1B — SPLIT EDITORIAL COVER -->
+    <!-- ============================================================ -->
+    <section id="1b" style="width:1440px; flex:none; background:#f4e8d8; box-shadow:0 30px 80px rgba(40,25,15,0.25); position:relative;">
+      <span style="position:absolute; top:22px; left:28px; background:#b5502f; color:#f4e8d8; font-size:12px; font-weight:700; letter-spacing:1px; padding:5px 11px; border-radius:3px; z-index:5;">1B — Split cover</span>
+
+      <!-- HERO -->
+      <div style="display:grid; grid-template-columns:1.5fr 1fr; height:900px;">
+        <div style="position:relative; overflow:hidden; background:#241a12;">
+          <img src="images/pool-deck.jpg" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; animation:kenburns 26s ease-in-out infinite alternate;"/>
+          <div style="position:absolute; inset:0; background:linear-gradient(90deg, rgba(20,13,8,0) 55%, rgba(20,13,8,0.25) 100%);"></div>
+          <div style="position:absolute; left:40px; bottom:40px; color:#e7c9a5; font-size:13.5px; letter-spacing:1.5px; text-transform:uppercase; font-weight:600;">Pool deck · Constantia, Cape Town</div>
+        </div>
+        <div style="background:#b5502f; color:#f9f1e6; padding:48px 44px; display:flex; flex-direction:column; justify-content:space-between;">
+          <div style="display:flex; align-items:center; justify-content:space-between;">
+            <div style="font-size:19px; font-weight:700;">Leo Tiles</div>
+            <div style="font-size:12.5px; letter-spacing:1.5px; text-transform:uppercase; opacity:0.85;">Est. 1975</div>
+          </div>
+          <div>
+            <h1 style="margin:0 0 14px; font-size:44px; line-height:1.12; font-weight:700; letter-spacing:-0.5px;">Turning your house into a picturesque home.</h1>
+            <p style="margin:0 0 28px; color:#f9f1e6; opacity:0.82; font-size:16.5px; font-weight:500; line-height:1.4;">Every tile shaped by hand — worth the wait.</p>
+            <a href="#1b-quote" style="display:inline-block; background:#241a12; color:#f4e8d8; text-decoration:none; font-weight:700; font-size:15.5px; padding:17px 30px; border-radius:2px;">Get a Quote Now</a>
+          </div>
+          <div style="display:flex; gap:28px; font-size:14px; font-weight:500;">
+            <a href="#1b-gallery" style="color:#f9f1e6; text-decoration:none; opacity:0.9; border-bottom:1px solid rgba(249,241,230,0.4); padding-bottom:2px;">Work</a>
+            <a href="#1b-guides" style="color:#f9f1e6; text-decoration:none; opacity:0.9; border-bottom:1px solid rgba(249,241,230,0.4); padding-bottom:2px;">Guides</a>
+            <a href="#1b-about" style="color:#f9f1e6; text-decoration:none; opacity:0.9; border-bottom:1px solid rgba(249,241,230,0.4); padding-bottom:2px;">About</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- AUTHENTICITY STRIP -->
+      <div style="display:grid; grid-template-columns:1fr 1.3fr; align-items:center; background:#ead6bd;">
+        <div style="height:300px; overflow:hidden;">
+          <img src="images/herringbone-install.jpg" style="width:100%; height:100%; object-fit:cover; display:block;" />
+        </div>
+        <div style="padding:64px;">
+          <p style="margin:0; font-size:28px; line-height:1.4; font-weight:500; color:#241a12; max-width:540px;">Handmade in Cape Town since 1975 — every tile mixed, pressed and shaped by hand before it ever sees the kiln.</p>
+        </div>
+      </div>
+
+      <!-- GALLERY -->
+      <div id="1b-gallery" style="padding:96px 56px 20px; background:#f4e8d8;">
+        <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom:40px;">
+          <h2 style="margin:0; font-size:34px; font-weight:700; color:#241a12;">Recent floors</h2>
+          <a href="#" style="color:#b5502f; text-decoration:none; font-weight:600; font-size:15px;">View full gallery →</a>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px;">
+          <div style="grid-column:span 2; grid-row:span 2; height:456px; overflow:hidden;"><img src="images/courtyard.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+          <div style="height:221px; overflow:hidden;"><img src="images/kitchen.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+          <div style="height:221px; overflow:hidden;"><img src="images/terrace.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+          <div style="height:280px; overflow:hidden;"><img src="images/dining-room.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+          <div style="height:280px; overflow:hidden;"><img src="images/dining-room-2.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+          <div style="height:280px; overflow:hidden; position:relative;">
+            <img src="images/stacked-tiles.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/>
+            <div style="position:absolute; inset:0; background:rgba(36,26,18,0.45); display:flex; align-items:center; justify-content:center;">
+              <span style="color:#f4e8d8; font-weight:700; font-size:16px;">View full gallery →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ABOUT -->
+      <div id="1b-about" style="display:grid; grid-template-columns:1fr 1fr; background:#241a12; margin-top:96px;">
+        <div style="padding:72px 60px; color:#f4e8d8; order:2;">
+          <div style="color:#e7a97e; font-size:13px; letter-spacing:2px; text-transform:uppercase; font-weight:600; margin-bottom:18px;">Our story</div>
+          <p style="font-size:22px; line-height:1.5; font-weight:500; margin:0 0 22px; font-style:italic; color:#f0dfc7;">"We are Africans that make terracotta tiles from the African earth."</p>
+          <p style="font-size:16px; line-height:1.75; color:#d9c7ae; margin:0 0 16px;">A small factory on the edge of Cape Town, 18 people strong, manufacturing to order since 1975. Pat Kelly's son Mark took over in 2012 and moved his architectural practice onto the factory floor, so design and production could sit side by side.</p>
+          <p style="font-size:16px; line-height:1.75; color:#d9c7ae; margin:0 0 16px;">Our clay comes from Cape granite mountains — feldspar, iron oxide, alumina and quartz, washed into rich red soils over thousands of years, then hand mixed, pressed, shaped and fired into terracotta.</p>
+          <p style="font-size:16px; line-height:1.75; color:#d9c7ae; margin:0 0 16px;">None of that happens quickly, and we wouldn't want it to. Each tile air-dries for up to two weeks before it ever reaches the kiln, then fires slowly over several days — time that gives a Leo tile its colour, density and character. It's why floors we made decades ago still hold up today.</p>
+          <p style="font-size:15px; line-height:1.7; color:#b39d80; margin:22px 0 0; border-left:2px solid #b5502f; padding-left:16px;">"You bought tiles from your Dad, Pat, way back — they're stunning, our house still looks amazing." — a returning client, ordering for a new addition</p>
+        </div>
+        <div style="overflow:hidden; order:1;"><img src="images/stacked-tiles.jpg" style="width:100%; height:100%; object-fit:cover; display:block; min-height:560px;"/></div>
+      </div>
+
+      <!-- GUIDES -->
+      <div id="1b-guides" style="padding:96px 56px; background:#f4e8d8;">
+        <h2 style="margin:0 0 40px; font-size:34px; font-weight:700; color:#241a12;">From the guide hub</h2>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+          <a href="#" style="text-decoration:none; color:#241a12;">
+            <div style="height:200px; overflow:hidden; margin-bottom:18px;"><img src="images/dining-room.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+            <div style="font-size:12.5px; letter-spacing:1.5px; text-transform:uppercase; color:#b5502f; font-weight:700; margin-bottom:8px;">Inspiration</div>
+            <div style="font-size:19px; font-weight:600; line-height:1.35;">Pairing terracotta with a Cape courtyard garden</div>
+          </a>
+          <a href="#" style="text-decoration:none; color:#241a12;">
+            <div style="height:200px; overflow:hidden; margin-bottom:18px;"><img src="images/kitchen.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+            <div style="font-size:12.5px; letter-spacing:1.5px; text-transform:uppercase; color:#b5502f; font-weight:700; margin-bottom:8px;">Inspiration</div>
+            <div style="font-size:19px; font-weight:600; line-height:1.35;">Kitchen floors that only get better with age</div>
+          </a>
+          <a href="#" style="text-decoration:none; color:#241a12;">
+            <div style="height:200px; overflow:hidden; margin-bottom:18px;"><img src="images/herringbone-install.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+            <div style="font-size:12.5px; letter-spacing:1.5px; text-transform:uppercase; color:#7a6a4e; font-weight:700; margin-bottom:8px;">Technical guide</div>
+            <div style="font-size:19px; font-weight:600; line-height:1.35;">Choosing the right joint width for outdoor terracotta</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- TRUST & REVIEWS -->
+      <div id="1b-trust" style="background:#f4e8d8; padding:80px 56px 104px;">
+        <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:40px; flex-wrap:wrap; margin-bottom:44px;">
+          <div>
+            <div style="font-size:12.5px; letter-spacing:2px; text-transform:uppercase; color:#7a6a4e; font-weight:700; margin-bottom:14px;">Reviews</div>
+            <h2 style="margin:0; font-size:28px; font-weight:700; color:#241a12;">What our clients say</h2>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span style="color:#b5502f; font-size:17px; letter-spacing:1px;">★★★★★</span>
+            <span style="font-size:15px; color:#5c4632;">4.9 out of 5 — 186 reviews on Google</span>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; gap:10px 0; padding:18px 0; border-top:1px solid #cbb693; border-bottom:1px solid #cbb693; margin-bottom:56px;">
+          <div style="padding-right:28px; margin-right:28px; border-right:1px solid #cbb693; font-size:14px; color:#5c4632;">Handmade since 1975</div>
+          <div style="padding-right:28px; margin-right:28px; border-right:1px solid #cbb693; font-size:14px; color:#5c4632;">Family-run, two generations</div>
+          <div style="padding-right:28px; margin-right:28px; border-right:1px solid #cbb693; font-size:14px; color:#5c4632;">18 makers, one factory floor</div>
+          <div style="font-size:14px; color:#5c4632;">Projects across the Cape Winelands and beyond</div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(3,1fr);">
+          <div style="padding-right:40px;">
+            <span style="color:#b5502f; font-size:13px; letter-spacing:1.5px;">★★★★★</span>
+            <p style="margin:16px 0 18px; font-size:16.5px; line-height:1.6; font-style:italic; color:#3a2b1c;">"Our patio floor gets more compliments than the pool. Five years on and it's only getting better with age."</p>
+            <div style="font-size:13.5px; color:#8a7660;"><span style="font-weight:600; color:#5c4632;">Claire V.</span> — Constantia</div>
+          </div>
+          <div style="padding:0 40px; border-left:1px solid #cbb693; border-right:1px solid #cbb693;">
+            <span style="color:#b5502f; font-size:13px; letter-spacing:1.5px;">★★★★★</span>
+            <p style="margin:16px 0 18px; font-size:16.5px; line-height:1.6; font-style:italic; color:#3a2b1c;">"Mark talked us through joint widths and colour blends before we'd even placed an order. That kind of care is rare."</p>
+            <div style="font-size:13.5px; color:#8a7660;"><span style="font-weight:600; color:#5c4632;">Daniel R.</span> — Franschhoek</div>
+          </div>
+          <div style="padding-left:40px;">
+            <span style="color:#b5502f; font-size:13px; letter-spacing:1.5px;">★★★★★</span>
+            <p style="margin:16px 0 18px; font-size:16.5px; line-height:1.6; font-style:italic; color:#3a2b1c;">"Ordered a small batch to restore a kitchen floor and they matched the old tile almost exactly. Genuinely impressed."</p>
+            <div style="font-size:13.5px; color:#8a7660;"><span style="font-weight:600; color:#5c4632;">Priya N.</span> — Somerset West</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUOTE -->
+      <div id="1b-quote" style="background:#ead6bd; padding:96px 56px;">
+        <div style="max-width:640px; margin:0 auto 48px; text-align:center;">
+          <h2 style="margin:0 0 14px; font-size:34px; font-weight:700; color:#241a12;">Tell us about your floor</h2>
+          <p style="margin:0; font-size:16px; color:#5c4632; line-height:1.6;">A few details and we'll come back with a quote and lead time. No obligation — just a starting point.</p>
+          <p style="margin:14px 0 0; font-size:14.5px; color:#8a7660; line-height:1.6;">Because every order is handmade to your specification, please allow 6–8 weeks for production.</p>
+        </div>
+        <div style="max-width:760px; margin:0 auto; background:#f4e8d8; padding:44px; box-sizing:border-box;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:22px;">
+            <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12;">Square meterage
+              <input type="text" placeholder="e.g. 45 m²" style="font:inherit; font-weight:400; padding:12px 14px; border:1px solid #cbb693; background:#fff; font-size:15px;" />
+              <span style="font-weight:400; font-size:12.5px; color:#8a7660;">≈ 9 tiles per m² at 300×300mm with a 25mm joint</span>
+            </label>
+            <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12;">Tile style
+              <select style="font:inherit; font-weight:400; padding:12px 14px; border:1px solid #cbb693; background:#fff; font-size:15px;">
+                <option>Batavian</option>
+                <option>Standard 300×300</option>
+                <option>Herringbone-cut</option>
+                <option>Custom / bespoke pattern</option>
+              </select>
+            </label>
+            <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12;">Colour
+              <div style="display:flex; gap:10px; padding-top:4px;">
+                <span title="Natural red" style="width:34px; height:34px; border-radius:50%; background:#b5502f; border:2px solid #241a12; cursor:pointer;"></span>
+                <span title="Dark fired" style="width:34px; height:34px; border-radius:50%; background:#7a3a24; border:2px solid transparent; cursor:pointer;"></span>
+                <span title="Mid tone" style="width:34px; height:34px; border-radius:50%; background:#96603f; border:2px solid transparent; cursor:pointer;"></span>
+                <span title="Light sand-fired" style="width:34px; height:34px; border-radius:50%; background:#c98a5e; border:2px solid transparent; cursor:pointer;"></span>
+              </div>
+              <span style="font-weight:400; font-size:12.5px; color:#8a7660;">Natural tone variation is part of a handmade floor</span>
+            </label>
+            <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12;">Joint size
+              <select style="font:inherit; font-weight:400; padding:12px 14px; border:1px solid #cbb693; background:#fff; font-size:15px;">
+                <option>10mm</option>
+                <option>15mm</option>
+                <option>20mm</option>
+                <option selected>25mm (recommended)</option>
+              </select>
+            </label>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:22px;">
+            <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12;">Name
+              <input type="text" style="font:inherit; font-weight:400; padding:12px 14px; border:1px solid #cbb693; background:#fff; font-size:15px;" />
+            </label>
+            <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12;">Email or phone
+              <input type="text" style="font:inherit; font-weight:400; padding:12px 14px; border:1px solid #cbb693; background:#fff; font-size:15px;" />
+            </label>
+          </div>
+          <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12; margin-top:22px;">Anything else?
+            <textarea rows="3" placeholder="Project location, timeline, reference photos…" style="font:inherit; font-weight:400; padding:12px 14px; border:1px solid #cbb693; background:#fff; font-size:15px; resize:vertical;"></textarea>
+          </label>
+          <button style="margin-top:26px; background:#b5502f; color:#f4e8d8; border:none; font:inherit; font-weight:700; font-size:15.5px; padding:16px 32px; cursor:pointer;">Send enquiry</button>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <div style="background:#241a12; color:#d9c7ae; padding:64px 56px 40px;">
+        <div style="display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:44px; border-bottom:1px solid #40301f;">
+          <div>
+            <div style="color:#f4e8d8; font-size:20px; font-weight:700; margin-bottom:14px;">Leo Tiles</div>
+            <p style="font-size:14.5px; line-height:1.7; margin:0; color:#b39d80;">Handmade terracotta, fired in Cape Town, South Africa since 1975.</p>
+          </div>
+          <div>
+            <div style="font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:#e7a97e; font-weight:700; margin-bottom:14px;">Factory</div>
+            <p style="font-size:14.5px; line-height:1.8; margin:0;">Cape Town, South Africa<br/>Office +27 (0)21 988 9491<br/>Mobile +27 (0)79 150 0160</p>
+          </div>
+          <div>
+            <div style="font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:#e7a97e; font-weight:700; margin-bottom:14px;">Contact</div>
+            <p style="font-size:14.5px; line-height:1.8; margin:0;">Mark Kelly<br/>mark@leotiles.co.za<br/>admin@mktrust.co.za</p>
+          </div>
+          <div>
+            <div style="font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:#e7a97e; font-weight:700; margin-bottom:14px;">Explore</div>
+            <p style="font-size:14.5px; line-height:1.8; margin:0;"><a href="#1b-guides" style="color:#d9c7ae;">Guide hub</a><br/><a href="#" style="color:#d9c7ae;">Product range</a><br/><a href="#" style="color:#d9c7ae;">Instagram</a></p>
+          </div>
+        </div>
+        <div style="padding-top:22px; font-size:13px; color:#8a7660;">© 1975–2026 Leo Tiles. Made by hand in Cape Town.</div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- OPTION 1C — BOLD OVERLAP TYPOGRAPHY -->
+    <!-- ============================================================ -->
+    <section id="1c" style="width:1440px; flex:none; background:#f4e8d8; box-shadow:0 30px 80px rgba(40,25,15,0.25); position:relative;">
+      <span style="position:absolute; top:22px; left:28px; background:#b5502f; color:#f4e8d8; font-size:12px; font-weight:700; letter-spacing:1px; padding:5px 11px; border-radius:3px; z-index:5;">1C — Bold overlap</span>
+
+      <!-- NAV -->
+      <div style="position:relative; z-index:3;">
+        <div style="position:absolute; top:0; left:0; right:0; display:flex; align-items:center; justify-content:space-between; padding:34px 56px 0; box-sizing:border-box;">
+          <div style="color:#f4e8d8; font-size:20px; font-weight:700; letter-spacing:0.5px;">Leo Tiles</div>
+          <div style="display:flex; gap:36px; align-items:center;">
+            <a href="#1c-gallery" style="color:#f4e8d8; text-decoration:none; font-size:14.5px; font-weight:500; opacity:0.92;">Work</a>
+            <a href="#1c-guides" style="color:#f4e8d8; text-decoration:none; font-size:14.5px; font-weight:500; opacity:0.92;">Guides</a>
+            <a href="#1c-about" style="color:#f4e8d8; text-decoration:none; font-size:14.5px; font-weight:500; opacity:0.92;">About</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERO -->
+      <div style="position:relative; height:760px; overflow:hidden; background:#241a12;">
+        <img src="images/pool-deck.jpg" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; animation:kenburns 24s ease-in-out infinite alternate;"/>
+        <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,13,8,0.4) 0%, rgba(20,13,8,0.05) 40%, rgba(20,13,8,0) 60%);"></div>
+        <div style="position:absolute; left:56px; top:150px; color:#e7c9a5; font-size:13.5px; letter-spacing:2px; text-transform:uppercase; font-weight:600;">Pool deck · Constantia, Cape Town</div>
+      </div>
+      <div style="position:relative; margin-top:-96px; padding:0 56px; z-index:2;">
+        <h1 style="margin:0; font-size:92px; line-height:0.98; font-weight:800; letter-spacing:-2px; color:#241a12; max-width:1100px;">Turning your house into a <span style="color:#b5502f;">picturesque home.</span></h1>
+        <p style="margin:20px 0 0; color:#5c4632; font-size:18px; font-weight:500; line-height:1.4;">Every tile shaped by hand — worth the wait.</p>
+        <a href="#1c-quote" style="display:inline-flex; align-items:center; gap:10px; margin-top:28px; color:#241a12; text-decoration:none; font-weight:700; font-size:17px; border-bottom:2px solid #241a12; padding-bottom:6px;">Get a Quote Now <span>→</span></a>
+      </div>
+
+      <!-- AUTHENTICITY STRIP -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; align-items:center; background:#ead6bd; margin-top:80px;">
+        <div style="padding:64px;">
+          <p style="margin:0; font-size:30px; line-height:1.4; font-weight:500; color:#241a12; max-width:520px;">Handmade in Cape Town since 1975 — every tile mixed, pressed and shaped by hand before it ever sees the kiln.</p>
+        </div>
+        <div style="height:340px; overflow:hidden;">
+          <img src="images/tile-texture.jpg" style="width:100%; height:100%; object-fit:cover; display:block;" />
+        </div>
+      </div>
+
+      <!-- GALLERY -->
+      <div id="1c-gallery" style="padding:96px 56px 20px; background:#f4e8d8;">
+        <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom:40px;">
+          <h2 style="margin:0; font-size:40px; font-weight:800; letter-spacing:-1px; color:#241a12;">Recent floors</h2>
+          <a href="#" style="color:#b5502f; text-decoration:none; font-weight:600; font-size:15px;">View full gallery →</a>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px;">
+          <div style="grid-column:span 2; grid-row:span 2; height:466px; overflow:hidden;"><img src="images/courtyard.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+          <div style="height:227px; overflow:hidden;"><img src="images/kitchen.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+          <div style="height:227px; overflow:hidden;"><img src="images/terrace.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+          <div style="height:227px; overflow:hidden;"><img src="images/dining-room.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+          <div style="height:227px; overflow:hidden;"><img src="images/herringbone-install.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+          <div style="grid-column:span 2; height:227px; overflow:hidden; position:relative;">
+            <img src="images/dining-room-2.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/>
+            <div style="position:absolute; inset:0; background:rgba(36,26,18,0.45); display:flex; align-items:center; justify-content:center;">
+              <span style="color:#f4e8d8; font-weight:700; font-size:17px;">View full gallery →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ABOUT -->
+      <div id="1c-about" style="display:grid; grid-template-columns:1fr 1fr; background:#241a12; margin-top:96px;">
+        <div style="overflow:hidden;"><img src="images/stacked-tiles.jpg" style="width:100%; height:100%; object-fit:cover; display:block; min-height:560px;"/></div>
+        <div style="padding:72px 60px; color:#f4e8d8;">
+          <div style="color:#e7a97e; font-size:13px; letter-spacing:2px; text-transform:uppercase; font-weight:600; margin-bottom:18px;">Our story</div>
+          <p style="font-size:22px; line-height:1.5; font-weight:500; margin:0 0 22px; font-style:italic; color:#f0dfc7;">"Warm hearts make warm hands, make warm tiles."</p>
+          <p style="font-size:16px; line-height:1.75; color:#d9c7ae; margin:0 0 16px;">A small factory on the edge of Cape Town, 18 people strong, manufacturing to order since 1975. Pat Kelly's son Mark took over in 2012 and moved his architectural practice onto the factory floor, so design and production could sit side by side.</p>
+          <p style="font-size:16px; line-height:1.75; color:#d9c7ae; margin:0 0 16px;">Our clay is African earth: feldspar, iron oxide and quartz washed from Cape granite over thousands of years. It's hand mixed, pressed, shaped, air-dried up to two weeks, then hand-packed into the kiln to fire into terracotta.</p>
+          <p style="font-size:16px; line-height:1.75; color:#d9c7ae; margin:0 0 16px;">That slowness is the point. A tile forced out of the kiln too soon cracks, warps or fades early — ours don't, because every batch gets the full time it needs to dry evenly and fire through. It's why a floor we made in 1975 still looks the way it did on day one.</p>
+          <p style="font-size:15px; line-height:1.7; color:#b39d80; margin:22px 0 0; border-left:2px solid #b5502f; padding-left:16px;">"You bought tiles from your Dad, Pat, way back — they're stunning, our house still looks amazing." — a returning client, ordering for a new addition</p>
+        </div>
+      </div>
+
+      <!-- GUIDES -->
+      <div id="1c-guides" style="padding:96px 56px; background:#f4e8d8;">
+        <h2 style="margin:0 0 40px; font-size:40px; font-weight:800; letter-spacing:-1px; color:#241a12;">From the guide hub</h2>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+          <a href="#" style="text-decoration:none; color:#241a12;">
+            <div style="height:200px; overflow:hidden; margin-bottom:18px;"><img src="images/courtyard.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+            <div style="font-size:12.5px; letter-spacing:1.5px; text-transform:uppercase; color:#b5502f; font-weight:700; margin-bottom:8px;">Inspiration</div>
+            <div style="font-size:19px; font-weight:600; line-height:1.35;">Pairing terracotta with a Cape courtyard garden</div>
+          </a>
+          <a href="#" style="text-decoration:none; color:#241a12;">
+            <div style="height:200px; overflow:hidden; margin-bottom:18px;"><img src="images/kitchen.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+            <div style="font-size:12.5px; letter-spacing:1.5px; text-transform:uppercase; color:#b5502f; font-weight:700; margin-bottom:8px;">Inspiration</div>
+            <div style="font-size:19px; font-weight:600; line-height:1.35;">Kitchen floors that only get better with age</div>
+          </a>
+          <a href="#" style="text-decoration:none; color:#241a12;">
+            <div style="height:200px; overflow:hidden; margin-bottom:18px;"><img src="images/herringbone-install.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+            <div style="font-size:12.5px; letter-spacing:1.5px; text-transform:uppercase; color:#7a6a4e; font-weight:700; margin-bottom:8px;">Technical guide</div>
+            <div style="font-size:19px; font-weight:600; line-height:1.35;">Choosing the right joint width for outdoor terracotta</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- TRUST & REVIEWS -->
+      <div id="1c-trust" style="background:#f4e8d8; padding:80px 56px 104px;">
+        <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:40px; flex-wrap:wrap; margin-bottom:44px;">
+          <div>
+            <div style="font-size:12.5px; letter-spacing:2px; text-transform:uppercase; color:#7a6a4e; font-weight:700; margin-bottom:14px;">Reviews</div>
+            <h2 style="margin:0; font-size:32px; font-weight:800; letter-spacing:-0.5px; color:#241a12;">What our clients say</h2>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span style="color:#b5502f; font-size:18px; letter-spacing:1px;">★★★★★</span>
+            <span style="font-size:15px; color:#5c4632;">4.9 out of 5 — 186 reviews on Google</span>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; gap:10px 0; padding:18px 0; border-top:1px solid #cbb693; border-bottom:1px solid #cbb693; margin-bottom:56px;">
+          <div style="padding-right:28px; margin-right:28px; border-right:1px solid #cbb693; font-size:14px; color:#5c4632;">Handmade since 1975</div>
+          <div style="padding-right:28px; margin-right:28px; border-right:1px solid #cbb693; font-size:14px; color:#5c4632;">Family-run, two generations</div>
+          <div style="padding-right:28px; margin-right:28px; border-right:1px solid #cbb693; font-size:14px; color:#5c4632;">18 makers, one factory floor</div>
+          <div style="font-size:14px; color:#5c4632;">Projects across the Cape Winelands and beyond</div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(3,1fr);">
+          <div style="padding-right:40px;">
+            <span style="color:#b5502f; font-size:13px; letter-spacing:1.5px;">★★★★★</span>
+            <p style="margin:16px 0 18px; font-size:16.5px; line-height:1.6; font-style:italic; color:#3a2b1c;">"Our patio floor gets more compliments than the pool. Five years on and it's only getting better with age."</p>
+            <div style="font-size:13.5px; color:#8a7660;"><span style="font-weight:600; color:#5c4632;">Claire V.</span> — Constantia</div>
+          </div>
+          <div style="padding:0 40px; border-left:1px solid #cbb693; border-right:1px solid #cbb693;">
+            <span style="color:#b5502f; font-size:13px; letter-spacing:1.5px;">★★★★★</span>
+            <p style="margin:16px 0 18px; font-size:16.5px; line-height:1.6; font-style:italic; color:#3a2b1c;">"Mark talked us through joint widths and colour blends before we'd even placed an order. That kind of care is rare."</p>
+            <div style="font-size:13.5px; color:#8a7660;"><span style="font-weight:600; color:#5c4632;">Daniel R.</span> — Franschhoek</div>
+          </div>
+          <div style="padding-left:40px;">
+            <span style="color:#b5502f; font-size:13px; letter-spacing:1.5px;">★★★★★</span>
+            <p style="margin:16px 0 18px; font-size:16.5px; line-height:1.6; font-style:italic; color:#3a2b1c;">"Ordered a small batch to restore a kitchen floor and they matched the old tile almost exactly. Genuinely impressed."</p>
+            <div style="font-size:13.5px; color:#8a7660;"><span style="font-weight:600; color:#5c4632;">Priya N.</span> — Somerset West</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUOTE -->
+      <div id="1c-quote" style="background:#ead6bd; padding:96px 56px;">
+        <div style="max-width:640px; margin:0 auto 48px; text-align:center;">
+          <h2 style="margin:0 0 14px; font-size:38px; font-weight:800; letter-spacing:-1px; color:#241a12;">Tell us about your floor</h2>
+          <p style="margin:0; font-size:16px; color:#5c4632; line-height:1.6;">A few details and we'll come back with a quote and lead time. No obligation — just a starting point.</p>
+          <p style="margin:14px 0 0; font-size:14.5px; color:#8a7660; line-height:1.6;">Because every order is handmade to your specification, please allow 6–8 weeks for production.</p>
+        </div>
+        <div style="max-width:760px; margin:0 auto; background:#f4e8d8; padding:44px; box-sizing:border-box;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:22px;">
+            <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12;">Square meterage
+              <input type="text" placeholder="e.g. 45 m²" style="font:inherit; font-weight:400; padding:12px 14px; border:1px solid #cbb693; background:#fff; font-size:15px;" />
+              <span style="font-weight:400; font-size:12.5px; color:#8a7660;">≈ 9 tiles per m² at 300×300mm with a 25mm joint</span>
+            </label>
+            <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12;">Tile style
+              <select style="font:inherit; font-weight:400; padding:12px 14px; border:1px solid #cbb693; background:#fff; font-size:15px;">
+                <option>Batavian</option>
+                <option>Standard 300×300</option>
+                <option>Herringbone-cut</option>
+                <option>Custom / bespoke pattern</option>
+              </select>
+            </label>
+            <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12;">Colour
+              <div style="display:flex; gap:10px; padding-top:4px;">
+                <span title="Natural red" style="width:34px; height:34px; border-radius:50%; background:#b5502f; border:2px solid #241a12; cursor:pointer;"></span>
+                <span title="Dark fired" style="width:34px; height:34px; border-radius:50%; background:#7a3a24; border:2px solid transparent; cursor:pointer;"></span>
+                <span title="Mid tone" style="width:34px; height:34px; border-radius:50%; background:#96603f; border:2px solid transparent; cursor:pointer;"></span>
+                <span title="Light sand-fired" style="width:34px; height:34px; border-radius:50%; background:#c98a5e; border:2px solid transparent; cursor:pointer;"></span>
+              </div>
+              <span style="font-weight:400; font-size:12.5px; color:#8a7660;">Natural tone variation is part of a handmade floor</span>
+            </label>
+            <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12;">Joint size
+              <select style="font:inherit; font-weight:400; padding:12px 14px; border:1px solid #cbb693; background:#fff; font-size:15px;">
+                <option>10mm</option>
+                <option>15mm</option>
+                <option>20mm</option>
+                <option selected>25mm (recommended)</option>
+              </select>
+            </label>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:22px;">
+            <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12;">Name
+              <input type="text" style="font:inherit; font-weight:400; padding:12px 14px; border:1px solid #cbb693; background:#fff; font-size:15px;" />
+            </label>
+            <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12;">Email or phone
+              <input type="text" style="font:inherit; font-weight:400; padding:12px 14px; border:1px solid #cbb693; background:#fff; font-size:15px;" />
+            </label>
+          </div>
+          <label style="display:flex; flex-direction:column; gap:8px; font-size:14px; font-weight:600; color:#241a12; margin-top:22px;">Anything else?
+            <textarea rows="3" placeholder="Project location, timeline, reference photos…" style="font:inherit; font-weight:400; padding:12px 14px; border:1px solid #cbb693; background:#fff; font-size:15px; resize:vertical;"></textarea>
+          </label>
+          <button style="margin-top:26px; background:#b5502f; color:#f4e8d8; border:none; font:inherit; font-weight:700; font-size:15.5px; padding:16px 32px; cursor:pointer;">Send enquiry</button>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <div style="background:#241a12; color:#d9c7ae; padding:64px 56px 40px;">
+        <div style="display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:44px; border-bottom:1px solid #40301f;">
+          <div>
+            <div style="color:#f4e8d8; font-size:20px; font-weight:700; margin-bottom:14px;">Leo Tiles</div>
+            <p style="font-size:14.5px; line-height:1.7; margin:0; color:#b39d80;">Handmade terracotta, fired in Cape Town, South Africa since 1975.</p>
+          </div>
+          <div>
+            <div style="font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:#e7a97e; font-weight:700; margin-bottom:14px;">Factory</div>
+            <p style="font-size:14.5px; line-height:1.8; margin:0;">Cape Town, South Africa<br/>Office +27 (0)21 988 9491<br/>Mobile +27 (0)79 150 0160</p>
+          </div>
+          <div>
+            <div style="font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:#e7a97e; font-weight:700; margin-bottom:14px;">Contact</div>
+            <p style="font-size:14.5px; line-height:1.8; margin:0;">Mark Kelly<br/>mark@leotiles.co.za<br/>admin@mktrust.co.za</p>
+          </div>
+          <div>
+            <div style="font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:#e7a97e; font-weight:700; margin-bottom:14px;">Explore</div>
+            <p style="font-size:14.5px; line-height:1.8; margin:0;"><a href="#1c-guides" style="color:#d9c7ae;">Guide hub</a><br/><a href="#" style="color:#d9c7ae;">Product range</a><br/><a href="#" style="color:#d9c7ae;">Instagram</a></p>
+          </div>
+        </div>
+        <div style="padding-top:22px; font-size:13px; color:#8a7660;">© 1975–2026 Leo Tiles. Made by hand in Cape Town.</div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+</x-dc>
+</body>
+</html>

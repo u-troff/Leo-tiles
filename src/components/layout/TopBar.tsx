@@ -8,7 +8,7 @@ export default function TopBar() {
         {/* Left: tagline */}
         <div className="flex items-center gap-2">
           <span className="font-medium text-white/90 tracking-wide">
-            50+ Years of Handmade Terracotta · Cape Town, South Africa
+            Handmade Terracotta Since {siteConfig.establishedYear} · Cape Town, South Africa
           </span>
         </div>
 

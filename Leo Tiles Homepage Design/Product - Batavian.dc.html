@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  html { background: #f4e8d8; }
+  body { margin: 0; font-family: 'Libre Franklin', sans-serif; }
+  ::selection { background: #b5502f; color: #f4e8d8; }
+</style>
+</helmet>
+
+<div style="background:#f4e8d8; min-height:100vh;">
+
+  <!-- NAV -->
+  <div style="display:flex; align-items:center; justify-content:space-between; padding:30px 56px; box-sizing:border-box; background:#241a12;">
+    <a href="Leo Tiles Homepage.dc.html" style="color:#f4e8d8; font-size:20px; font-weight:700; letter-spacing:0.5px; text-decoration:none;">Leo Tiles</a>
+    <div style="display:flex; gap:36px; align-items:center;">
+      <a href="Work Gallery.dc.html" style="color:#f4e8d8; text-decoration:none; font-size:14.5px; font-weight:500; opacity:0.9;">Work</a>
+      <a href="Guide Hub.dc.html" style="color:#f4e8d8; text-decoration:none; font-size:14.5px; font-weight:500; opacity:0.9;">Guides</a>
+      <a href="#" style="color:#f4e8d8; text-decoration:none; font-size:14.5px; font-weight:500; opacity:0.9;">About</a>
+      <a href="Leo Tiles Homepage.dc.html#1a-quote" style="color:#241a12; background:#f4e8d8; text-decoration:none; font-size:14px; font-weight:600; padding:9px 18px; border-radius:2px;">Enquire</a>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div style="padding:28px 56px 0;">
+    <a href="Guide Hub.dc.html" style="color:#8a7660; text-decoration:none; font-size:13.5px; font-weight:600;">← Product reference</a>
+  </div>
+
+  <!-- HERO -->
+  <div style="position:relative; height:640px; overflow:hidden; margin:24px 56px 0;">
+    <img src="images/pool-deck.jpg" style="width:100%; height:100%; object-fit:cover; display:block;" />
+    <div style="position:absolute; inset:0; background:linear-gradient(0deg, rgba(20,13,8,0.62) 0%, rgba(20,13,8,0) 45%);"></div>
+    <div style="position:absolute; left:44px; bottom:40px; right:44px;">
+      <div style="color:#e7c9a5; font-size:13px; letter-spacing:2px; text-transform:uppercase; font-weight:600; margin-bottom:12px;">Poolside deck, Constantia — laid in the Batavian Collection</div>
+      <h1 style="margin:0; color:#f9f1e6; font-size:50px; font-weight:700; letter-spacing:-0.5px;">Batavian Collection</h1>
+    </div>
+  </div>
+
+  <!-- SECONDARY GALLERY -->
+  <div style="padding:40px 56px 0;">
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px;">
+      <div style="height:260px; overflow:hidden;"><img src="images/courtyard.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+      <div style="height:260px; overflow:hidden;"><img src="images/dining-room.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+      <div style="height:260px; overflow:hidden;"><img src="images/kitchen.jpg" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+    </div>
+    <p style="margin:16px 0 0; font-size:13.5px; color:#8a7660;">Courtyard, dining room and kitchen installations, all in the Batavian Collection.</p>
+  </div>
+
+  <!-- DETAILS + SWATCH -->
+  <div style="display:grid; grid-template-columns:1.3fr 1fr; gap:64px; padding:96px 56px; max-width:1400px; box-sizing:border-box;">
+
+    <div>
+      <div style="color:#b5502f; font-size:13px; letter-spacing:2px; text-transform:uppercase; font-weight:700; margin-bottom:14px;">The range</div>
+      <p style="margin:0 0 32px; font-size:20px; line-height:1.65; font-weight:500; color:#241a12; max-width:560px;">Our signature hand-shaped tile — mixed, pressed and edged by hand, then fired to a natural terracotta red with the tonal variation you'd expect from real clay. Suited to floors, decks and pool surrounds, indoors and out.</p>
+
+      <div style="border-top:1px solid #d9c19c;">
+        <div style="display:flex; justify-content:space-between; padding:20px 0; border-bottom:1px solid #d9c19c;">
+          <span style="font-size:14.5px; font-weight:600; color:#241a12;">Sizes</span>
+          <span style="font-size:14.5px; color:#5c4632; text-align:right;">300×300mm standard · custom sizes on request</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; padding:20px 0; border-bottom:1px solid #d9c19c;">
+          <span style="font-size:14.5px; font-weight:600; color:#241a12;">Thickness</span>
+          <span style="font-size:14.5px; color:#5c4632; text-align:right;">≈ 25mm</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; padding:20px 0; border-bottom:1px solid #d9c19c;">
+          <span style="font-size:14.5px; font-weight:600; color:#241a12;">Recommended joint</span>
+          <span style="font-size:14.5px; color:#5c4632; text-align:right;">25mm outdoors · 10–15mm indoors (pre-sorted)</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; padding:20px 0; border-bottom:1px solid #d9c19c;">
+          <span style="font-size:14.5px; font-weight:600; color:#241a12;">Grout</span>
+          <span style="font-size:14.5px; color:#5c4632; text-align:right;">Sand-cement or flexible grout for wide joints</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; padding:20px 0;">
+          <span style="font-size:14.5px; font-weight:600; color:#241a12;">Coverage</span>
+          <span style="font-size:14.5px; color:#5c4632; text-align:right;">≈ 9 tiles per m² at 300×300mm, 25mm joint</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="height:260px; overflow:hidden; margin-bottom:16px;">
+        <img src="images/tile-texture.jpg" style="width:100%; height:100%; object-fit:cover; display:block;" />
+      </div>
+      <div style="font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:#8a7660; font-weight:700; margin-bottom:10px;">Natural tone range</div>
+      <div style="display:flex; gap:10px; margin-bottom:10px;">
+        <span style="width:32px; height:32px; border-radius:50%; background:#b5502f;"></span>
+        <span style="width:32px; height:32px; border-radius:50%; background:#7a3a24;"></span>
+        <span style="width:32px; height:32px; border-radius:50%; background:#96603f;"></span>
+        <span style="width:32px; height:32px; border-radius:50%; background:#c98a5e;"></span>
+      </div>
+      <p style="margin:0; font-size:13.5px; line-height:1.6; color:#8a7660;">Tone varies with each tile's position in the kiln — expect a natural mix within any order, not a flat, uniform colour.</p>
+    </div>
+
+  </div>
+
+  <!-- HOW TO INSTALL CALLOUT -->
+  <div style="margin:0 56px 96px; background:#241a12; padding:44px 48px; display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap;">
+    <div>
+      <div style="color:#e7a97e; font-size:12.5px; letter-spacing:1.5px; text-transform:uppercase; font-weight:700; margin-bottom:10px;">How to install</div>
+      <div style="color:#f4e8d8; font-size:21px; font-weight:600; max-width:520px;">Choosing the right joint width for outdoor terracotta</div>
+    </div>
+    <a href="Guide Article.dc.html" style="flex:none; background:#f4e8d8; color:#241a12; text-decoration:none; font-weight:700; font-size:15px; padding:15px 26px; border-radius:2px; white-space:nowrap;">Read the guide →</a>
+  </div>
+
+  <!-- QUOTE CTA -->
+  <div style="background:#ead6bd; padding:80px 56px; text-align:center;">
+    <h2 style="margin:0 0 14px; font-size:32px; font-weight:700; color:#241a12;">Get a quote for the Batavian Collection</h2>
+    <p style="margin:0 0 30px; font-size:16px; color:#5c4632;">Tell us your square meterage and we'll come back with pricing and lead time for this range.</p>
+    <a href="Leo Tiles Homepage.dc.html#1a-quote" style="display:inline-block; background:#b5502f; color:#f4e8d8; text-decoration:none; font-weight:700; font-size:15.5px; padding:17px 32px; border-radius:2px;">Request a quote — Batavian Collection</a>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="background:#241a12; color:#d9c7ae; padding:64px 56px 40px;">
+    <div style="display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:44px; border-bottom:1px solid #40301f;">
+      <div>
+        <div style="color:#f4e8d8; font-size:20px; font-weight:700; margin-bottom:14px;">Leo Tiles</div>
+        <p style="font-size:14.5px; line-height:1.7; margin:0; color:#b39d80;">Handmade terracotta, fired in Cape Town, South Africa since 1975.</p>
+      </div>
+      <div>
+        <div style="font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:#e7a97e; font-weight:700; margin-bottom:14px;">Factory</div>
+        <p style="font-size:14.5px; line-height:1.8; margin:0;">Cape Town, South Africa<br/>Office +27 (0)21 988 9491<br/>Mobile +27 (0)79 150 0160</p>
+      </div>
+      <div>
+        <div style="font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:#e7a97e; font-weight:700; margin-bottom:14px;">Contact</div>
+        <p style="font-size:14.5px; line-height:1.8; margin:0;">Mark Kelly<br/>mark@leotiles.co.za<br/>admin@mktrust.co.za</p>
+      </div>
+      <div>
+        <div style="font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:#e7a97e; font-weight:700; margin-bottom:14px;">Explore</div>
+        <p style="font-size:14.5px; line-height:1.8; margin:0;"><a href="Work Gallery.dc.html" style="color:#d9c7ae;">Work gallery</a><br/><a href="Guide Hub.dc.html" style="color:#d9c7ae;">Guide hub</a><br/><a href="#" style="color:#d9c7ae;">Instagram</a></p>
+      </div>
+    </div>
+    <div style="padding-top:22px; font-size:13px; color:#8a7660;">© 1975–2026 Leo Tiles. Made by hand in Cape Town.</div>
+  </div>
+</div>
+
+</x-dc>
+</body>
+</html>
