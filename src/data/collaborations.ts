@@ -36,7 +36,7 @@ export const collaborations: Collaboration[] = [
     partnerType: "Wine Estate Project",
     location: "Stellenbosch, Western Cape",
     description:
-      "Wine cellar project completed in partnership with an interior design and architecture team — name to be confirmed and credited once verified with the client.",
+      "Wine cellar project completed in partnership with an interior design and architecture team, name to be confirmed and credited once verified with the client.",
     image: "https://images.pexels.com/photos/30832873/pexels-photo-30832873.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=700&w=1000",
     comingSoon: true,
   },

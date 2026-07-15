@@ -34,12 +34,12 @@ export default function CommercialPage() {
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
               Buying the tile is only part of the job. Adhesive, sealant, grout, and installation
-              all need to be matched correctly to handmade terracotta — get any of them wrong and
+              all need to be matched correctly to handmade terracotta, get any of them wrong and
               the finished floor suffers.
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
               {siteConfig.businessName} supplies <strong>everything needed alongside your tile
-              order in {siteConfig.address.city}, {siteConfig.address.state}</strong> — adhesive,
+              order in {siteConfig.address.city}, {siteConfig.address.state}</strong>, adhesive,
               colour-matched grout, penetrating sealant, cleaning products, and our own
               installation team for projects that need it.
             </p>

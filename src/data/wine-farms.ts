@@ -14,7 +14,7 @@ export const wineFarms: WineFarm[] = [
     name: "Boschkloof Wine Farm",
     location: "Stellenbosch, Western Cape",
     description:
-      "Terracotta tiling supplied for Boschkloof's wine cellar — a showcase of handmade clay standing up to a working cellar environment.",
+      "Terracotta tiling supplied for Boschkloof's wine cellar, a showcase of handmade clay standing up to a working cellar environment.",
     image: "https://images.pexels.com/photos/30832872/pexels-photo-30832872.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=700&w=1000",
   },
   {

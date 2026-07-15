@@ -9,7 +9,7 @@ const differentiators = [
   },
   {
     title: "Custom Sizes to Specification",
-    description: "We manufacture to order. Any size, any shape — specify what your project needs and we'll produce it.",
+    description: "We manufacture to order. Any size, any shape, specify what your project needs and we'll produce it.",
   },
   {
     title: "50+ Years of Craft",
@@ -34,17 +34,19 @@ const differentiators = [
 
 export default function WhyChooseUsGrid() {
   return (
-    <section className="py-16 lg:py-24 bg-stone-50">
-      <div className="max-w-7xl mx-auto px-4">
-        <Eyebrow label="Why Choose Us" />
-        <h2 className="text-3xl lg:text-4xl font-bold text-clay-900 mb-12 max-w-2xl leading-tight">
-          What makes {siteConfig.businessName} special?
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+    <section className="py-24 lg:py-40 bg-warm-linen">
+      <div className="max-w-[1440px] mx-auto px-5 md:px-8">
+        <div className="max-w-2xl mb-16 lg:mb-20">
+          <Eyebrow label="Why Choose Us" />
+          <h2 className="font-display text-4xl lg:text-5xl leading-[1.1] text-charcoal-ash">
+            What makes {siteConfig.businessName} different.
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
           {differentiators.map((item) => (
-            <div key={item.title} className="border-t-2 border-rust-500 pt-5">
-              <div className="text-clay-900 text-lg font-bold mb-2">{item.title}</div>
-              <p className="text-stone-700 text-[15px] leading-relaxed">{item.description}</p>
+            <div key={item.title} className="border-t-2 border-clay-deep pt-6">
+              <h3 className="font-display text-2xl text-charcoal-ash mb-3">{item.title}</h3>
+              <p className="text-secondary text-[15px] leading-relaxed">{item.description}</p>
             </div>
           ))}
         </div>

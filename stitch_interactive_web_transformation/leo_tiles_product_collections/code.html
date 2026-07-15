@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Architectural Palette - LEO TILES</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#120d0b",
+                        "surface-container-low": "#201a18",
+                        "on-tertiary": "#5d1800",
+                        "inverse-surface": "#ece0dc",
+                        "surface-container-high": "#2f2926",
+                        "surface-tint": "#cfc4c1",
+                        "surface-container": "#241e1c",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "surface-bright": "#3e3835",
+                        "background": "#171210",
+                        "surface-variant": "#3a3331",
+                        "on-primary-fixed-variant": "#4c4543",
+                        "inverse-on-surface": "#352f2d",
+                        "heritage-wine": "#6B1E2B",
+                        "surface-dim": "#171210",
+                        "secondary-fixed": "#e9e1d6",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#cfc4c1",
+                        "tertiary-fixed": "#ffdbd0",
+                        "secondary-container": "#4d4940",
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#201a18",
+                        "on-tertiary-fixed": "#390b00",
+                        "secondary-fixed-dim": "#cdc6ba",
+                        "on-secondary-fixed": "#1e1b14",
+                        "tertiary": "#ffb59d",
+                        "on-secondary-fixed-variant": "#4a463e",
+                        "on-surface-variant": "#d1c4bf",
+                        "on-background": "#ece0dc",
+                        "outline-variant": "#4e4542",
+                        "error": "#ffb4ab",
+                        "on-surface": "#ece0dc",
+                        "inverse-primary": "#655d5a",
+                        "surface": "#171210",
+                        "on-primary-container": "#857c79",
+                        "on-tertiary-fixed-variant": "#842500",
+                        "on-tertiary-container": "#d95222",
+                        "architectural-gold": "#D9A441",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed": "#ece0dc",
+                        "secondary": "#cdc6ba",
+                        "tertiary-container": "#2b0700",
+                        "on-secondary": "#343028",
+                        "charcoal-ink": "#171210",
+                        "on-secondary-container": "#beb8ac",
+                        "outline": "#9a8e8a",
+                        "surface-container-highest": "#3a3331",
+                        "on-primary": "#352f2d",
+                        "bone-cream": "#F7EFE3",
+                        "primary-container": "#171210",
+                        "primary": "#cfc4c1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "section-gap": "120px",
+                        "grid-columns": "12",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "label-caps": ["Inter"],
+                        "display-hero": ["Playfair Display"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "38px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["36px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "display-hero": ["84px", { "lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-charcoal-ink text-bone-cream font-body-lg antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-charcoal-ink/70 backdrop-blur-md border-b border-architectural-gold/30 transition-all duration-500 ease-in-out">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-[1920px] mx-auto">
+<a class="font-headline-md text-headline-md font-bold text-bone-cream tracking-tighter" href="#">LEO TILES</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps uppercase text-architectural-gold border-b-2 border-architectural-gold pb-1" href="#">Products</a>
+<a class="font-label-caps text-label-caps uppercase text-bone-cream hover:text-architectural-gold transition-colors duration-300" href="#">Work Gallery</a>
+<a class="font-label-caps text-label-caps uppercase text-bone-cream hover:text-architectural-gold transition-colors duration-300" href="#">Guides</a>
+<a class="font-label-caps text-label-caps uppercase text-bone-cream hover:text-architectural-gold transition-colors duration-300" href="#">Wine Farms</a>
+</div>
+<div class="hidden md:block">
+<button class="bg-bone-cream text-charcoal-ink px-8 py-4 font-label-caps text-label-caps uppercase hover:bg-bone-cream/90 transition-colors">Get a Quote</button>
+</div>
+<button class="md:hidden text-bone-cream">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-[100px]">
+<!-- Hero Section -->
+<section class="relative w-full h-[819px] md:h-[921px] flex items-end pb-section-gap px-margin-mobile md:px-margin-desktop">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A cinematic, wide-angle architectural photograph of premium terracotta tiles installed on an expansive outdoor patio of a luxury heritage estate. The scene is illuminated by dramatic golden hour sunset lighting, casting long, sharp shadows across the textured masonry. High contrast between the deep charcoal ink shadows and the warm, glowing stone surfaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxjxLkw85yFlFzN97jXPZ3weIoB2riyYGGXVx2lVyeGZ3Xk6M7RH7txDr7ZUKHYPLM2hqflhxxMQjzE8wXRSIprIPjyvlHzrjW1k8j74zou1naN7jVdtNgnVsj0hHugWuhcu5I9aYFtTGAog4WopwE4utY2V7nkw-1-sdCB-khklST0PBBGKS5Kjniqot3H1u7rTdenDyDAJ3Ycsld2aX8MbsFUUc8rz2gjRSAe-MRT724T2ZC2C2ZZsCQ_fHq5KgjHSa39G3vJO4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-charcoal-ink via-charcoal-ink/40 to-transparent"></div>
+</div>
+<div class="relative z-10 w-full max-w-[1920px] mx-auto">
+<p class="font-label-caps text-label-caps uppercase text-architectural-gold mb-6 tracking-[0.2em]">Product Collection</p>
+<h1 class="font-display-hero text-display-hero text-bone-cream max-w-4xl leading-tight">The Architectural Palette.</h1>
+</div>
+</section>
+<!-- Collection Grid -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-[1920px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Card 1 -->
+<div class="group relative overflow-hidden bg-surface-container-low border-t border-architectural-gold/30">
+<div class="aspect-[4/3] w-full overflow-hidden">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="A high-contrast close-up shot of Batavian Floor Tiles, showcasing their rich, earthy terracotta texture and subtle color variations. Dramatic, directional studio lighting highlights the artisanal imperfections and rugged edges of the masonry against a deep charcoal background. Cinematic and minimalist." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3Q3eJhSVqDhPr1VhkUmivV_mWYpM4eJZp2ByvwPmyqUx5wzHdrax9NrUtZjS4N_-ZzZ6WpkUm-VNNAapg382wi8p4JFiYMwIE_FHS6tfR-1-l8gndwrK5M-ZlMGxZwlApHFq8h4Wh_-OkI0aHdhBYOwZDFeTmW2hvflGMEz29StGs0JKFacg4bIUgVCW-DUkM08lSui68_i9ZP9RlgaqDFmv4iommkOwMEaWbqs2QBKOMI-m3U1w6HHdXaYxUrD8vsWh7qBFK5cQ"/>
+</div>
+<div class="p-8">
+<h3 class="font-headline-md text-headline-md text-bone-cream mb-4">Batavian Floor Tiles</h3>
+<a class="inline-flex items-center gap-2 font-label-caps text-label-caps uppercase text-architectural-gold hover:text-bone-cream transition-colors" href="#">
+                            Explore Collection <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative overflow-hidden bg-surface-container-low border-t border-architectural-gold/30 mt-0 md:mt-24">
+<div class="aspect-[4/3] w-full overflow-hidden">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="A stark, minimalist photograph of Dutch Klompie Pavers arranged in a precise geometric pattern. The lighting is harsh and angular, emphasizing the sharp corners and structural density of the premium bricks. Set against a dark, moody environment with deep shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCczcuie4-G-irlgWrnxbn9oeB68JduIiHIZ_Uy6vKf-CS-nEKd_-yyb65edGQsERKl2fCbls_SxWTlaQMyV0_AbZJgYKmbqIW65UmX9SKg3tV-GSVuPRKzfIjFuC6Z3vwqshnGTncxn6YC9h45TkjpotyvdrpYBtswPm3aIT0NWsNnWRxDU6-xbDVdwytamLqZneTScXscAagSoJgTXfLDM-E5vxoHPyE59GiuzsNGzc09jKZJdABAOHEfhCM_yF1TKtCY66_oFEQ"/>
+</div>
+<div class="p-8">
+<h3 class="font-headline-md text-headline-md text-bone-cream mb-4">Dutch Klompie Pavers</h3>
+<a class="inline-flex items-center gap-2 font-label-caps text-label-caps uppercase text-architectural-gold hover:text-bone-cream transition-colors" href="#">
+                            Explore Collection <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative overflow-hidden bg-surface-container-low border-t border-architectural-gold/30">
+<div class="aspect-[4/3] w-full overflow-hidden">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="An abstract, top-down view of Hexagon Terracotta tiles fitted seamlessly together. The high-contrast image focuses on the geometry and the organic clay texture. Lighting is soft yet directional, creating a sense of depth and architectural prestige." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD72_Qe-Mq93p3PCt3bWSDiTBtksogg_UhggYEmfQ7wc4uxDAka8MoY7tQ_Ghwt5b9lGPKxO6D3TNAfbcYp7LnO_3hfTMfEifysLT4UVg9ayqd0HKfzOfnbx0YsGQQ4LQoj43UBcX7ZBPBTh5d3zyj-32-lF0SRKUAKf0YCm5OuVuKdn7tnDUkmE4536IrgR_wYWvmObbtdWvJYc-8W50hinnPgztvgnB3jPvzNhYXxcPmREwqYDA67TfpTB5NTGqLWWphOVv0Dstg"/>
+</div>
+<div class="p-8">
+<h3 class="font-headline-md text-headline-md text-bone-cream mb-4">Hexagon Terracotta</h3>
+<a class="inline-flex items-center gap-2 font-label-caps text-label-caps uppercase text-architectural-gold hover:text-bone-cream transition-colors" href="#">
+                            Explore Collection <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group relative overflow-hidden bg-surface-container-low border-t border-architectural-gold/30 mt-0 md:mt-24">
+<div class="aspect-[4/3] w-full overflow-hidden">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="A curated arrangement of bespoke project accessories and custom tile cuts, presented like objects in an art gallery. The pieces are placed on a stark charcoal surface under a tight spotlight, highlighting their precise craftsmanship and structural integrity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ-OEaZfAIKQKxn3iHBoL5D-tiWS4Hb1TvT5NGqxu-KR9eKAaIDB47YW54pa0ox4qd52npONG0dh2xzZb2BJ4yZcCLysnyk6Lvkk41ZSO-dccQRv5sRbaIAcPuy-oZQQAevTIrpcguuQBq-UpIHa4UiGQqOFpne5TdfOmCpqqjhi7T8rC2nttmCsgTs7Pq3QBLGei9p-lqTN3UdTqmRVXN9dDSsa3aOA5jK_WVAN7kqacalHmsDeQRnnKKVhxZC7uyXjzw2cimN1w"/>
+</div>
+<div class="p-8">
+<h3 class="font-headline-md text-headline-md text-bone-cream mb-4">Project Accessories</h3>
+<a class="inline-flex items-center gap-2 font-label-caps text-label-caps uppercase text-architectural-gold hover:text-bone-cream transition-colors" href="#">
+                            Explore Collection <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Integrity Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-lowest border-t border-architectural-gold/20">
+<div class="max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 mb-12 md:mb-0">
+<p class="font-label-caps text-label-caps uppercase text-architectural-gold mb-6 tracking-[0.2em]">Craftsmanship</p>
+<h2 class="font-headline-lg text-headline-lg text-bone-cream mb-8">Technical Integrity.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-lg">
+                        Our materials are fired for permanence. Engineered to withstand the rigors of time while maintaining their artisanal character. Every piece is a testament to unyielding structural quality.
+                    </p>
+<div class="space-y-6">
+<div class="border-b border-architectural-gold/30 pb-4">
+<h4 class="font-label-caps text-label-caps uppercase text-bone-cream mb-2">High-Density Composition</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Resistant to severe weather variations.</p>
+</div>
+<div class="border-b border-architectural-gold/30 pb-4">
+<h4 class="font-label-caps text-label-caps uppercase text-bone-cream mb-2">Artisanal Firing Process</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Ensuring deep, lasting coloration.</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-7 h-[600px] relative">
+<img class="w-full h-full object-cover" data-alt="A dramatic macro shot of an artisan's hands working with raw clay, illuminated by a single shaft of light in a dark, atmospheric studio. The focus is incredibly sharp on the texture of the material and the tools, emphasizing the dedication to traditional craftsmanship and technical mastery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtovJYN-ItMdSYm9n_1luRfyVqGLmbY34ubt7JjqO8TqhOH6VB-_A6jRtUXU_lo-CzcwYWQw_iuDjMGBxnkVWyz0RpbDy3bxb-m0REem4tLdcp2ajYw9yEnaFDRYEh86srtrE2Wh6sqfy_ofOe_IRs36MIo3G1ezjsdOaeuR2KAYrqskJakDSXRQZjqM-YdFhPePE0Yyq76P3odcQNwhLY3EzFpuU7zGl7uRsBOcioBQ0lr7VGSZTrfimvbPlq1k-kRzt5gaGyyYA"/>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-[160px] px-margin-mobile md:px-margin-desktop text-center bg-charcoal-ink">
+<h2 class="font-display-hero text-display-hero text-bone-cream mb-12 max-w-4xl mx-auto">Experience the texture firsthand.</h2>
+<button class="bg-bone-cream text-charcoal-ink px-12 py-6 font-label-caps text-label-caps uppercase hover:bg-bone-cream/90 transition-colors">Request a Bespoke Sample Kit</button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="relative w-full mt-section-gap bg-surface-container-lowest border-t border-architectural-gold grid grid-cols-1 md:grid-cols-12 px-margin-mobile md:px-margin-desktop py-section-gap max-w-[1920px] mx-auto">
+<div class="md:col-span-4 mb-12 md:mb-0">
+<span class="font-headline-lg text-headline-lg text-bone-cream block mb-6">LEO TILES</span>
+<p class="font-body-md text-body-md text-on-surface-variant uppercase tracking-widest text-xs">© 2024 LEO TILES. ARTISANAL PERMANENCE.</p>
+</div>
+<div class="md:col-span-8 flex flex-col md:flex-row justify-end gap-12 md:gap-24">
+<div class="flex flex-col gap-4">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-bone-cream transition-colors" href="#">Heritage</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-bone-cream transition-colors" href="#">Craftsmanship</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-bone-cream transition-colors" href="#">Sustainability</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-bone-cream transition-colors" href="#">Contact</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-bone-cream transition-colors" href="#">Terms</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,9 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap');
 
 @import "tailwindcss";
 
 @theme inline {
-  /* ── Rust / Terracotta accent ─────────────────────────────── */
+  /* ── Earth & Ethos, quiet-luxury terracotta palette ──────── */
+  --color-warm-linen:    #FAF9F6;  /* editorial near-white background   */
+  --color-sand-bone:     #F2E8DF;  /* tactile surface / card fill        */
+  --color-charcoal-ash:  #2D2D2D;  /* type + dark editorial sections     */
+  --color-clay-deep:     #A65D43;  /* primary CTA / brand anchor         */
+  --color-primary:       #88452D;  /* deeper clay, hover / accents      */
+  --color-secondary:     #645d56;  /* muted body text on light           */
+  --color-mortar-gray:   #8C847E;  /* captions / hairline borders        */
+  --color-kiln-glow:     #D98E73;  /* warm highlight                     */
+  --color-on-variant:    #54433e;  /* secondary text on linen            */
+
+  /* ── Legacy scales (inner pages not yet migrated) ─────────── */
   --color-rust-50:  #fdf6ef;
   --color-rust-100: #f9e6d4;
   --color-rust-200: #f1c9a9;
@@ -15,7 +26,6 @@
   --color-rust-800: #512113;
   --color-rust-900: #3b160c;
 
-  /* ── Clay / Dark Ink ──────────────────────────────────────── */
   --color-clay-50:  #faf6f1;
   --color-clay-100: #f2e8dc;
   --color-clay-200: #e2d0b8;
@@ -27,7 +37,6 @@
   --color-clay-800: #40301f;
   --color-clay-900: #241a12;
 
-  /* ── Stone / Warm Neutral ──────────────────────────────────── */
   --color-stone-50:  #f4e8d8;
   --color-stone-100: #ead6bd;
   --color-stone-200: #dcc6a6;
@@ -40,17 +49,34 @@
   --color-stone-900: #2a2016;
 
   /* ── Typography ──────────────────────────────────────────── */
-  --font-sans:   'Libre Franklin', system-ui, -apple-system, sans-serif;
-  --font-serif:  'Libre Franklin', system-ui, -apple-system, sans-serif;
+  --font-sans:  'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'EB Garamond', Georgia, 'Times New Roman', serif;
 }
 
 /* ── Base ─────────────────────────────────────────────────── */
 body {
   font-family: var(--font-sans);
-  background-color: #f4e8d8;
-  color: #1a1714;
+  background-color: #FAF9F6;   /* warm-linen */
+  color: #2D2D2D;              /* charcoal-ash */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Editorial display serif, headlines */
+.font-display {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+/* Label-caps, eyebrows / overlines */
+.label-caps {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 /* ── Hero Ken Burns crossfade ─────────────────────────────── */
@@ -84,25 +110,23 @@ body {
   from { opacity: 0; transform: translateY(22px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
-
 @keyframes scaleIn {
   from { opacity: 0; transform: scale(0.96); }
   to   { opacity: 1; transform: scale(1); }
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 .animate-fade-in {
-  animation: fadeIn 0.5s ease both;
+  animation: fadeIn 0.6s ease both;
 }
 .animate-scale-in {
-  animation: scaleIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 /* Staggered delay helpers */
@@ -119,11 +143,11 @@ body {
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: -3px;
   left: 0;
   width: 0;
-  height: 1.5px;
-  background-color: var(--color-rust-500);
-  transition: width 0.25s ease;
+  height: 1px;
+  background-color: var(--color-clay-deep);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .nav-link:hover::after { width: 100%; }

@@ -3,27 +3,23 @@ import { siteConfig } from "@/data/site-config";
 
 export default function TopBar() {
   return (
-    <div className="bg-clay-900 text-white/80 text-xs py-2.5 border-b border-white/5">
-      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between gap-4">
-        {/* Left: tagline */}
-        <div className="flex items-center gap-2">
-          <span className="font-medium text-white/90 tracking-wide">
-            Handmade Terracotta Since {siteConfig.establishedYear} · Cape Town, South Africa
-          </span>
-        </div>
+    <div className="hidden sm:block bg-charcoal-ash text-warm-linen/70">
+      <div className="max-w-[1440px] mx-auto px-5 md:px-8 py-2.5 flex items-center justify-between gap-4">
+        <span className="label-caps text-[10.5px] text-warm-linen/60">
+          Handcrafted in Cape Town since {siteConfig.establishedYear}
+        </span>
 
-        {/* Right: contact */}
-        <div className="hidden sm:flex items-center gap-5">
+        <div className="flex items-center gap-7">
           <a
             href={`mailto:${siteConfig.email}`}
-            className="flex items-center gap-1.5 hover:text-rust-400 transition-colors"
+            className="flex items-center gap-2 label-caps text-[10.5px] hover:text-kiln-glow transition-colors"
           >
             <Mail className="w-3 h-3" />
             <span>{siteConfig.email}</span>
           </a>
           <a
             href={`tel:${siteConfig.phoneRaw}`}
-            className="flex items-center gap-1.5 hover:text-rust-400 transition-colors font-medium text-white/90"
+            className="flex items-center gap-2 label-caps text-[10.5px] text-warm-linen hover:text-kiln-glow transition-colors"
           >
             <Phone className="w-3 h-3" />
             <span>{siteConfig.phone}</span>

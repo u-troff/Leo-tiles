@@ -1,182 +1,120 @@
 import Link from "next/link";
-import { Flame, Phone, Mail, Facebook, Instagram } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 import { residentialServices } from "@/data/services-residential";
 import { commercialServices } from "@/data/services-commercial";
 
 export default function Footer() {
   return (
-    <footer className="bg-clay-900 text-white">
-      {/* Top decorative bar */}
-      <div className="h-1 bg-rust-500" />
-
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer className="bg-sand-bone">
+      <div className="max-w-[1440px] mx-auto px-5 md:px-8 py-20 lg:py-28">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
 
           {/* ── Brand Column ───────────────────────────────── */}
-          <div className="lg:col-span-1">
-            {/* Logo */}
-            <div className="flex items-center gap-2.5 mb-5">
-              <div className="w-9 h-9 bg-rust-500 flex items-center justify-center">
-                <Flame className="w-5 h-5 text-white" />
-              </div>
-              <div className="flex flex-col leading-none">
-                <span className="font-serif text-[18px] font-bold text-white leading-tight">
-                  {siteConfig.businessName.split(" ")[0]}
-                </span>
-                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-rust-400">
-                  Handmade Terracotta Tiles
-                </span>
-              </div>
-            </div>
-
-            <p className="text-white/50 text-sm mb-6 leading-relaxed">
-              Handmade terracotta, fired in {siteConfig.address.city}, {siteConfig.address.state}, South
-              Africa since {siteConfig.establishedYear}.
+          <div className="md:col-span-4">
+            <span className="font-display text-4xl font-semibold text-primary tracking-tight">
+              LEO TILES
+            </span>
+            <p className="text-secondary text-[15px] leading-relaxed max-w-xs mt-6 mb-8">
+              Handcrafted terracotta heritage since {siteConfig.establishedYear}. Fired in{" "}
+              {siteConfig.address.city}, {siteConfig.address.state}, every tile shaped by hand.
             </p>
-
-            {/* Social icons */}
-            <div className="flex items-center gap-3 mb-6">
-              <a
-                href={siteConfig.socialLinks.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 bg-clay-800 border border-white/10 flex items-center justify-center hover:bg-rust-500 hover:border-rust-500 transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a
-                href={siteConfig.socialLinks.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 bg-clay-800 border border-white/10 flex items-center justify-center hover:bg-rust-500 hover:border-rust-500 transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a
-                href={`tel:${siteConfig.phoneRaw}`}
-                className="w-9 h-9 bg-clay-800 border border-white/10 flex items-center justify-center hover:bg-rust-500 hover:border-rust-500 transition-colors"
-                aria-label="Phone"
-              >
-                <Phone className="w-4 h-4" />
-              </a>
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className="w-9 h-9 bg-clay-800 border border-white/10 flex items-center justify-center hover:bg-rust-500 hover:border-rust-500 transition-colors"
-                aria-label="Email"
-              >
-                <Mail className="w-4 h-4" />
-              </a>
-            </div>
-
             <a
               href={`tel:${siteConfig.phoneRaw}`}
-              className="inline-flex items-center gap-2 bg-rust-500 text-white px-5 py-3 text-sm font-semibold hover:bg-rust-600 transition-colors"
+              className="font-display text-2xl text-charcoal-ash hover:text-clay-deep transition-colors"
             >
-              <Phone className="w-4 h-4" />
               {siteConfig.phone}
             </a>
-
-            <p className="text-white/40 text-xs mt-4 leading-relaxed">
-              Office {siteConfig.officePhone}
+            <p className="text-mortar-gray text-sm mt-4 leading-relaxed">
+              {siteConfig.address.full}
               <br />
-              <a href={`mailto:${siteConfig.secondaryEmail}`} className="hover:text-rust-400 transition-colors">
-                {siteConfig.secondaryEmail}
+              <a href={`mailto:${siteConfig.email}`} className="hover:text-clay-deep transition-colors">
+                {siteConfig.email}
               </a>
             </p>
           </div>
 
-          {/* ── Quick Links ────────────────────────────────── */}
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-rust-400 mb-5">
-              Quick Links
-            </p>
-            <ul className="space-y-2.5">
+          {/* ── Collection ─────────────────────────────────── */}
+          <div className="md:col-span-3">
+            <p className="label-caps text-charcoal-ash mb-6">Collection</p>
+            <ul className="space-y-3.5">
+              {residentialServices.slice(0, 6).map((service) => (
+                <li key={service.slug}>
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="text-secondary text-[15px] hover:text-clay-deep transition-colors"
+                  >
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* ── Accessories & Services ─────────────────────── */}
+          <div className="md:col-span-2">
+            <p className="label-caps text-charcoal-ash mb-6">Accessories</p>
+            <ul className="space-y-3.5">
+              {commercialServices.slice(0, 6).map((service) => (
+                <li key={service.slug}>
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="text-secondary text-[15px] hover:text-clay-deep transition-colors"
+                  >
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* ── Company ────────────────────────────────────── */}
+          <div className="md:col-span-3">
+            <p className="label-caps text-charcoal-ash mb-6">Company</p>
+            <ul className="space-y-3.5">
               {[
-                { label: "Products", href: "/residential" },
-                { label: "Accessories & Services", href: "/commercial" },
-                { label: "Guide Hub", href: "/guides" },
+                { label: "Our Story", href: "/about-us" },
                 { label: "Work Gallery", href: "/work-gallery" },
-                { label: "About Us", href: "/about-us" },
-                { label: "Blog", href: "/blog" },
+                { label: "Guides", href: "/guides" },
                 { label: "Wine Farms", href: "/wine-farms" },
                 { label: "Designer Collaborations", href: "/designer-collaborations" },
-                { label: "Get a Quote", href: "/get-a-quote" },
-                { label: "Contact Us", href: "/contact-us" },
+                { label: "Blog", href: "/blog" },
+                { label: "Contact", href: "/contact-us" },
               ].map((item) => (
                 <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-white/50 text-sm hover:text-rust-400 transition-colors"
-                  >
+                  <Link href={item.href} className="text-secondary text-[15px] hover:text-clay-deep transition-colors">
                     {item.label}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
 
-          {/* ── Residential Services ───────────────────────── */}
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-rust-400 mb-5">
-              Products
-            </p>
-            <ul className="space-y-2.5">
-              {residentialServices.map((service) => (
-                <li key={service.slug}>
-                  <Link
-                    href={`/services/${service.slug}`}
-                    className="text-white/50 text-sm hover:text-rust-400 transition-colors"
-                  >
-                    {service.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* ── Commercial Services ────────────────────────── */}
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-rust-400 mb-5">
-              Accessories & Services
-            </p>
-            <ul className="space-y-2.5">
-              {commercialServices.map((service) => (
-                <li key={service.slug}>
-                  <Link
-                    href={`/services/${service.slug}`}
-                    className="text-white/50 text-sm hover:text-rust-400 transition-colors"
-                  >
-                    {service.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div className="flex gap-6 mt-8">
+              <a href={siteConfig.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="label-caps text-mortar-gray hover:text-clay-deep transition-colors">
+                Instagram
+              </a>
+              <a href={siteConfig.socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="label-caps text-mortar-gray hover:text-clay-deep transition-colors">
+                Facebook
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* ── Bottom Bar ─────────────────────────────────────── */}
-      <div className="border-t border-white/8">
-        <div className="max-w-7xl mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/30">
-          <p>
-            &copy; {siteConfig.establishedYear}–{new Date().getFullYear()} {siteConfig.businessName}. Made
-            by hand in Cape Town.
+        {/* ── Bottom Bar ───────────────────────────────────── */}
+        <div className="pt-10 mt-16 border-t border-mortar-gray/25 flex flex-col md:flex-row justify-between items-start md:items-center gap-5">
+          <p className="text-mortar-gray text-sm">
+            &copy; {siteConfig.establishedYear}&ndash;{new Date().getFullYear()} {siteConfig.businessName}. Handcrafted Architectural Heritage.
           </p>
-          <div className="flex items-center gap-5">
-            <Link href="/privacy-policy" className="hover:text-rust-400 transition-colors">
+          <div className="flex items-center gap-8">
+            <Link href="/privacy-policy" className="text-mortar-gray text-sm hover:text-clay-deep transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms-of-service" className="hover:text-rust-400 transition-colors">
+            <Link href="/terms-of-service" className="text-mortar-gray text-sm hover:text-clay-deep transition-colors">
               Terms of Service
             </Link>
+            <Link href="https://u-flow.solutions" target="_blank" rel="noopener noreferrer" className="text-mortar-gray text-sm hover:text-clay-deep transition-colors">
+              {siteConfig.agencyName}
+            </Link>
           </div>
-          <p>
-            Designed by{" "}
-            <Link href="https://u-flow.solutions" target="_blank" rel="noopener noreferrer" className="text-rust-400 font-medium">{siteConfig.agencyName}</Link>
-          </p>
         </div>
       </div>
     </footer>

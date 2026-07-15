@@ -103,7 +103,7 @@ export default async function ProductPage({
             ))}
           </div>
           <p className="text-stone-500 text-[13.5px] leading-relaxed">
-            Tone varies with each tile&rsquo;s position in the kiln — expect a natural mix within any order, not a
+            Tone varies with each tile&rsquo;s position in the kiln, expect a natural mix within any order, not a
             flat, uniform colour.
           </p>
         </div>
@@ -137,7 +137,7 @@ export default async function ProductPage({
           href="/get-a-quote"
           className="inline-block bg-rust-500 text-stone-50 font-bold text-[15.5px] px-8 py-4 hover:bg-rust-600 transition-colors"
         >
-          Request a quote — {product.name}
+          Request a quote, {product.name}
         </Link>
       </div>
     </>

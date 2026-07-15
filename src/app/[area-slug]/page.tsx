@@ -114,7 +114,7 @@ export default async function ServiceAreaPage({
           </div>
           <div className="max-w-3xl mx-auto">
             <p className="text-gray-600 mb-4 leading-relaxed">
-              {area.city} projects — from heritage homes to new builds — share one thing in
+              {area.city} projects, from heritage homes to new builds, share one thing in
               common: a factory tile simply doesn&apos;t deliver the warmth that handmade
               terracotta does. Each tile we produce is shaped, dried, and kiln-fired by hand in our
               Cape Town facility.
@@ -153,7 +153,7 @@ export default async function ServiceAreaPage({
                 Honest Lead Times, Delivered to {area.city}
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Handmade tiles take time to produce properly — we won&apos;t pretend otherwise.
+                Handmade tiles take time to produce properly, we won&apos;t pretend otherwise.
                 Here&apos;s what to expect when ordering for a project in {area.city}:
               </p>
               <ul className="space-y-3 mb-8">
@@ -293,7 +293,7 @@ export default async function ServiceAreaPage({
             <p className="text-gray-600">From enquiry to delivery for your {area.city} project.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <StepCard number={1} title="Enquire" description="Tell us about your project — product, sizing, and quantity — and we'll confirm feasibility." />
+            <StepCard number={1} title="Enquire" description="Tell us about your project, product, sizing, and quantity, and we'll confirm feasibility." />
             <StepCard number={2} title="Sample & Specify" description="We can send samples and confirm exact specifications before production begins." />
             <StepCard number={3} title="Production" description="Your tiles are shaped, dried, and kiln-fired by hand in our Cape Town facility." />
             <StepCard number={4} title="Delivery & Installation" description="Tiles are carefully packed and delivered, with installation available if you need it." />

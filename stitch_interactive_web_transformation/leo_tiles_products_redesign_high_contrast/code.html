@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Products | LEO TILES - Handcrafted Architectural Heritage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "charcoal-ink": "#171210",
+                        "rich-bone": "#F7EFE3",
+                        "architectural-gold": "#C19A5B",
+                        "burnt-orange": "#E85D2C",
+                        "primary": "#E85D2C",
+                        "surface": "#171210",
+                        "surface-variant": "#2a221f",
+                        "on-surface": "#F7EFE3",
+                        "on-surface-variant": "#a39793",
+                        "mortar-gray": "#8C847E",
+                        "secondary": "#a39793",
+                        "clay-deep": "#E85D2C",
+                        "sand-bone": "#2a221f",
+                        "warm-linen": "#171210",
+                        "charcoal-ash": "#F7EFE3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "section-gap-mobile": "80px",
+                        "section-gap-desktop": "160px",
+                        "container-max": "1440px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "40px",
+                        "gutter": "32px",
+                        "section-gap": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Playfair Display", "serif"],
+                        "label-caps": ["Inter", "sans-serif"],
+                        "headline-lg": ["Playfair Display", "serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "headline-md": ["Playfair Display", "serif"],
+                        "quote": ["Playfair Display", "serif"],
+                        "display-hero": ["Playfair Display", "serif"],
+                        "display-hero-mobile": ["Playfair Display", "serif"],
+                        "body-md": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "500", "letterSpacing": "-0.02em"}],
+                        "label-caps": ["12px", {"lineHeight": "1.5", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "500", "letterSpacing": "-0.02em"}],
+                        "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500", "letterSpacing": "-0.01em"}],
+                        "quote": ["24px", {"lineHeight": "1.5", "fontWeight": "400", "fontStyle": "italic"}],
+                        "display-hero": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "500"}],
+                        "display-hero-mobile": ["44px", {"lineHeight": "1.1", "fontWeight": "500", "letterSpacing": "-0.02em"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .hover-arrow:hover .arrow-icon { transform: translateX(4px); transition: transform 0.3s ease; }
+    </style>
+</head>
+<body class="bg-charcoal-ink text-rich-bone font-body-md selection:bg-burnt-orange selection:text-charcoal-ink">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-charcoal-ink/70 backdrop-blur-xl border-b border-architectural-gold/30 transition-all duration-700 ease-in-out">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-full">
+<div class="font-display-hero text-headline-md tracking-tighter text-on-surface">LEO TILES</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-label-caps text-label-caps text-architectural-gold border-b border-architectural-gold pb-1 transition-all duration-500 ease-in-out" href="#">Products</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-architectural-gold transition-colors duration-300" href="#">Work Gallery</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-architectural-gold transition-colors duration-300" href="#">Guides</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-architectural-gold transition-colors duration-300" href="#">Wine Farms</a>
+</div>
+<button class="text-primary font-label-caps text-label-caps transition-opacity duration-500 hover:opacity-80 group flex items-center gap-2 uppercase tracking-widest border border-primary px-6 py-2">
+                Get a Quote
+            </button>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<header class="max-w-container-max mx-auto px-margin-mobile md:px-gutter mb-section-gap-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-end">
+<div class="md:col-span-8">
+<p class="font-label-caps text-label-caps text-architectural-gold mb-4">ARCHITECTURAL CERAMICS</p>
+<h1 class="font-display-hero text-display-hero-mobile md:text-display-hero text-rich-bone max-w-4xl tracking-tighter">
+                        A curated showroom of handmade terracotta.
+                    </h1>
+</div>
+<div class="md:col-span-4 hidden md:block">
+<p class="font-body-lg text-body-lg text-secondary mb- unit">
+                        Since 1975, we have been firing raw earth into timeless architectural elements. Every piece is an intersection of heritage and geometry.
+                    </p>
+</div>
+</div>
+</header>
+<!-- Product Categories Filter -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-gutter mb-20">
+<div class="flex flex-wrap gap-4 border-b border-surface-variant pb-4">
+<button class="font-label-caps text-label-caps text-burnt-orange border-b-2 border-burnt-orange pb-2">All Collections</button>
+<button class="font-label-caps text-label-caps text-secondary hover:text-burnt-orange transition-colors pb-2">Batavian Floor Tiles</button>
+<button class="font-label-caps text-label-caps text-secondary hover:text-burnt-orange transition-colors pb-2">Dutch Style Klompies</button>
+<button class="font-label-caps text-label-caps text-secondary hover:text-burnt-orange transition-colors pb-2">Hexagon Statement</button>
+<button class="font-label-caps text-label-caps text-secondary hover:text-burnt-orange transition-colors pb-2">Fired Accessories</button>
+</div>
+</section>
+<!-- Product Grid (Asymmetric) -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-gutter pb-section-gap-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-y-24 md:gap-x-gutter">
+<!-- Large Featured Product 1 -->
+<article class="md:col-span-8 group">
+<div class="overflow-hidden aspect-[16/10] bg-surface-variant mb-8">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLt0sfndGskjtwKhKQb-Jyj9YlKPbRnzspEu8Iyj-jFnLaPxBGkA004RY14sAjJhO2iyN3jWKUcHEKzrKUYOlVhdu5-RnzlfjUZ41tLPtMGYtGNSYo4b0J2IOXsRY6BoWTOduj6jzKlgtU9B84x5KuWPTpO14ju4AX3uYSCoUw-T6FMjQpfNuhzJ4Z1PR1ntA4wogXA5h0OwHxsgA2ORR_t9o8xXDF6tjgYuX9PFAXqZGhOJhxkM3Y8QXvw"/>
+</div>
+<div class="flex flex-col md:flex-row md:justify-between items-start gap-8">
+<div class="flex-1">
+<p class="font-label-caps text-label-caps text-mortar-gray mb-2">COLLECTION: TRADITIONAL HERITAGE</p>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-rich-bone mb-4 tracking-tight">Batavian Floor Tiles</h2>
+<p class="font-body-md text-secondary mb-6 max-w-xl">Classic large-format terracotta, ideal for expansive estates and high-traffic historical restorations. Hand-pressed and kiln-fired for distinct variation.</p>
+<div class="grid grid-cols-2 gap-8 mb-6 border-t border-surface-variant pt-6">
+<div>
+<span class="font-label-caps text-[10px] text-mortar-gray block uppercase mb-1">Available Sizes</span>
+<ul class="font-body-md text-rich-bone space-y-1">
+<li>300 x 300 x 20 mm</li>
+<li>200 x 200 x 20 mm</li>
+<li>150 x 150 x 20 mm</li>
+</ul>
+</div>
+<div>
+<span class="font-label-caps text-[10px] text-mortar-gray block uppercase mb-1">Lead Time</span>
+<span class="font-body-md text-rich-bone">6 - 8 Weeks</span>
+</div>
+</div>
+</div>
+<div class="w-full md:w-auto">
+<button class="w-full md:w-auto border border-burnt-orange text-burnt-orange font-label-caps text-label-caps px-8 py-4 hover:bg-burnt-orange hover:text-charcoal-ink transition-all duration-300 group/btn flex items-center justify-center gap-2">
+                                Request Sample
+                                <span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover/btn:translate-x-1">chevron_right</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Side Info / Mini Grid -->
+<aside class="md:col-span-4 flex flex-col justify-center">
+<div class="overflow-hidden aspect-square bg-surface-variant mb-8">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvXCsxseNYTpcJtD55ffinqNYpQzDwvRhcovCRI0HZeeAC7CG68mt3BWp_1qTDD1uSBD78VjklqQ1NH1p8MjOmKj4D1vHUJsndhWj-GR7GMMwWlnIk0tPgiwhJ3XEv6q5P9--7SgeAWLwuJ_9scqFQcCmsn_f5-h1YT35-FJTcV_uS5DeAQjgJNbyyRqn8dcynLfFvEt9kD1BdkTfHyCLtSnsf9sKmuCzAwF0Eank9vqY0aLxu0RMcndnQ"/>
+</div>
+<div class="bg-surface-variant p-10 relative">
+<span class="material-symbols-outlined text-architectural-gold text-4xl mb-6">format_quote</span>
+<p class="font-quote text-quote text-rich-bone italic mb-8">
+                            "The variation in firing creates a patina that can't be replicated. It feels like walking on history."
+                        </p>
+<p class="font-label-caps text-label-caps text-mortar-gray">— Studio Van Heusen, Architects</p>
+</div>
+</aside>
+<!-- Product 2 -->
+<article class="md:col-span-4 group">
+<div class="overflow-hidden aspect-square bg-surface-variant mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLszPT80lot8rf5fOPLg_fS-fLdpYDkH159bs_3AOMU_yvYBFHVZ6QJX3mtXu7rI9309kPwtqO9kMQP0J59ErlN8NbXNjvR0XAPT3s_rn-qmQJ9tzrGJ81yCDfWZfcRai8PMbWzrtX-ZI-sEKEknwXmbP4ymEMs2PYDC_PEn_UbHOmbD6cHFcYgli0Zt6KkQfH2MPcwHKFAXtxYRS6y1z1r8fmPIGvMEOioePS_6EIgXBDEMrLYQHF5uEA"/>
+</div>
+<p class="font-label-caps text-label-caps text-mortar-gray mb-2">COLLECTION: MASONRY</p>
+<h3 class="font-headline-md text-headline-md text-rich-bone mb-4 tracking-tight">Dutch Style Klompies</h3>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between border-b border-surface-variant pb-2">
+<span class="font-label-caps text-[10px] text-mortar-gray">SIZE</span>
+<span class="font-body-md text-rich-bone">150 x 50 x 25 mm</span>
+</div>
+<div class="flex justify-between border-b border-surface-variant pb-2">
+<span class="font-label-caps text-[10px] text-mortar-gray">LEAD TIME</span>
+<span class="font-body-md text-rich-bone">4 Weeks</span>
+</div>
+</div>
+<button class="text-architectural-gold font-label-caps text-label-caps flex items-center gap-2 hover:text-burnt-orange transition-colors group/link">
+                        Request Sample
+                        <span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover/link:translate-x-1">arrow_right_alt</span>
+</button>
+</article>
+<!-- Product 3 -->
+<article class="md:col-span-4 group">
+<div class="overflow-hidden aspect-square bg-surface-variant mb-6 relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Close up high-angle photography of premium terracotta hexagon floor tiles arranged in a geometric honeycomb pattern. The natural earthy red and burnt orange tones of the clay are highlighted by soft side lighting, showing the raw texture and artisanal imperfections. Modern architectural light-mode aesthetic with warm linen and sand bone color palette." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB-PfZK2TJ9eMJgxOvmXVGPL9ZBazBzPVRYbKFwVftAKZZzoZlfhJ9iUdoU7Ktp-iDZfUpXKuWnPY_L274S6Ufp2bXtfU9vt5GmzOMFlava8KMSTBST9j1eZbnl4GoBQXmui9Ty2tc78dToqFmOiwDjQbkbeT-GOwePYkA10L-nJjLlh1MWcJtJkjiY3TlX53rp7SkuLKlIfeUlslaV7l2wHYxPGTpdRDX5hEhalrNMcXiwTcj8ws8l2QOVOHxxSOdURhUXZ1dRFyY')"></div>
+</div>
+<p class="font-label-caps text-label-caps text-mortar-gray mb-2">COLLECTION: GEOMETRIC</p>
+<h3 class="font-headline-md text-headline-md text-rich-bone mb-4 tracking-tight">Hexagon Shaped Tiles</h3>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between border-b border-surface-variant pb-2">
+<span class="font-label-caps text-[10px] text-mortar-gray">DIAMETER</span>
+<span class="font-body-md text-rich-bone">200 mm</span>
+</div>
+<div class="flex justify-between border-b border-surface-variant pb-2">
+<span class="font-label-caps text-[10px] text-mortar-gray">LEAD TIME</span>
+<span class="font-body-md text-rich-bone">5 - 7 Weeks</span>
+</div>
+</div>
+<button class="text-architectural-gold font-label-caps text-label-caps flex items-center gap-2 hover:text-burnt-orange transition-colors group/link">
+                        Request Sample
+                        <span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover/link:translate-x-1">arrow_right_alt</span>
+</button>
+</article>
+<!-- Product 4 -->
+<article class="md:col-span-4 group">
+<div class="overflow-hidden aspect-square bg-surface-variant mb-6 relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Handcrafted terracotta clay accessories including a minimalist wine cooler and small pellets arranged on a clean stone surface. The aesthetic is organic modernism, showcasing the deep clay textures and warm earthen hues under bright architectural lighting. Pristine light-mode environment with deep shadows and high-end artisanal finish." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuANkHRPUfbv1ixQMLdIZHkTOwP-D9qUMLyvHxgZ1hiiVaeJtJjcEV8ssePxgHgXzM6xFy1MbwWEAQViBYVq4bFNhqbL4qgE9u-e8e3kbnn6j6uIeCrrTnH-SwXI4X7JlmzCV4VFpQZ4DkE6zfhYn-VpdCcimTiN33R2WKds7nXMjyJT3jUHi40umlOGDPqo6Q8hHA0dFHBOw_2KNTyY-rE8ajw0NaYg05qgSoSQDus6E7x_cQRWP0pJl27_Fqftljj_SKspCRcsF2g')"></div>
+</div>
+<p class="font-label-caps text-label-caps text-mortar-gray mb-2">COLLECTION: ACCESSORIES</p>
+<h3 class="font-headline-md text-headline-md text-rich-bone mb-4 tracking-tight">Fired Clay Accessories</h3>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between border-b border-surface-variant pb-2">
+<span class="font-label-caps text-[10px] text-mortar-gray">VARIANT</span>
+<span class="font-body-md text-rich-bone">Wine Coolers, Pellets</span>
+</div>
+<div class="flex justify-between border-b border-surface-variant pb-2">
+<span class="font-label-caps text-[10px] text-mortar-gray">AVAILABILITY</span>
+<span class="font-body-md text-rich-bone">In Stock</span>
+</div>
+</div>
+<button class="text-architectural-gold font-label-caps text-label-caps flex items-center gap-2 hover:text-burnt-orange transition-colors group/link">
+                        Inquire Now
+                        <span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover/link:translate-x-1">arrow_right_alt</span>
+</button>
+</article>
+</div>
+</section>
+<!-- Technical Specification Section -->
+<section class="bg-surface-variant py-section-gap-desktop">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-4">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-rich-bone mb-6 tracking-tight">Technical Integrity</h2>
+<p class="font-body-md text-body-md text-secondary mb-12">
+                            Each tile is fired at upwards of 1100°C to ensure structural permanence and resistance to the elements.
+                        </p>
+</div>
+<div class="md:col-span-8">
+<table class="w-full border-collapse">
+<thead>
+<tr class="border-b-2 border-architectural-gold/50">
+<th class="text-left py-4 font-label-caps text-label-caps text-architectural-gold">Parameter</th>
+<th class="text-left py-4 font-label-caps text-label-caps text-architectural-gold">Standard</th>
+<th class="text-right py-4 font-label-caps text-label-caps text-architectural-gold">Performance</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-rich-bone">
+<tr class="border-b border-mortar-gray/20">
+<td class="py-6">Water Absorption</td>
+<td class="py-6 text-mortar-gray">ISO 10545-3</td>
+<td class="py-6 text-right font-medium">&lt; 3.0%</td>
+</tr>
+<tr class="border-b border-mortar-gray/20">
+<td class="py-6">Firing Temperature</td>
+<td class="py-6 text-mortar-gray">Internal Protocol</td>
+<td class="py-6 text-right font-medium">1120°C - 1180°C</td>
+</tr>
+<tr class="border-b border-mortar-gray/20">
+<td class="py-6">Thermal Shock Resistance</td>
+<td class="py-6 text-mortar-gray">ISO 10545-9</td>
+<td class="py-6 text-right font-medium">High Resistance</td>
+</tr>
+<tr class="border-b border-mortar-gray/20">
+<td class="py-6">Slip Resistance</td>
+<td class="py-6 text-mortar-gray">DIN 51130</td>
+<td class="py-6 text-right font-medium">R11 Class</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-gutter py-section-gap-desktop text-center">
+<div class="max-w-2xl mx-auto">
+<h2 class="font-display-hero text-headline-lg-mobile md:text-headline-lg mb-8 tracking-tighter text-rich-bone">Request a bespoke sample kit.</h2>
+<p class="font-body-lg text-body-lg text-secondary mb-12">Experience the weight and texture of our terracotta in your own space before finalizing your architectural plans.</p>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-burnt-orange text-charcoal-ink font-label-caps text-label-caps px-12 py-5 transition-all duration-300 hover:bg-architectural-gold">Order Sample Box</button>
+<button class="border border-architectural-gold text-architectural-gold font-label-caps text-label-caps px-12 py-5 transition-all duration-300 hover:bg-surface-variant">Consult Architect</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-charcoal-ink border-t border-architectural-gold">
+<div class="flex flex-col gap-section-gap px-margin-mobile md:px-margin-desktop py-section-gap max-w-full">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-6">
+<div class="font-display-hero text-display-hero text-on-surface uppercase tracking-tighter mb-6">LEO TILES</div>
+</div>
+<div class="md:col-span-6 grid grid-cols-2 md:grid-cols-3 gap-8">
+<div>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">Products</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">Gallery</a></li>
+</ul>
+</div>
+<div>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">Guides</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">About</a></li>
+</ul>
+</div>
+<div>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">Blog</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-architectural-gold/20 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 LEO TILES. ARTISAN PRECISION.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for images
+        document.querySelectorAll('.group').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                // Potential for lightweight JS effects
+            });
+        });
+
+        // Navigation scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>

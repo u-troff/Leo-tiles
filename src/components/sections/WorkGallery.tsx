@@ -1,4 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import Eyebrow from "@/components/ui/Eyebrow";
 
 const galleryItems = [
   {
@@ -43,7 +46,7 @@ const galleryItems = [
   },
   {
     id: 6,
-    label: "Clay Production Process",
+    label: "Herringbone Detail",
     category: "Craft",
     image: "/images/design/herringbone-install.jpg",
     alt: "Herringbone terracotta tiles being hand-laid on site",
@@ -53,26 +56,35 @@ const galleryItems = [
 
 export default function WorkGallery() {
   return (
-    <section className="pt-16 lg:pt-24 pb-0 bg-stone-50">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-baseline justify-between mb-10">
-          <h2 className="text-3xl lg:text-4xl font-bold text-clay-900">Our work speaks for itself</h2>
+    <section id="gallery" className="py-24 lg:py-40 bg-warm-linen overflow-hidden">
+      <div className="max-w-[1440px] mx-auto px-5 md:px-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-16">
+          <div>
+            <Eyebrow label="Work Gallery" />
+            <h2 className="font-display text-4xl lg:text-5xl leading-[1.1] text-charcoal-ash">
+              Our work speaks for itself.
+            </h2>
+          </div>
+          <Link href="/work-gallery" className="group inline-flex items-center label-caps text-clay-deep shrink-0">
+            View All Projects
+            <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 lg:grid-rows-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 lg:grid-rows-2 gap-4 lg:auto-rows-[300px]">
           {galleryItems.map((item) => (
-            <div key={item.id} className={`relative overflow-hidden h-[220px] lg:h-auto ${item.span}`}>
+            <div key={item.id} className={`group relative overflow-hidden h-[240px] lg:h-full ${item.span}`}>
               <Image
                 src={item.image}
                 alt={item.alt}
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                 sizes="(max-width: 1024px) 50vw, 33vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-clay-900/60 via-transparent to-transparent" />
-              <div className="absolute left-4 bottom-4 text-stone-50">
-                <div className="text-[11.5px] uppercase tracking-wider opacity-85">{item.category}</div>
-                <div className="text-[15.5px] font-bold">{item.label}</div>
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal-ash/70 via-transparent to-transparent" />
+              <div className="absolute left-5 bottom-5 text-warm-linen">
+                <div className="label-caps text-[10px] text-warm-linen/75">{item.category}</div>
+                <div className="font-display text-xl mt-1">{item.label}</div>
               </div>
             </div>
           ))}

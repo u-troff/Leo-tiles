@@ -1,9 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { ArrowRight } from "lucide-react";
+import Eyebrow from "@/components/ui/Eyebrow";
 import { siteConfig } from "@/data/site-config";
 
 const tileProducts = ["Batavian Floor Tiles", "Dutch Klompies", "Hexagon Tiles", "Wine Coolers", "Clay Pellets", "Custom Order"];
+
+const inputClass =
+  "font-normal text-base bg-transparent border-b border-mortar-gray/40 py-3 focus:outline-none focus:border-charcoal-ash focus:border-b-2 transition-colors placeholder:text-mortar-gray/70";
 
 export default function QuoteFormSection() {
   const [name, setName] = useState("");
@@ -22,80 +27,61 @@ export default function QuoteFormSection() {
   };
 
   return (
-    <section id="quote" className="bg-stone-100 py-16 lg:py-24">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="max-w-xl mx-auto mb-12 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-clay-900 mb-3.5">We&rsquo;re here to help</h2>
-          <p className="text-stone-700 leading-relaxed">
-            Send us a message and we&rsquo;ll get back to you within 24 hours with a quote and lead time.
-          </p>
-        </div>
-        <form
-          onSubmit={handleSubmit}
-          className="max-w-[760px] mx-auto bg-stone-50 p-6 lg:p-11 grid grid-cols-1 lg:grid-cols-2 gap-6"
-        >
-          <label className="flex flex-col gap-2 text-sm font-semibold text-clay-900">
-            Full Name
-            <input
-              type="text"
-              required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="font-normal px-3.5 py-3 border border-stone-300 bg-white text-sm focus:outline-none focus:ring-1 focus:ring-rust-500 focus:border-rust-500"
-            />
-          </label>
-          <label className="flex flex-col gap-2 text-sm font-semibold text-clay-900">
-            Email
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="font-normal px-3.5 py-3 border border-stone-300 bg-white text-sm focus:outline-none focus:ring-1 focus:ring-rust-500 focus:border-rust-500"
-            />
-          </label>
-          <label className="flex flex-col gap-2 text-sm font-semibold text-clay-900">
-            Phone
-            <input
-              type="tel"
-              required
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              className="font-normal px-3.5 py-3 border border-stone-300 bg-white text-sm focus:outline-none focus:ring-1 focus:ring-rust-500 focus:border-rust-500"
-            />
-          </label>
-          <label className="flex flex-col gap-2 text-sm font-semibold text-clay-900">
-            Product of Interest
-            <select
-              value={product}
-              onChange={(e) => setProduct(e.target.value)}
-              className="font-normal px-3.5 py-3 border border-stone-300 bg-white text-sm focus:outline-none focus:ring-1 focus:ring-rust-500 focus:border-rust-500"
+    <section id="quote" className="py-24 lg:py-40 bg-warm-linen">
+      <div className="max-w-[1440px] mx-auto px-5 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="lg:col-span-4">
+            <Eyebrow label="Request a Quote" />
+            <h2 className="font-display text-4xl lg:text-5xl leading-[1.1] text-charcoal-ash mb-6">
+              We&rsquo;re here to help.
+            </h2>
+            <p className="text-secondary leading-relaxed">
+              Send us a message and we&rsquo;ll get back to you within 24 hours with a quote and honest
+              lead time for your project.
+            </p>
+          </div>
+
+          <form onSubmit={handleSubmit} className="lg:col-span-7 lg:col-start-6 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+            <label className="flex flex-col gap-1">
+              <span className="label-caps text-mortar-gray">Full Name</span>
+              <input type="text" required value={name} onChange={(e) => setName(e.target.value)} className={inputClass} />
+            </label>
+            <label className="flex flex-col gap-1">
+              <span className="label-caps text-mortar-gray">Email</span>
+              <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className={inputClass} />
+            </label>
+            <label className="flex flex-col gap-1">
+              <span className="label-caps text-mortar-gray">Phone</span>
+              <input type="tel" required value={phone} onChange={(e) => setPhone(e.target.value)} className={inputClass} />
+            </label>
+            <label className="flex flex-col gap-1">
+              <span className="label-caps text-mortar-gray">Product of Interest</span>
+              <select value={product} onChange={(e) => setProduct(e.target.value)} className={inputClass}>
+                <option value="">Select a product</option>
+                {tileProducts.map((p) => (
+                  <option key={p} value={p}>{p}</option>
+                ))}
+              </select>
+            </label>
+            <label className="flex flex-col gap-1 md:col-span-2">
+              <span className="label-caps text-mortar-gray">Message</span>
+              <textarea
+                rows={3}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Tell us about your project…"
+                className={`${inputClass} resize-y`}
+              />
+            </label>
+            <button
+              type="submit"
+              className="group md:col-span-2 justify-self-start inline-flex items-center bg-clay-deep text-warm-linen label-caps px-10 py-5 hover:bg-primary transition-colors mt-2"
             >
-              <option value="">Select a product</option>
-              {tileProducts.map((p) => (
-                <option key={p} value={p}>
-                  {p}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label className="flex flex-col gap-2 text-sm font-semibold text-clay-900 lg:col-span-2">
-            Message
-            <textarea
-              rows={3}
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              placeholder="Tell us about your project…"
-              className="font-normal px-3.5 py-3 border border-stone-300 bg-white text-sm resize-y focus:outline-none focus:ring-1 focus:ring-rust-500 focus:border-rust-500"
-            />
-          </label>
-          <button
-            type="submit"
-            className="lg:col-span-2 mt-1 bg-rust-500 text-stone-50 font-bold text-[15.5px] py-4 hover:bg-rust-600 transition-colors"
-          >
-            Send Message
-          </button>
-        </form>
+              Send Message
+              <ArrowRight className="ml-2.5 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </button>
+          </form>
+        </div>
       </div>
     </section>
   );

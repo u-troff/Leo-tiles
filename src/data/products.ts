@@ -25,7 +25,7 @@ export const products: Product[] = [
   {
     slug: "batavian-collection",
     name: "Batavian Collection",
-    heroCaption: "Poolside deck, Constantia — laid in the Batavian Collection",
+    heroCaption: "Poolside deck, Constantia, laid in the Batavian Collection",
     heroImage: "/images/design/pool-deck.jpg",
     galleryImages: [
       {
@@ -43,7 +43,7 @@ export const products: Product[] = [
     ],
     textureImage: "/images/design/tile-texture.jpg",
     description:
-      "Our signature hand-shaped tile — mixed, pressed and edged by hand, then fired to a natural terracotta red with the tonal variation you'd expect from real clay. Suited to floors, decks and pool surrounds, indoors and out.",
+      "Our signature hand-shaped tile, mixed, pressed and edged by hand, then fired to a natural terracotta red with the tonal variation you'd expect from real clay. Suited to floors, decks and pool surrounds, indoors and out.",
     specs: [
       { label: "Sizes", value: "300×300mm standard · custom sizes on request" },
       { label: "Thickness", value: "≈ 25mm" },

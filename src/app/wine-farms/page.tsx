@@ -21,7 +21,7 @@ export default function WineFarmsPage() {
           </h1>
           <p className="text-stone-200 text-lg leading-relaxed max-w-2xl mb-4">
             Since {siteConfig.establishedYear}, {siteConfig.businessName} has supplied handmade
-            terracotta to wine farms, cellars and tasting rooms across the Cape Winelands — some of
+            terracotta to wine farms, cellars and tasting rooms across the Cape Winelands, some of
             our oldest relationships go back decades. This page is a growing record of that work, and
             an open invitation to the wine farms we haven&rsquo;t worked with yet.
           </p>
@@ -75,7 +75,7 @@ export default function WineFarmsPage() {
           Is your wine farm missing from this list?
         </h2>
         <p className="text-stone-700 mb-7 max-w-xl mx-auto">
-          We&rsquo;d love to hear from you — whether it&rsquo;s a new cellar, tasting room, or
+          We&rsquo;d love to hear from you, whether it&rsquo;s a new cellar, tasting room, or
           courtyard project.
         </p>
         <Button href="/get-a-quote" variant="primary" size="lg">

@@ -3,38 +3,35 @@ import { siteConfig } from "@/data/site-config";
 
 export default function FloatingCTABanner() {
   return (
-    <section className="relative bg-clay-900 py-14 lg:py-20 overflow-hidden">
-      {/* Decorative diagonal accent */}
+    <section className="relative bg-primary text-warm-linen overflow-hidden">
+      {/* Paper-grain texture, tonal not shadowed */}
       <div
-        className="absolute inset-y-0 right-0 w-1/3 bg-rust-500/10 pointer-events-none"
-        style={{ clipPath: "polygon(15% 0, 100% 0, 100% 100%, 0% 100%)" }}
+        className="absolute inset-0 opacity-15 pointer-events-none"
+        style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/natural-paper.png')" }}
       />
-      <div className="absolute top-0 left-0 right-0 h-px bg-white/10" />
-
-      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-        {/* Eyebrow */}
-        <div className="flex items-center justify-center gap-3 mb-5">
-          <div className="h-px w-8 bg-rust-500" />
-          <span className="text-rust-400 text-[11px] font-semibold uppercase tracking-[0.22em]">
-            Custom Orders Welcome
-          </span>
-          <div className="h-px w-8 bg-rust-500" />
-        </div>
-
-        <h2 className="font-serif text-3xl lg:text-4xl font-bold text-white mb-3 leading-tight">
+      <div className="relative z-10 max-w-3xl mx-auto px-5 py-24 lg:py-32 text-center">
+        <span className="label-caps text-warm-linen/70 mb-6 block">Custom Orders Welcome</span>
+        <h2 className="font-display text-4xl lg:text-5xl mb-6 leading-[1.1]">
           Ready to start your tile order?
         </h2>
-        <p className="text-white/60 text-base mb-10 max-w-lg mx-auto">
-          Give us a call and we will be more than happy to talk through your project.
+        <p className="text-warm-linen/85 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+          Our artisans are ready to bring handcrafted warmth to your next project. Request a custom quote today.
         </p>
-
-        <a
-          href={`tel:${siteConfig.phoneRaw}`}
-          className="inline-flex items-center gap-2.5 bg-rust-500 text-white px-10 py-4 font-semibold text-base hover:bg-rust-600 transition-all duration-200 shadow-xl hover:shadow-rust-900/30 hover:-translate-y-0.5"
-        >
-          <Phone className="w-5 h-5" />
-          Call {siteConfig.phone}
-        </a>
+        <div className="flex flex-col sm:flex-row gap-5 justify-center">
+          <a
+            href="/get-a-quote"
+            className="bg-warm-linen text-primary label-caps px-10 py-5 hover:bg-sand-bone transition-colors"
+          >
+            Request a Quote
+          </a>
+          <a
+            href={`tel:${siteConfig.phoneRaw}`}
+            className="border border-warm-linen text-warm-linen label-caps px-10 py-5 hover:bg-warm-linen hover:text-primary transition-colors inline-flex items-center justify-center gap-2"
+          >
+            <Phone className="w-4 h-4" />
+            {siteConfig.phone}
+          </a>
+        </div>
       </div>
     </section>
   );

@@ -27,7 +27,7 @@ export default function AboutBrief() {
             <p className="text-gray-600 mb-4 leading-relaxed text-[15px]">
               {siteConfig.businessName} is a trusted, {siteConfig.differentiator} terracotta tile
               manufacturer serving {siteConfig.region} and beyond. For over 50 years we have shaped,
-              dried, and kiln-fired handmade clay tiles in our own facility — a craft that has all
+              dried, and kiln-fired handmade clay tiles in our own facility, a craft that has all
               but disappeared elsewhere in South Africa.
             </p>
             <p className="text-gray-600 mb-6 leading-relaxed text-[15px]">
@@ -35,7 +35,7 @@ export default function AboutBrief() {
               <strong className="text-clay-800">
                 tile makers in {siteConfig.address.city}, {siteConfig.address.state}
               </strong>{" "}
-              brings decades of expertise, patience, and genuine care to every batch — from standard
+              brings decades of expertise, patience, and genuine care to every batch, from standard
               floor tiles to bespoke heritage-matched restorations.
             </p>
 
@@ -55,7 +55,7 @@ export default function AboutBrief() {
             </Button>
           </div>
 
-          {/* Right — Team photo */}
+          {/* Right, Team photo */}
           <div className="relative">
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image

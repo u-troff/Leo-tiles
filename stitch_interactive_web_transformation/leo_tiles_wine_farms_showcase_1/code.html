@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wine Farms Showcase | LEO TILES</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#ffdbd0",
+                    "primary-container": "#171210",
+                    "surface-dim": "#171210",
+                    "architectural-gold": "#D9A441",
+                    "primary-fixed": "#ece0dc",
+                    "on-error-container": "#ffdad6",
+                    "surface-bright": "#3e3835",
+                    "on-error": "#690005",
+                    "charcoal-ink": "#171210",
+                    "error-container": "#93000a",
+                    "on-surface-variant": "#d1c4bf",
+                    "surface": "#171210",
+                    "inverse-on-surface": "#352f2d",
+                    "tertiary-container": "#2b0700",
+                    "primary": "#cfc4c1",
+                    "surface-container-high": "#2f2926",
+                    "heritage-wine": "#6B1E2B",
+                    "surface-container-lowest": "#120d0b",
+                    "surface-container": "#241e1c",
+                    "outline-variant": "#4e4542",
+                    "on-tertiary-fixed": "#390b00",
+                    "on-primary-container": "#857c79",
+                    "tertiary": "#ffb59d",
+                    "on-tertiary-fixed-variant": "#842500",
+                    "secondary-fixed-dim": "#cdc6ba",
+                    "on-primary": "#352f2d",
+                    "error": "#ffb4ab",
+                    "on-tertiary-container": "#d95222",
+                    "inverse-surface": "#ece0dc",
+                    "secondary-fixed": "#e9e1d6",
+                    "outline": "#9a8e8a",
+                    "surface-container-highest": "#3a3331",
+                    "on-background": "#ece0dc",
+                    "surface-container-low": "#201a18",
+                    "secondary": "#cdc6ba",
+                    "inverse-primary": "#655d5a",
+                    "on-tertiary": "#5d1800",
+                    "secondary-container": "#4d4940",
+                    "on-secondary": "#343028",
+                    "bone-cream": "#F7EFE3",
+                    "primary-fixed-dim": "#cfc4c1",
+                    "on-primary-fixed": "#201a18",
+                    "surface-variant": "#3a3331",
+                    "on-secondary-fixed-variant": "#4a463e",
+                    "on-surface": "#ece0dc",
+                    "on-secondary-container": "#beb8ac",
+                    "on-primary-fixed-variant": "#4c4543",
+                    "surface-tint": "#cfc4c1",
+                    "background": "#171210",
+                    "tertiary-fixed-dim": "#ffb59d",
+                    "on-secondary-fixed": "#1e1b14"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "grid-columns": "12",
+                    "margin-desktop": "64px",
+                    "section-gap": "120px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Inter"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "display-hero": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["36px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "38px", "fontWeight": "600"}],
+                    "display-hero": ["84px", {"lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .text-justified { text-align: justify; }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(23, 18, 16, 0) 0%, rgba(23, 18, 16, 1) 100%);
+        }
+        .wine-hover:hover {
+            background-color: #6B1E2B;
+            color: #F7EFE3;
+        }
+        .grayscale-coming-soon {
+            filter: grayscale(1) contrast(1.2) brightness(0.6);
+            transition: all 0.5s ease;
+        }
+        .grayscale-coming-soon:hover {
+            filter: grayscale(0.5) contrast(1.1) brightness(0.8);
+        }
+    </style>
+</head>
+<body class="bg-charcoal-ink text-on-surface selection:bg-architectural-gold selection:text-charcoal-ink overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-charcoal-ink/70 backdrop-blur-md transition-all duration-700 ease-in-out border-b border-architectural-gold/30 flex justify-between items-center px-margin-desktop py-6">
+<div class="font-display-hero text-headline-md tracking-tighter text-on-surface">LEO TILES</div>
+<div class="hidden md:flex gap-10">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-architectural-gold transition-colors" href="#">Products</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-architectural-gold transition-colors" href="#">Work Gallery</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-architectural-gold transition-colors" href="#">Guides</a>
+<a class="font-label-caps text-label-caps text-architectural-gold border-b border-architectural-gold pb-1" href="#">Wine Farms</a>
+</div>
+<button class="font-label-caps text-label-caps px-6 py-2 border border-architectural-gold text-architectural-gold hover:bg-architectural-gold hover:text-charcoal-ink transition-all duration-500">
+            Get a Quote
+        </button>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-[921px] flex items-end justify-start overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A sweeping aerial view of a majestic vineyard in Stellenbosch at sunset. The rows of grapevines create deep textural patterns against the rolling green hills. In the foreground, a modern architectural tasting room features exquisite slate floor tiling that reflects the warm golden hour light. The atmosphere is quiet, expensive, and deeply serene, emphasizing high-end artisanal craftsmanship." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBZ9IJEekre-qGcADJdkHq2czfowyetMhu61HDYIcZ3alRh2MO1DkjxEwtLFPkHsEEWwAKouEcMkOBI3g6SXnkr-XSqW1K3GjkxCVsbpTaTGfkQY8_UbTQ8mEP93s-skkNcj3ea-Vp1OFZi7ggxEcUzpSjsib5N91VC6V56omUzBFJFGM97UX3uwVh064YdIzNavo8ZIJFtW7M5o25l9ehDB7ihvwVJlk7UCaLflwEz51EJ_EG-C3TVdiHFwXTQKIEU2PO-YFsPHYc')"></div>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 px-margin-desktop pb-section-gap max-w-4xl">
+<p class="font-label-caps text-label-caps text-architectural-gold mb-4">CURATED COLLECTIONS</p>
+<h1 class="font-display-hero text-display-hero leading-none mb-6">The Vineyard Heritage</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Where ancient terroir meets architectural precision. Explore our bespoke tile installations across the most prestigious wine estates of the Cape.
+            </p>
+</div>
+</header>
+<!-- Main Content: Farm Cards -->
+<main class="space-y-section-gap py-section-gap px-margin-desktop bg-charcoal-ink">
+<!-- Case Study 01: La Colombe -->
+<section class="grid grid-cols-12 gap-gutter group items-center">
+<div class="col-span-12 md:col-span-7 overflow-hidden">
+<div class="aspect-[16/9] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="An interior shot of a world-class restaurant kitchen at La Colombe. The floor is clad in large-format charcoal tiles with a subtle metallic sheen. Minimalist lighting casts sharp shadows, highlighting the geometric precision of the grout lines. The scene conveys a sense of clinical perfection and high-stakes culinary artistry in a luxury architectural setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH4mQXCOKbnOTpNsP_0KG9ANip09UVzWWmRBqbSPEJ6CuLR0Esy9w9CSTUwLwRZ3hMGHs63wfQ0fStS6bqOz7hibem3gBJSVlSKrwhRHsddDAc-MI1IWUnrKrG9qa2SvRXTFx42jqauFZEbuncKu76GF8WZqfPUqOu5YcjhqqxbRZ1nH2C4L_4d-fMXS6fbmex4Qfi9oZ8QJ7ue9hKMrG0osAQcd_21RhLYlAo_lSGaLF6kBMNLbNcQruWubi4HeeF00YxlN5M0V4"/>
+</div>
+</div>
+<div class="col-span-12 md:col-span-5 md:pl-16 mt-8 md:mt-0">
+<div class="border-t border-architectural-gold w-24 mb-8"></div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-architectural-gold text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-architectural-gold text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-architectural-gold text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-architectural-gold text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-architectural-gold text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg mb-6">La Colombe</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 text-justified leading-relaxed">
+                    Our collaboration with La Colombe focused on durability without sacrificing elegance. The selection features our Signature Graphite Slab, providing a non-slip, high-impact surface that mirrors the restaurant's commitment to precision.
+                </p>
+<div class="flex gap-4">
+<span class="font-label-caps text-[10px] bg-heritage-wine text-bone-cream px-3 py-1">TRAVERTINE</span>
+<span class="font-label-caps text-[10px] bg-surface-container-highest text-architectural-gold px-3 py-1">BESPOKE CUT</span>
+</div>
+</div>
+</section>
+<!-- Case Study 02: Val d'Or (Wine-Red Theme) -->
+<section class="grid grid-cols-12 gap-gutter bg-heritage-wine p-12 md:p-24 items-center">
+<div class="col-span-12 md:col-span-5 order-2 md:order-1">
+<p class="font-label-caps text-label-caps text-bone-cream/60 mb-4">HERITAGE PROJECT</p>
+<h2 class="font-headline-lg text-headline-lg text-bone-cream mb-6">Val d'Or Estate</h2>
+<div class="border-b border-bone-cream/20 w-full mb-8"></div>
+<p class="font-body-lg text-body-lg text-bone-cream/80 mb-10 leading-relaxed italic">
+                    "The tiles brought a sense of grounded luxury to our cellar door that we didn't know was possible."
+                </p>
+<button class="bg-bone-cream text-heritage-wine px-10 py-4 font-label-caps text-label-caps hover:bg-architectural-gold hover:text-charcoal-ink transition-all">
+                    VIEW PROJECT DETAILS
+                </button>
+</div>
+<div class="col-span-12 md:col-span-7 order-1 md:order-2">
+<div class="aspect-square bg-black/20 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A close-up of a rustic wine cellar at Val d'Or. The floor features reclaimed-style terracotta tiles with a deep, earthy patina, set in a traditional herringbone pattern. Soft, warm candlelight flickers against the oak barrels and the textured surface of the tiles, creating a rich, heritage-driven aesthetic that feels centuries old." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiyC_2i_ujCjB72Yzel1-PEb-xtM6Ix-wwNiShGAnYF7HphPlsNwND01-whNX3ukr67p_cdE57mnKMD5HTdp9C4rl0tm5d-fXlOeHzsqTnIehJYyIU238vzzLO7X4dp2sTBpq6KeEFRT3ioChzpa-f4ZKzLDHq6LQedit9SrIPhKHrPBbbw7dzSmWn0IY1IvF9N3ehnIa1OYG9D23KdNFw1vzZGEzpkqY5hgsrLFj-IckTH-GZqr8_hYHqLxdkWbgoYP82IA5RHZM"/>
+</div>
+</div>
+</section>
+<!-- Case Study 03: Delaire Graff -->
+<section class="grid grid-cols-12 gap-gutter group items-center">
+<div class="col-span-12 md:col-span-7 overflow-hidden">
+<div class="aspect-[16/9] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="The terrace of Delaire Graff Estate overlooking the mountains. The floor is composed of massive, seamless white marble tiles that shimmer under the sun. High-end outdoor furniture is arranged sparsely to emphasize the scale of the architecture. The color palette is dominated by cool whites, architectural golds, and deep mountain blues, evoking ultimate luxury and exclusivity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7dXlRHtWDW4PPiSL2g9_s1ya1rXq8w48UADYxgWb1N2rGGdAYUOyyym9GMWX53Xr7UE9-4F7GyNK4w_fmnhY2QV6ZN8Iq_ZTxnE4tml3BR3MG2UR3rHES5SpAZ7bBYvfJT-dtN1H97qz3Ih07SSHTjU96r5q-uNFp3RgK842eO6ZTVX1wC0MPZYAFeXBFCTC1Ds82rDaQ-L11kYsYJ2nouyVZP8DnisSU_T1-L_sCkDktHhuTpxgiy1JxZOlz--CDjSgtV3AHe6k"/>
+</div>
+</div>
+<div class="col-span-12 md:col-span-5 md:pl-16 mt-8 md:mt-0">
+<div class="border-t border-architectural-gold w-24 mb-8"></div>
+<h2 class="font-headline-lg text-headline-lg mb-6">Delaire Graff</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 text-justified leading-relaxed">
+                    The 'Jewel of the Winelands' demanded a surface that could compete with the horizon. Our Imperial Marble range was chosen for its light-reflective properties and seamless jointing system.
+                </p>
+<div class="flex flex-col gap-4 border-l border-architectural-gold/30 pl-6">
+<div>
+<p class="font-label-caps text-[10px] text-architectural-gold">INSTALLATION TYPE</p>
+<p class="font-body-md text-on-surface">Infinity Terrace</p>
+</div>
+<div>
+<p class="font-label-caps text-[10px] text-architectural-gold">MATERIAL</p>
+<p class="font-body-md text-on-surface">Imperial Carrara 1200x1200mm</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Coming Soon Section -->
+<section class="pt-section-gap">
+<div class="mb-16 text-center">
+<h3 class="font-headline-md text-headline-md mb-4">The Future of Heritage</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">UPCOMING INSTALLATIONS &amp; COLLABORATIONS</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="group cursor-wait">
+<div class="relative aspect-[4/5] mb-6 overflow-hidden">
+<img class="w-full h-full object-cover grayscale-coming-soon" data-alt="A moody, grayscale shot of a fog-covered vineyard in the early morning. In the foreground, a stack of uninstalled dark slate tiles sits neatly on a wooden pallet. The lighting is low-key and dramatic, focusing on the raw texture of the stone against the soft focus of the vines. The overall tone is mysterious and exclusive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_hDoogLv5T6cP9NBnUrE6sftCrOgldnvGlOT_66jCOZCGltCdz9sKLUSXokN41nzpNYCNzDHKPxzGcv6TIBtF24R7APTTDu71wrNwoCckPHi9UJsJaM3SqTsyTGSKFgIb42M4JZx4m3brdbfaAt-npZaZUGeCqZ1byiOlUruNx2dbF2TgspxTdrGORd5Gb5NO92Poo3xsYk3mcnZYeaff_t7R7zItLf9rB0nLyWOTqE0BFnSJkbJllIRWOiw_V61EmurOdnJCwiA"/>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-charcoal-ink/40 backdrop-blur-sm">
+<span class="font-label-caps text-label-caps tracking-[0.3em] text-bone-cream">AUTUMN 2024</span>
+</div>
+</div>
+<h4 class="font-headline-md text-[24px] mb-2">Boschendal Manor</h4>
+<p class="font-label-caps text-[10px] text-architectural-gold">KITCHEN &amp; CELLAR RENOVATION</p>
+</div>
+<div class="group cursor-wait">
+<div class="relative aspect-[4/5] mb-6 overflow-hidden">
+<img class="w-full h-full object-cover grayscale-coming-soon" data-alt="A desaturated architectural photograph of a minimalist tasting room under construction. The ceiling features heavy oak beams, and the floor is a work-in-progress showing a complex circular tile mosaic. The scene is quiet and contemplative, emphasizing the meticulous process of luxury construction and artisan craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnjmPM-7hjeJXk2a1t1VOH7lOIiAvz0pQNvoNq3WBMpSH0jEZ35J3KBxhOr0vBjToPHVK5tzyuzNjHpDTq4CQcHA3Nafm_QOV0B8eYOdos02pkDo7rzONp7jtD_wzJC-Mc4jNTZdsG0oh3Z_HzXwzm2hMOPBqFYqP03IGFzRlW_A0a8BS2KAKW4RELBNO4Wkeu7q7Lpkja0odYEDuQX_mVT4vGx29-5PkPfjgZFmzUl5kYkFp1h97VR5qTEvZ2iDJMKA18L2lwWS0"/>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-charcoal-ink/40 backdrop-blur-sm">
+<span class="font-label-caps text-label-caps tracking-[0.3em] text-bone-cream">WINTER 2024</span>
+</div>
+</div>
+<h4 class="font-headline-md text-[24px] mb-2">Tokara Winery</h4>
+<p class="font-label-caps text-[10px] text-architectural-gold">GALLERY WALKWAY</p>
+</div>
+<div class="group cursor-wait">
+<div class="relative aspect-[4/5] mb-6 overflow-hidden">
+<img class="w-full h-full object-cover grayscale-coming-soon" data-alt="A high-contrast black and white image of a reflecting pool outside a contemporary wine farm. The water is perfectly still, reflecting the sharp lines of the building. The tiles surrounding the pool are dark and textured, providing a stark contrast to the smooth water surface. The mood is one of absolute luxury and modern architectural purity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvKEKWnnb1uCThELLelpqY_zJtmbbx_tzv92EWOa9TvimlyxLJbaeK9QqBfkUl2GkpWFZG5UqHzLmjcDwg4aAAb-TAdcotszn4_nLVX-7AhedCzkZAn5BnysEQkDM8XabPiqA9EV4hIj2JZJK9LwYoUK45nEXwmmAWKjjUoVDRgH-_zcuF3fLiKhZyJonKbqqbSh8UnJEu8nFDK_zVw-QUpSw0hu00iwAhwvI3QCao3psy7vc6Vf52IlcL037HthnLy-C7rbUKMV0"/>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-charcoal-ink/40 backdrop-blur-sm">
+<span class="font-label-caps text-label-caps tracking-[0.3em] text-bone-cream">SPRING 2025</span>
+</div>
+</div>
+<h4 class="font-headline-md text-[24px] mb-2">Jordan Estate</h4>
+<p class="font-label-caps text-[10px] text-architectural-gold">EXTERIOR DECKING</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-charcoal-ink border-t border-architectural-gold flex flex-col gap-section-gap px-margin-desktop py-section-gap max-w-full">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12">
+<div class="max-w-md">
+<div class="font-display-hero text-display-hero text-on-surface uppercase tracking-tighter mb-8 leading-none">LEO TILES</div>
+<p class="font-body-md text-on-surface-variant">The architect's choice for artisanal masonry. Delivering precision, heritage, and permanence to the world's most beautiful spaces.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-x-16 gap-y-4">
+<a class="font-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">Products</a>
+<a class="font-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">Gallery</a>
+<a class="font-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">Guides</a>
+<a class="font-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">About</a>
+<a class="font-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">Blog</a>
+<a class="font-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">Contact</a>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-on-surface/10">
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 md:mb-0 text-architectural-gold">© 2024 LEO TILES. ARTISAN PRECISION.</p>
+<div class="flex gap-8">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-architectural-gold cursor-pointer transition-colors">language</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-architectural-gold cursor-pointer transition-colors">share</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-architectural-gold cursor-pointer transition-colors">favorite</span>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for scroll fade
+        document.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-4', 'bg-charcoal-ink/90');
+                nav.classList.remove('py-6', 'bg-charcoal-ink/70');
+            } else {
+                nav.classList.add('py-6', 'bg-charcoal-ink/70');
+                nav.classList.remove('py-4', 'bg-charcoal-ink/90');
+            }
+        });
+
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'ease-out', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Work Gallery | LEO TILES</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#690005",
+                    "primary": "#cfc4c1",
+                    "surface-container-highest": "#3a3331",
+                    "surface-variant": "#3a3331",
+                    "secondary-container": "#4d4940",
+                    "on-secondary": "#343028",
+                    "on-primary-container": "#857c79",
+                    "surface-container-low": "#201a18",
+                    "bone-cream": "#F7EFE3",
+                    "primary-fixed": "#ece0dc",
+                    "on-primary-fixed-variant": "#4c4543",
+                    "surface-tint": "#cfc4c1",
+                    "on-tertiary-fixed": "#390b00",
+                    "secondary-fixed-dim": "#cdc6ba",
+                    "tertiary": "#ffb59d",
+                    "surface-container-high": "#2f2926",
+                    "on-surface": "#ece0dc",
+                    "on-primary": "#352f2d",
+                    "background": "#171210",
+                    "surface-container": "#241e1c",
+                    "surface-dim": "#171210",
+                    "inverse-primary": "#655d5a",
+                    "on-tertiary-fixed-variant": "#842500",
+                    "on-tertiary-container": "#d95222",
+                    "secondary-fixed": "#e9e1d6",
+                    "architectural-gold": "#D9A441",
+                    "on-background": "#ece0dc",
+                    "charcoal-ink": "#171210",
+                    "on-secondary-container": "#beb8ac",
+                    "surface": "#171210",
+                    "tertiary-fixed": "#ffdbd0",
+                    "surface-container-lowest": "#120d0b",
+                    "on-tertiary": "#5d1800",
+                    "primary-fixed-dim": "#cfc4c1",
+                    "outline": "#9a8e8a",
+                    "error-container": "#93000a",
+                    "on-secondary-fixed": "#1e1b14",
+                    "surface-bright": "#3e3835",
+                    "secondary": "#cdc6ba",
+                    "on-secondary-fixed-variant": "#4a463e",
+                    "inverse-on-surface": "#352f2d",
+                    "on-error-container": "#ffdad6",
+                    "outline-variant": "#4e4542",
+                    "on-primary-fixed": "#201a18",
+                    "primary-container": "#171210",
+                    "tertiary-container": "#2b0700",
+                    "heritage-wine": "#6B1E2B",
+                    "error": "#ffb4ab",
+                    "on-surface-variant": "#d1c4bf",
+                    "inverse-surface": "#ece0dc",
+                    "tertiary-fixed-dim": "#ffb59d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "grid-columns": "12",
+                    "gutter": "24px",
+                    "margin-mobile": "20px",
+                    "section-gap": "120px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "display-hero": ["Playfair Display"],
+                    "label-caps": ["Inter"],
+                    "headline-lg": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-hero": ["84px", {"lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["36px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "38px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .project-card:hover .project-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .stagger-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #171210;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D9A441;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-architectural-gold selection:text-charcoal-ink overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-charcoal-ink/70 backdrop-blur-md dark:bg-charcoal-ink/70 border-b border-architectural-gold/30 flex justify-between items-center px-margin-desktop py-6 transition-all duration-700 ease-in-out">
+<div class="font-display-hero text-headline-md tracking-tighter text-on-surface">LEO TILES</div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="font-label-caps text-label-caps text-on-surface hover:text-architectural-gold transition-colors" href="#">Products</a>
+<a class="font-label-caps text-label-caps text-architectural-gold border-b border-architectural-gold pb-1" href="#">Work Gallery</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-architectural-gold transition-colors" href="#">Guides</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-architectural-gold transition-colors" href="#">Wine Farms</a>
+<button class="bg-bone-cream text-charcoal-ink px-6 py-2 font-label-caps text-label-caps uppercase hover:opacity-80 transition-opacity duration-500">Get a Quote</button>
+</div>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="px-margin-desktop mb-section-gap">
+<div class="grid grid-cols-12 gap-gutter items-end">
+<div class="col-span-12 md:col-span-8">
+<h1 class="font-display-hero text-display-hero mb-8 stagger-in">Mastery in <br/><span class="text-architectural-gold">Masonry.</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl stagger-in" style="transition-delay: 200ms;">Explore our curated selection of architectural achievements, where precision meets the raw beauty of natural stone and artisan tiles.</p>
+</div>
+<div class="col-span-12 md:col-span-4 flex justify-end">
+<div class="border-l border-architectural-gold pl-6 py-2 stagger-in" style="transition-delay: 400ms;">
+<span class="font-label-caps text-label-caps text-architectural-gold block mb-1">CURRENTLY VIEWING</span>
+<span class="font-headline-md text-headline-md">All Projects</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Project Filters -->
+<section class="px-margin-desktop mb-16">
+<div class="flex flex-wrap gap-4 border-b border-outline-variant pb-8 stagger-in">
+<button class="bg-charcoal-ink border border-architectural-gold text-architectural-gold px-8 py-3 font-label-caps text-label-caps uppercase">All Projects</button>
+<button class="hover:bg-surface-container transition-colors px-8 py-3 font-label-caps text-label-caps uppercase text-on-surface-variant">Residential</button>
+<button class="hover:bg-surface-container transition-colors px-8 py-3 font-label-caps text-label-caps uppercase text-on-surface-variant">Outdoor &amp; Pools</button>
+<button class="hover:bg-surface-container transition-colors px-8 py-3 font-label-caps text-label-caps uppercase text-on-surface-variant">Commercial</button>
+<button class="hover:bg-surface-container transition-colors px-8 py-3 font-label-caps text-label-caps uppercase text-on-surface-variant">Craft</button>
+</div>
+</section>
+<!-- Main Gallery Masonry -->
+<section class="px-margin-desktop mb-section-gap">
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Full Width Feature: Vineyard Estate -->
+<div class="col-span-12 group relative overflow-hidden h-[70vh] stagger-in">
+<img alt="Vineyard Estate" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLsthh4eohMgM_eGtojzZRTIVtcmuY8OKe1WWoX1Y5vN6O2jNJcGsFbM4c2BCV0Bry78lAym1VerT-KERDqf6q6sbJHmMiuzhIjmUqiY0WRD-vOZJymzOJp8IvQVZ2d57fQceDfVn0qnviRLGj1so7K4uefNHoaw6oUyCpFIHGAeIBGKGDXUMbNr4KzNA16l44Zf1O0ZW8bH6wA-mPZToP4djQg1L0SasG73kcxzdlAZrQ69ZirfTLTqjxs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-charcoal-ink via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-12 left-12 right-12 flex justify-between items-end">
+<div>
+<span class="bg-charcoal-ink text-architectural-gold px-3 py-1 font-label-caps text-label-caps mb-4 inline-block border border-architectural-gold">OUTDOOR &amp; POOLS</span>
+<h2 class="font-headline-lg text-headline-lg text-bone-cream">Vineyard Estate</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Stellenbosch, South Africa</p>
+</div>
+<button class="bg-bone-cream text-charcoal-ink p-4 rounded-full flex items-center justify-center hover:bg-architectural-gold transition-colors">
+<span class="material-symbols-outlined">arrow_outward</span>
+</button>
+</div>
+</div>
+<!-- Split Grid -->
+<div class="col-span-12 md:col-span-5 flex flex-col gap-gutter">
+<div class="group relative overflow-hidden aspect-[4/5] stagger-in" style="transition-delay: 100ms;">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Close up detail of artisan terracotta tiles laid in a herringbone pattern with tight architectural grout lines. The lighting is soft and golden, highlighting the organic texture and warm orange-red earthy tones of the fired clay. The aesthetic is high-end architectural photography, cinematic and focused on craftsmanship." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTlp9xRs8muF2LnRzsNyIfwkZJOTScZ7EndIDDVBgKM5fpJx39DnTkC7EohwJ_bZXs5h8_aO65edAIDmc4mionIJslJ0UbYCd2IOPkhhFcTDr8KBQAjFfWptVUy6I6MfulQ2qgQQ0QdRmQWxAK6VQK-BDJGrZjW51ghFy8MmkLalBLAUN6Z-ledYqGUPhR2t5XmYgl7l5zh8dVLA6kCZ3RjH25JlybAlV0DyBi7OTUi1oPrskQ4MKVRZrW3k5v9DfHB9btRQQE0oE')"></div>
+<div class="absolute inset-0 bg-charcoal-ink/40 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 project-overlay translate-y-4">
+<span class="font-label-caps text-label-caps text-architectural-gold mb-2">CRAFT</span>
+<h3 class="font-headline-md text-headline-md text-bone-cream">Herringbone Terra</h3>
+<p class="font-body-md text-on-surface-variant">Signature Artisan Collection</p>
+</div>
+</div>
+<div class="bg-bone-cream text-charcoal-ink p-12 flex flex-col justify-center stagger-in" style="transition-delay: 200ms;">
+<h4 class="font-label-caps text-label-caps mb-6 text-architectural-gold tracking-[0.2em]">OUR PHILOSOPHY</h4>
+<p class="font-headline-md text-headline-md mb-8 leading-tight">"Architecture is the learned game, correct and magnificent, of forms assembled in light."</p>
+<p class="font-body-md opacity-70 italic">— Le Corbusier</p>
+</div>
+</div>
+<div class="col-span-12 md:col-span-7 stagger-in" style="transition-delay: 300ms;">
+<div class="group relative overflow-hidden h-full aspect-[4/5] md:aspect-auto">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A luxury restaurant terrace setting with minimalist olive green woven chairs around marble-top tables. The flooring is a complex geometric tile pattern in neutral bone and charcoal tones. In the background, a lush manicured garden and distant misty mountains create a serene, high-end dining atmosphere. Professional architectural shot with soft natural light." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDRWyUsfsWMoZo6yyl6tPt6oXRr9vC14ht9TP924jCAGDaU7eIN-kMzRTt4lGAXHthNMChyS4yJJpYDbADBmmJCyFUZnu5SOz0CLWDEE5AiSc3Rhui3TVA3NrZxtl8wvIL0GmETpyNPTveJsbU5L_2AMw2vn69Waujtg5pImEyM_FmK8jK1TQK65ZfhB-oUAKXm8XgowQ6snhnvCYTJ0k0mWpb71tdkToQ6MtirLovlpgnj14hedOTPy8uS3fuKA5KWA7WFl_oXFGg')"></div>
+<div class="absolute inset-0 bg-charcoal-ink/40 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-12 project-overlay translate-y-4">
+<span class="font-label-caps text-label-caps text-architectural-gold mb-2">COMMERCIAL</span>
+<h3 class="font-headline-lg text-headline-lg text-bone-cream">La Colombe Terrace</h3>
+<p class="font-body-md text-on-surface-variant">Modernist Culinary Escape</p>
+</div>
+</div>
+</div>
+<!-- High Contrast Heritage Section -->
+<div class="col-span-12 mt-12 mb-12 stagger-in">
+<div class="grid grid-cols-1 md:grid-cols-2">
+<div class="bg-heritage-wine p-16 flex flex-col justify-center border-l-4 border-architectural-gold">
+<span class="font-label-caps text-label-caps text-bone-cream opacity-60 mb-4">SPECIALIZED CARD</span>
+<h2 class="font-display-hero text-headline-lg text-bone-cream mb-6">Winery Heritage Collection</h2>
+<p class="font-body-lg text-bone-cream opacity-80 mb-10 leading-relaxed">Designed for the prestigious wine farms of the Cape, this collection uses age-old techniques to produce tiles that withstand the test of time and climate while maintaining a deep, sophisticated aesthetic.</p>
+<a class="text-architectural-gold font-label-caps text-label-caps flex items-center gap-2 hover:translate-x-2 transition-transform" href="#">
+                                VIEW THE COLLECTION <span class="material-symbols-outlined">east</span>
+</a>
+</div>
+<div class="h-96 md:h-auto overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-1000 hover:scale-110" data-alt="A detailed shot of a luxury wine cellar floor with deep crimson and charcoal heritage tiles. The lighting is moody and atmospheric, coming from low-level accent lights. Oak barrels are visible in the soft-focus background. The vibe is expensive, aged, and sophisticated." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuASpHYv5Je2uYPmr6aJzXMwEs9tiRoR9-EwKuz-y-D8OS3j8ejFjtrMc28r-1snW3h-9kPKWD2QwNy_HFmIBhPbIdCk8BbGtY-NaVUf92LjG18xF6zeeZlqtNTeUab-T3OWzo80nVgeLJ5Ougt5CBnRsTE_c6F0btpCzESlqQu3JkEAYjK9gtWEIFnr0YI9a-_6XEetvUfBB8ch9L7mio1HA8qp2qptp_-3SB1lEcf3N2ShaTJwdXDuDw8P_bQhGmYvbL9Dhkk6Lqk')"></div>
+</div>
+</div>
+</div>
+<!-- Featured Residential -->
+<div class="col-span-12 group relative overflow-hidden h-[70vh] stagger-in" style="transition-delay: 100ms;">
+<img alt="Luxury Terrace" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLsazRov7PYrbwfjStHyKEgdX8DiYNi5c16ew7keIUFdKUaGO8pJw1SlodtJYOrebaZtv5G2jhUc4ZzdED1Av4h0R5CMDkk71WAUfKFzeQrRVHzVRLmlYnoIJMX11KWz6DHMJg5OkNxZU1ohNOUUaLseBacLqtXucpdf6F5S2DjFW3JSsdlQ9Mj_F9Xc6XIpywHFNFjI10WkDjq4kHc8nnzzELBNLi5v8tgUxSZmPXyZPEVzhgcDtZo6dFo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-charcoal-ink via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-12 left-12 right-12 flex justify-between items-end">
+<div>
+<span class="bg-charcoal-ink text-architectural-gold px-3 py-1 font-label-caps text-label-caps mb-4 inline-block border border-architectural-gold">RESIDENTIAL</span>
+<h2 class="font-headline-lg text-headline-lg text-bone-cream">Luxury Terrace</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Cape Peninsula Residence</p>
+</div>
+<button class="bg-bone-cream text-charcoal-ink p-4 rounded-full flex items-center justify-center hover:bg-architectural-gold transition-colors">
+<span class="material-symbols-outlined">arrow_outward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="bg-bone-cream text-charcoal-ink py-32 px-margin-desktop text-center">
+<div class="max-w-3xl mx-auto stagger-in">
+<h2 class="font-display-hero text-display-hero mb-8 text-charcoal-ink">Begin Your <br/>Project.</h2>
+<p class="font-body-lg text-body-lg mb-12 opacity-80">Our artisans are ready to transform your vision into a lasting architectural statement. Request a personalized quote for your collection.</p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<button class="bg-charcoal-ink text-bone-cream px-12 py-5 font-label-caps text-label-caps uppercase text-lg hover:bg-architectural-gold transition-colors">Inquire Now</button>
+<button class="border border-charcoal-ink text-charcoal-ink px-12 py-5 font-label-caps text-label-caps uppercase text-lg hover:bg-charcoal-ink hover:text-bone-cream transition-colors">Download Catalog</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-charcoal-ink border-t border-architectural-gold px-margin-desktop py-section-gap flex flex-col gap-section-gap max-w-full">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12">
+<div class="max-w-md">
+<div class="font-display-hero text-display-hero text-on-surface uppercase tracking-tighter mb-8">LEO TILES</div>
+<p class="font-body-md text-on-surface-variant">The gold standard in artisan masonry. From private estates to commercial landmarks, we craft the foundations of premium architecture.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-16">
+<div>
+<h5 class="font-label-caps text-label-caps text-architectural-gold mb-6">EXPLORE</h5>
+<ul class="flex flex-col gap-4">
+<li><a class="font-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">Products</a></li>
+<li><a class="font-body-md text-on-surface font-bold" href="#">Gallery</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">Guides</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-caps text-label-caps text-architectural-gold mb-6">COMPANY</h5>
+<ul class="flex flex-col gap-4">
+<li><a class="font-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">About</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">Blog</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center border-t border-on-surface-variant/10 pt-12">
+<p class="font-body-md text-on-surface-variant">© 2024 LEO TILES. ARTISAN PRECISION.</p>
+<div class="flex gap-8 mt-6 md:mt-0">
+<a class="text-on-surface-variant hover:text-architectural-gold transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-on-surface-variant hover:text-architectural-gold transition-colors" href="#"><span class="material-symbols-outlined">camera</span></a>
+<a class="text-on-surface-variant hover:text-architectural-gold transition-colors" href="#"><span class="material-symbols-outlined">link</span></a>
+</div>
+</div>
+</footer>
+<script>
+        // Smooth stagger animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stagger-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar blur effect on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-4', 'bg-charcoal-ink/90');
+                nav.classList.remove('py-6', 'bg-charcoal-ink/70');
+            } else {
+                nav.classList.add('py-6', 'bg-charcoal-ink/70');
+                nav.classList.remove('py-4', 'bg-charcoal-ink/90');
+            }
+        });
+    </script>
+</body></html>

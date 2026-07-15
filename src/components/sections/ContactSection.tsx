@@ -28,7 +28,7 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
 
-          {/* Left — Contact Info */}
+          {/* Left, Contact Info */}
           <div>
             <SectionLogo label="Get in Touch" />
             <h2 className="font-serif text-3xl lg:text-4xl font-bold text-clay-900 mb-8 leading-tight">
@@ -81,7 +81,7 @@ export default function ContactSection() {
             {/* Map */}
             <div className="aspect-video overflow-hidden">
               <iframe
-                title="Leo Tiles location — 30 Industrial Road, Kraaifontein"
+                title="Leo Tiles location, 30 Industrial Road, Kraaifontein"
                 src="https://maps.google.com/maps?q=-33.8417622,18.7304505&z=15&output=embed"
                 width="100%"
                 height="100%"
@@ -92,7 +92,7 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Right — Form */}
+          {/* Right, Form */}
           <div className="bg-white border border-stone-300 p-8 lg:p-10">
             <h3 className="font-serif text-2xl font-bold text-clay-900 mb-6">
               Send Us a Message
@@ -170,7 +170,7 @@ export default function ContactSection() {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   className="w-full px-4 py-3 border border-stone-300 bg-stone-50 text-clay-800 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-rust-500 focus:border-rust-500 transition-colors resize-none"
-                  placeholder="Tell us about your project — dimensions, tile type, installation needs..."
+                  placeholder="Tell us about your project, dimensions, tile type, installation needs..."
                 />
               </div>
               <button

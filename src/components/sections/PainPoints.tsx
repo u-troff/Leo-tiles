@@ -13,13 +13,13 @@ const painPoints = [
     icon: Clock,
     title: "Long Lead Times Catch People Off Guard",
     description:
-      "Handmade tiles take time. We're upfront about production schedules — contact us early in your project so we can deliver on time.",
+      "Handmade tiles take time. We're upfront about production schedules, contact us early in your project so we can deliver on time.",
   },
   {
     icon: Layers,
     title: "Wrong Installer Ruins the Result",
     description:
-      "Non-standard sizing requires specialist installation. Our own team has installed thousands of square metres of our tiles — nobody knows them better.",
+      "Non-standard sizing requires specialist installation. Our own team has installed thousands of square metres of our tiles, nobody knows them better.",
   },
   {
     icon: Droplets,

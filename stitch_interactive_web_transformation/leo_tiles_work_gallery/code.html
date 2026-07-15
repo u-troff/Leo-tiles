@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Work Gallery | LEO TILES</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#ffb59c",
+                    "secondary": "#645d56",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "on-secondary-fixed-variant": "#4c463f",
+                    "surface-dim": "#dbdad7",
+                    "outline": "#86736d",
+                    "on-primary-container": "#fff4f0",
+                    "on-primary-fixed": "#390c00",
+                    "secondary-fixed": "#ebe1d8",
+                    "tertiary-fixed-dim": "#c8c6c6",
+                    "surface-bright": "#faf9f6",
+                    "primary": "#88452d",
+                    "surface-tint": "#904b33",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#1a1c1a",
+                    "secondary-fixed-dim": "#cec5bc",
+                    "on-secondary-container": "#6a635c",
+                    "surface-container-highest": "#e3e2e0",
+                    "sand-bone": "#F2E8DF",
+                    "surface-container-low": "#f4f3f1",
+                    "mortar-gray": "#8C847E",
+                    "secondary-container": "#ebe1d8",
+                    "surface-variant": "#e3e2e0",
+                    "on-background": "#1a1c1a",
+                    "error": "#ba1a1a",
+                    "primary-container": "#a65d43",
+                    "surface-container": "#efeeeb",
+                    "on-primary-fixed-variant": "#73351e",
+                    "clay-deep": "#A65D43",
+                    "on-primary": "#ffffff",
+                    "on-surface-variant": "#54433e",
+                    "warm-linen": "#FAF9F6",
+                    "inverse-on-surface": "#f2f1ee",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#ffdbcf",
+                    "background": "#faf9f6",
+                    "charcoal-ash": "#2D2D2D",
+                    "surface": "#faf9f6",
+                    "tertiary-fixed": "#e4e2e1",
+                    "tertiary-container": "#717070",
+                    "inverse-surface": "#2f312f",
+                    "kiln-glow": "#D98E73",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "surface-container-high": "#e9e8e5",
+                    "tertiary": "#585858",
+                    "inverse-primary": "#ffb59c",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#d9c2ba",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed": "#1f1b16",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-container": "#f8f5f4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "section-gap-mobile": "80px",
+                    "section-gap-desktop": "160px",
+                    "container-max": "1440px",
+                    "margin-mobile": "20px",
+                    "gutter": "32px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["EB Garamond"],
+                    "label-caps": ["Inter"],
+                    "headline-lg": ["EB Garamond"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["EB Garamond"],
+                    "quote": ["EB Garamond"],
+                    "display-hero": ["EB Garamond"],
+                    "display-hero-mobile": ["EB Garamond"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "label-caps": ["12px", {"lineHeight": "1.5", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "quote": ["24px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display-hero": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                    "display-hero-mobile": ["44px", {"lineHeight": "1.1", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .masonry-item:nth-child(even) {
+            margin-top: 80px;
+        }
+        @media (max-width: 768px) {
+            .masonry-item:nth-child(even) {
+                margin-top: 0;
+            }
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-warm-linen text-charcoal-ash font-body-md overflow-x-hidden">
+<header class="fixed top-0 w-full z-50 bg-warm-linen/80 backdrop-blur-md border-b border-mortar-gray/20 h-20">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter flex justify-between items-center h-full">
+<a class="font-headline-md text-headline-md text-primary tracking-tight" href="#">LEO TILES</a>
+<nav class="hidden md:flex items-center space-x-12">
+<a class="font-label-caps text-label-caps text-charcoal-ash hover:text-clay-deep transition-colors duration-300" href="#">Products</a>
+<a class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1" href="#">Work Gallery</a>
+<a class="font-label-caps text-label-caps text-charcoal-ash hover:text-clay-deep transition-colors duration-300" href="#">Guides</a>
+</nav>
+<button class="bg-clay-deep text-warm-linen px-6 py-2.5 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary transition-all duration-300 group flex items-center">
+                Request Quote
+                <span class="material-symbols-outlined ml-2 transition-transform duration-300 group-hover:translate-x-1" style="font-size: 16px;">arrow_forward</span>
+</button>
+</div>
+</header>
+<main class="pt-40">
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-gutter mb-section-gap-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-end">
+<div class="md:col-span-7">
+<span class="font-label-caps text-label-caps text-primary mb-6 block uppercase tracking-widest">Selected Works</span>
+<h1 class="font-display-hero text-display-hero-mobile md:text-display-hero text-primary leading-tight">
+                        Architectural contexts, <br/><span class="italic text-charcoal-ash">captured in situ.</span>
+</h1>
+</div>
+<div class="md:col-span-4 md:col-start-9 pb-4">
+<p class="font-body-lg text-body-lg text-secondary border-l border-mortar-gray/40 pl-8">
+                        A curation of architectural dialogues where our handcrafted tiles meet modern structure and historical restoration.
+                    </p>
+</div>
+</div>
+</section>
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-gutter space-y-section-gap-desktop">
+<div class="reveal-on-scroll grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-8 relative group overflow-hidden">
+<div class="aspect-[16/9] w-full bg-surface-container overflow-hidden">
+<img alt="Luxury Terrace" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLsthh4eohMgM_eGtojzZRTIVtcmuY8OKe1WWoX1Y5vN6O2jNJcGsFbM4c2BCV0Bry78lAym1VerT-KERDqf6q6sbJHmMiuzhIjmUqiY0WRD-vOZJymzOJp8IvQVZ2d57fQceDfVn0qnviRLGj1so7K4uefNHoaw6oUyCpFIHGAeIBGKGDXUMbNr4KzNA16l44Zf1O0ZW8bH6wA-mPZToP4djQg1L0SasG73kcxzdlAZrQ69ZirfTLTqjxs"/>
+</div>
+</div>
+<div class="md:col-span-4 space-y-6">
+<span class="font-label-caps text-label-caps text-mortar-gray uppercase">Case Study 01</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Luxury Terrace</h2>
+<p class="font-body-md text-body-md text-secondary">
+                        Situated overlooking the valley, this project utilized our hand-pressed terracotta to create a seamless transition between the indoor living space and the infinity pool surround. The natural variations in the clay mirror the rugged mountain landscape.
+                    </p>
+<div class="pt-4 border-t border-mortar-gray/20 space-y-2">
+<p class="font-label-caps text-label-caps"><span class="text-mortar-gray">LOCATION:</span> STELLENBOSCH, ZA</p>
+<p class="font-label-caps text-label-caps"><span class="text-mortar-gray">SPEC:</span> CLASSIC RECTANGLE, 150X300MM</p>
+</div>
+</div>
+</div>
+<div class="reveal-on-scroll grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-4 md:order-1 order-2 space-y-6">
+<span class="font-label-caps text-label-caps text-mortar-gray uppercase">Case Study 02</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Residential Courtyard</h2>
+<p class="font-body-md text-body-md text-secondary">
+                        A modern minimalist courtyard designed as a sanctuary of light. Our herringbone pattern creates a rhythmic ground plane that anchors the architectural volume of the main residence while maintaining a warm, organic texture underfoot.
+                    </p>
+<div class="pt-4 border-t border-mortar-gray/20 space-y-2">
+<p class="font-label-caps text-label-caps"><span class="text-mortar-gray">LOCATION:</span> CAPE TOWN, ZA</p>
+<p class="font-label-caps text-label-caps"><span class="text-mortar-gray">SPEC:</span> SLIM BRICK, 50X200MM (HERRINGBONE)</p>
+</div>
+</div>
+<div class="md:col-span-8 md:order-2 order-1 relative group overflow-hidden">
+<div class="aspect-[16/9] w-full bg-surface-container overflow-hidden">
+<img alt="Residential Courtyard" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLsazRov7PYrbwfjStHyKEgdX8DiYNi5c16ew7keIUFdKUaGO8pJw1SlodtJYOrebaZtv5G2jhUc4ZzdED1Av4h0R5CMDkk71WAUfKFzeQrRVHzVRLmlYnoIJMX11KWz6DHMJg5OkNxZU1ohNOUUaLseBacLqtXucpdf6F5S2DjFW3JSsdlQ9Mj_F9Xc6XIpywHFNFjI10WkDjq4kHc8nnzzELBNLi5v8tgUxSZmPXyZPEVzhgcDtZo6dFo"/>
+</div>
+</div>
+</div>
+<div class="reveal-on-scroll grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-7 relative group overflow-hidden">
+<div class="aspect-[4/5] w-full bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="A high-end commercial wine estate terrace featuring Leo Tiles terracotta. The setting is an expansive vineyard at sunset, with warm golden light hitting the rich clay-colored tiles. The architecture is a mix of glass and heavy timber beams. Professional architectural photography style, editorial luxury aesthetic with deep shadows and vibrant textures." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDwe0hmhYK088tZ9Ww3VedUomh9_9h_RHxxy_6CYIxH6zOpnEEmSmaGJ-JXZduBF1CHvwdCkw5gGj4Tx86tXiTyYvsVghPrrWXC4J99CLlWCTyZ1U7rLOWEHoH1ucnZmKib0M0rEDJ_5RO4MjsK2S0Zf5NNBOSJYiC0smKvQG4KUIfV-U9g3kuXkLCJApaDK0GBPAfYcAQnDUsltmzi08RvTW2sJrYbrxUZNLLGIVRQ68hJ1mBkN6hrFm_odhPB32xdBW3-5BnqfZ8')"></div>
+</div>
+</div>
+<div class="md:col-span-4 md:col-start-9 space-y-6">
+<span class="font-label-caps text-label-caps text-mortar-gray uppercase">Case Study 03</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Commercial Wine Estate</h2>
+<p class="font-body-md text-body-md text-secondary">
+                        Designed for high traffic without sacrificing artisanal soul. This estate chose our extra-fired pavers for their durability and "kiln-glow" patina, which deepens and matures beautifully with the estate's world-class vintage.
+                    </p>
+<div class="pt-4 border-t border-mortar-gray/20 space-y-2">
+<p class="font-label-caps text-label-caps"><span class="text-mortar-gray">LOCATION:</span> FRANSCHHOEK, ZA</p>
+<p class="font-label-caps text-label-caps"><span class="text-mortar-gray">SPEC:</span> HEAVY DUTY SQUARE, 400X400MM</p>
+</div>
+<button class="border border-charcoal-ash px-8 py-3 font-label-caps text-label-caps uppercase tracking-widest hover:bg-charcoal-ash hover:text-warm-linen transition-all duration-300 flex items-center group">
+                        View Full Project
+                        <span class="material-symbols-outlined ml-2 transition-transform duration-300 group-hover:translate-x-1" style="font-size: 16px;">north_east</span>
+</button>
+</div>
+</div>
+<div class="reveal-on-scroll bg-sand-bone p-12 md:p-24 grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 space-y-8">
+<span class="font-label-caps text-label-caps text-primary uppercase">Preservation</span>
+<h2 class="font-headline-lg text-headline-lg text-primary leading-tight">Heritage Restorations</h2>
+<p class="font-quote text-quote text-charcoal-ash italic">
+                        "Leo Tiles provided the only match for our 18th-century masonry restoration. The color depth and structural integrity were indistinguishable from the original site remains."
+                    </p>
+<p class="font-body-md text-body-md text-secondary">
+                        Restoring historical landmarks requires a deep understanding of 1975 firing techniques. We work with conservationists to reproduce heritage profiles that honor the original architectural intent.
+                    </p>
+</div>
+<div class="md:col-span-6 md:col-start-7">
+<div class="aspect-square bg-warm-linen overflow-hidden shadow-sm">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-1000 hover:scale-110" data-alt="Close up architectural detail of heritage restoration with Leo Tiles. A weathered stone wall meets fresh but historically accurate terracotta tile paving. The lighting is soft morning overcast, highlighting the intricate patinas and handmade textures. The shot is a high-angle architectural detail focusing on material intersection. Calm, authoritative, and professional." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBrCb6mBUPeSkMhZruJyh8iXCRlqd4T78MviwFQXdtZn1FyygISaWT3Jrkfhc5Xoq1-iA64Zi5FvAZ0hnWuTAMxKvU4hy0pwbD21vMzLRWkpx2bxeh0YD6gn4KfTFBKnrthQUtgbp587KhluxY3jeUxl3iY1KRc-RDRfHQ5_XmeGQsnsyDI-rpXEb6S_weM5e3N50rIFV3ttr9NYL8xycT6OH4glpVqq2P0OlwjO94_AFyM5C_m9iwlCGDEoQi32SjSFEWO3DNM10w')"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-section-gap-desktop bg-charcoal-ash text-warm-linen">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter text-center space-y-8">
+<h2 class="font-headline-lg text-headline-lg">Elevate your next project.</h2>
+<p class="font-body-lg text-body-lg max-w-2xl mx-auto text-warm-linen/70">
+                    We partner with architects and designers worldwide to provide bespoke tiling solutions that stand the test of time.
+                </p>
+<div class="flex flex-col md:flex-row justify-center gap-6 pt-8">
+<button class="bg-clay-deep px-12 py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-kiln-glow transition-all duration-300">
+                        Order Sample Kit
+                    </button>
+<button class="border border-warm-linen/30 px-12 py-4 font-label-caps text-label-caps uppercase tracking-widest hover:border-warm-linen transition-all duration-300">
+                        Download Catalog
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full py-section-gap-desktop bg-sand-bone">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter max-w-container-max mx-auto px-margin-mobile">
+<div class="md:col-span-4 space-y-6">
+<span class="font-headline-lg text-headline-lg text-primary">LEO TILES</span>
+<p class="font-body-md text-body-md text-secondary max-w-xs">
+                    © 1975 Leo Tiles. Handcrafted Architectural Heritage.
+                </p>
+</div>
+<div class="md:col-span-2 md:col-start-6 space-y-4">
+<p class="font-label-caps text-label-caps text-charcoal-ash uppercase">Social</p>
+<ul class="space-y-2">
+<li><a class="font-body-md text-on-secondary-fixed-variant hover:text-clay-deep underline decoration-1" href="#">Instagram</a></li>
+<li><a class="font-body-md text-on-secondary-fixed-variant hover:text-clay-deep underline decoration-1" href="#">Pinterest</a></li>
+<li><a class="font-body-md text-on-secondary-fixed-variant hover:text-clay-deep underline decoration-1" href="#">LinkedIn</a></li>
+</ul>
+</div>
+<div class="md:col-span-2 space-y-4">
+<p class="font-label-caps text-label-caps text-charcoal-ash uppercase">Legal</p>
+<ul class="space-y-2">
+<li><a class="font-body-md text-on-secondary-fixed-variant hover:text-clay-deep underline decoration-1" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-on-secondary-fixed-variant hover:text-clay-deep underline decoration-1" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="md:col-span-3 space-y-4">
+<p class="font-label-caps text-label-caps text-charcoal-ash uppercase">Commitment</p>
+<ul class="space-y-2">
+<li><a class="font-body-md text-on-secondary-fixed-variant hover:text-clay-deep underline decoration-1" href="#">Sustainability</a></li>
+<li><a class="font-body-md text-on-secondary-fixed-variant hover:text-clay-deep underline decoration-1" href="#">Artisanal Sourcing</a></li>
+</ul>
+</div>
+</div>
+</footer>
+<script>
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+        // Horizontal scroll progress bar
+        const progressBar = document.createElement('div');
+        progressBar.style.position = 'fixed';
+        progressBar.style.top = '0';
+        progressBar.style.left = '0';
+        progressBar.style.height = '3px';
+        progressBar.style.backgroundColor = '#88452d';
+        progressBar.style.zIndex = '100';
+        progressBar.style.transition = 'width 0.1s ease-out';
+        document.body.appendChild(progressBar);
+
+        window.addEventListener('scroll', () => {
+            const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (window.scrollY / windowHeight) * 100;
+            progressBar.style.width = progress + '%';
+        });
+    </script>
+</body></html>

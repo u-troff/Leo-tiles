@@ -21,7 +21,7 @@ const differentiators = [
   {
     icon: Ruler,
     title: "Custom Sizes to Specification",
-    description: "We manufacture to order. Any size, any shape — specify what your project needs and we'll produce it.",
+    description: "We manufacture to order. Any size, any shape, specify what your project needs and we'll produce it.",
   },
   {
     icon: Clock,
@@ -92,7 +92,7 @@ export default function WhyChooseUs() {
             </div>
           </div>
 
-          {/* Right — Sticky image */}
+          {/* Right, Sticky image */}
           <div className="relative lg:sticky lg:top-24">
             <div className="relative aspect-[3/4] overflow-hidden">
               <Image

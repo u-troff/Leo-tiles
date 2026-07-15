@@ -27,12 +27,12 @@ export const guides: Guide[] = [
       {
         number: "01",
         title: "Understand the size variation",
-        body: "Because every tile is hand pressed and shaped, expect a natural size variation of approximately 6–8% across a batch. This isn't a defect to sort out — it's the reason the joint needs to be wide enough to absorb it.",
+        body: "Because every tile is hand pressed and shaped, expect a natural size variation of approximately 6–8% across a batch. This isn't a defect to sort out, it's the reason the joint needs to be wide enough to absorb it.",
       },
       {
         number: "02",
         title: "Use a 25mm joint outdoors",
-        body: "For our standard 300×300mm tile laid outdoors, we recommend a 25mm joint as the average. At this spacing, coverage works out to roughly 9 tiles per m² — which is also why we sell by the tile rather than by the box.",
+        body: "For our standard 300×300mm tile laid outdoors, we recommend a 25mm joint as the average. At this spacing, coverage works out to roughly 9 tiles per m², which is also why we sell by the tile rather than by the box.",
       },
       {
         number: "03",
@@ -42,7 +42,7 @@ export const guides: Guide[] = [
       {
         number: "04",
         title: "Match your grout to the joint",
-        body: "Wider joints call for a sand-cement or flexible grout rather than a rigid, fine-line product — rigid grout is more likely to crack under the natural movement of a wide outdoor joint.",
+        body: "Wider joints call for a sand-cement or flexible grout rather than a rigid, fine-line product, rigid grout is more likely to crack under the natural movement of a wide outdoor joint.",
       },
       {
         number: "05",

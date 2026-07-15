@@ -253,7 +253,7 @@ export default function QuoteEstimator() {
                 </div>
                 <p className="text-white/40 text-xs leading-relaxed pt-2">
                   This is an estimated guide price. Final pricing is confirmed when you contact us
-                  — custom sizes, site conditions, and project complexity may affect the final quote.
+                 , custom sizes, site conditions, and project complexity may affect the final quote.
                 </p>
               </div>
             )}

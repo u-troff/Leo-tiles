@@ -9,7 +9,7 @@ export default function FounderStory() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* Left — Owner photo */}
+          {/* Left, Owner photo */}
           <div className="relative order-2 lg:order-1">
             <div className="relative aspect-[3/4] max-w-sm overflow-hidden">
               <Image
@@ -40,14 +40,14 @@ export default function FounderStory() {
               {siteConfig.businessName} began in Kraaifontein with little more than a kiln, a
               passion for clay, and {siteConfig.founder.name}&apos;s determination to do things the
               hard, honest way. What started as a small workshop has grown into South Africa&apos;s
-              most trusted source for handmade terracotta — but the process has never changed.
+              most trusted source for handmade terracotta, but the process has never changed.
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed text-[15px]">
               {siteConfig.founder.bio}
             </p>
             <p className="text-gray-600 mb-8 leading-relaxed text-[15px]">
               Today, {siteConfig.businessName} supplies homeowners, architects, and restoration
-              projects across {siteConfig.serviceAreas.slice(0, 5).join(", ")}, and beyond — every
+              projects across {siteConfig.serviceAreas.slice(0, 5).join(", ")}, and beyond, every
               tile still shaped and fired by hand in the same Cape Town kiln.
             </p>
 

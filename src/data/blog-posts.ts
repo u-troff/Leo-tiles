@@ -13,14 +13,14 @@ export const blogPosts: BlogPost[] = [
     title: "7 Signs You Need to Call a Plumber Immediately",
     date: "2025-01-15",
     excerpt:
-      "Some plumbing issues can wait — but these seven warning signs mean you should pick up the phone right away to prevent costly damage.",
+      "Some plumbing issues can wait, but these seven warning signs mean you should pick up the phone right away to prevent costly damage.",
     image: "https://images.pexels.com/photos/14953886/pexels-photo-14953886.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
     content: `
 Not every plumbing issue is an emergency, but ignoring the wrong signs can turn a small problem into a major disaster. Here are seven warning signs that mean you should call a professional plumber immediately.
 
 ## 1. Water Backing Up in Multiple Drains
 
-If water is backing up in more than one drain simultaneously — for example, your toilet and shower at the same time — this likely indicates a main sewer line blockage. This is not a problem you can fix with a plunger.
+If water is backing up in more than one drain simultaneously, for example, your toilet and shower at the same time, this likely indicates a main sewer line blockage. This is not a problem you can fix with a plunger.
 
 ## 2. No Hot Water
 
@@ -36,7 +36,7 @@ The smell of sewage inside your home indicates a broken or blocked sewer line. T
 
 ## 5. Water Stains on Ceilings or Walls
 
-Brown water stains on your ceiling or walls mean there is an active leak somewhere in your plumbing system. The longer you wait, the more damage — including mold growth — will occur.
+Brown water stains on your ceiling or walls mean there is an active leak somewhere in your plumbing system. The longer you wait, the more damage, including mold growth, will occur.
 
 ## 6. Low Water Pressure Throughout the House
 
@@ -48,7 +48,7 @@ Gurgling sounds indicate trapped air in your plumbing system, which often signal
 
 ## When in Doubt, Call a Professional
 
-If you notice any of these signs, don't wait. Call a licensed plumber to assess the situation before it becomes a bigger — and more expensive — problem.
+If you notice any of these signs, don't wait. Call a licensed plumber to assess the situation before it becomes a bigger, and more expensive, problem.
     `.trim(),
   },
   {
@@ -78,12 +78,12 @@ Tank water heaters store 40-80 gallons of hot water in an insulated tank, keepin
 
 ## Tankless Water Heaters
 
-Tankless (on-demand) water heaters heat water only when you turn on a hot water faucet. They don't store hot water — they create it in real time.
+Tankless (on-demand) water heaters heat water only when you turn on a hot water faucet. They don't store hot water, they create it in real time.
 
 **Pros:**
 - Endless hot water supply
 - Lower monthly energy costs (20-30% savings)
-- Compact size — wall-mounted
+- Compact size, wall-mounted
 - Longer lifespan (20+ years)
 
 **Cons:**
@@ -110,7 +110,7 @@ Our team can evaluate your home's hot water needs, existing plumbing setup, and 
       "Frozen pipes can burst and cause thousands in water damage. Learn the simple steps you can take to protect your plumbing this winter.",
     image: "https://images.pexels.com/photos/35016079/pexels-photo-35016079.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
     content: `
-While Southern California winters are mild compared to much of the country, freezing temperatures do occur — especially in foothill communities like Altadena, La Cañada Flintridge, and Sierra Madre. A single frozen pipe can burst and cause thousands of dollars in water damage.
+While Southern California winters are mild compared to much of the country, freezing temperatures do occur, especially in foothill communities like Altadena, La Cañada Flintridge, and Sierra Madre. A single frozen pipe can burst and cause thousands of dollars in water damage.
 
 ## Why Do Pipes Freeze?
 

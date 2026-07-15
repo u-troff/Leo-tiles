@@ -4,7 +4,7 @@ export const siteConfig = {
   tradePlural: "tiling",
   tradeProfessional: "tile specialist",
   tradeProfessionalPlural: "tile specialists",
-  tagline: "South Africa's Original Handmade Terracotta Tile Makers — Crafted by Hand Since 1975",
+  tagline: "South Africa's Original Handmade Terracotta Tile Makers, Crafted by Hand Since 1975",
   phone: "+27 79 150 0160",
   phoneRaw: "+27791500160",
   officePhone: "+27 21 988 9491",

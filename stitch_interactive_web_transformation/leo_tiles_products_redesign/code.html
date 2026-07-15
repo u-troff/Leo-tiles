@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Collection | LEO TILES</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#ffdbd0",
+                    "primary-container": "#171210",
+                    "surface-dim": "#171210",
+                    "architectural-gold": "#D9A441",
+                    "primary-fixed": "#ece0dc",
+                    "on-error-container": "#ffdad6",
+                    "surface-bright": "#3e3835",
+                    "on-error": "#690005",
+                    "charcoal-ink": "#171210",
+                    "error-container": "#93000a",
+                    "on-surface-variant": "#d1c4bf",
+                    "surface": "#171210",
+                    "inverse-on-surface": "#352f2d",
+                    "tertiary-container": "#2b0700",
+                    "primary": "#cfc4c1",
+                    "surface-container-high": "#2f2926",
+                    "heritage-wine": "#6B1E2B",
+                    "surface-container-lowest": "#120d0b",
+                    "surface-container": "#241e1c",
+                    "outline-variant": "#4e4542",
+                    "on-tertiary-fixed": "#390b00",
+                    "on-primary-container": "#857c79",
+                    "tertiary": "#ffb59d",
+                    "on-tertiary-fixed-variant": "#842500",
+                    "secondary-fixed-dim": "#cdc6ba",
+                    "on-primary": "#352f2d",
+                    "error": "#ffb4ab",
+                    "on-tertiary-container": "#d95222",
+                    "inverse-surface": "#ece0dc",
+                    "secondary-fixed": "#e9e1d6",
+                    "outline": "#9a8e8a",
+                    "surface-container-highest": "#3a3331",
+                    "on-background": "#ece0dc",
+                    "surface-variant": "#3a3331",
+                    "on-secondary-fixed-variant": "#4a463e",
+                    "on-surface": "#ece0dc",
+                    "on-secondary-container": "#beb8ac",
+                    "on-primary-fixed-variant": "#4c4543",
+                    "surface-tint": "#cfc4c1",
+                    "background": "#171210",
+                    "tertiary-fixed-dim": "#ffb59d",
+                    "on-secondary-fixed": "#1e1b14"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "grid-columns": "12",
+                    "margin-desktop": "64px",
+                    "section-gap": "120px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Inter"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "display-hero": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["36px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "38px", "fontWeight": "600"}],
+                    "display-hero": ["84px", {"lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .hero-gradient { background: linear-gradient(to bottom, rgba(23,18,16,0.3) 0%, rgba(23,18,16,1) 100%); }
+    </style>
+</head>
+<body class="bg-charcoal-ink text-on-surface font-body-md overflow-x-hidden selection:bg-architectural-gold selection:text-charcoal-ink">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-charcoal-ink/70 backdrop-blur-md border-b border-architectural-gold/30 flex justify-between items-center px-64 py-6 w-full max-w-full transition-all duration-700 ease-in-out md:px-margin-desktop">
+<div class="font-display-hero text-headline-md tracking-tighter text-on-surface">LEO TILES</div>
+<div class="hidden md:flex gap-12">
+<a class="font-label-caps text-label-caps text-architectural-gold border-b border-architectural-gold pb-1" href="#">Products</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-architectural-gold transition-colors" href="#">Work Gallery</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-architectural-gold transition-colors" href="#">Guides</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-architectural-gold transition-colors" href="#">Wine Farms</a>
+</div>
+<button class="font-label-caps text-label-caps bg-bone-cream text-charcoal-ink px-8 py-3 hover:opacity-80 transition-opacity duration-500">
+            Get a Quote
+        </button>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="px-margin-desktop mb-section-gap relative min-h-[614px] flex flex-col justify-end pb-20">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center grayscale opacity-40" data-alt="A high-contrast architectural photograph of a luxury indoor patio featuring artisanal terracotta floor tiles. The lighting is dramatic, with long shadows from early morning sun streaming through large floor-to-ceiling windows. The color palette is dominated by Charcoal-Ink and Bone-Cream, emphasizing the deep texture of the fired clay surfaces in a cinematic, minimalist style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCzKoBhNhM2NXJrcPwvavJDln9dl_YVvBWaCJOcs8HxcwB34i4gtDz2j6v7LoD1HymgmS4rogsmOxV9NpY3W2rjtAw5FzNf0vH_cJ-xbmv6sSD0Z2SyESnL88mFprhIr39rbAzwtDjGZyGve-frHvjMYsnJYTn_gTT4K-s_q5vKY4taJNZhLok-jzvF36GRpoRPcbe3nuy_tz49VnNq9wysWskkM8G2tO_DwsvxgL68dn20McE3HaOO0uqXHDj6obFzHdjhfAxYQ8s')"></div>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 max-w-4xl">
+<span class="font-label-caps text-label-caps text-architectural-gold mb-4 block">ARTISAN CURATION</span>
+<h1 class="font-display-hero text-display-hero leading-none mb-6">The Collection</h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl">A meticulous orchestration of form, earth, and fire. Each signature piece in our catalog is hand-crafted to endure as an architectural legacy.</p>
+</div>
+</section>
+<!-- Product Grid Section -->
+<section class="px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-x-gutter gap-y-section-gap">
+<!-- Batavian Floor Tiles -->
+<div class="reveal flex flex-col gap-6">
+<div class="aspect-[4/5] relative overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="Close-up architectural shot of Batavian Floor Tiles laid in a seamless pattern. The tiles have a raw, matte finish with subtle tonal variations of charcoal and bone. Soft sidelighting highlights the hand-pressed texture and sharp geometric precision. The atmosphere is sophisticated and premium, evoking a luxury design journal aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8tp00beSZDAqmmuUmeX5qK4VQHoClfhYX4DZ4-nCnraeno_i2gR-tK2xwU_4vElApwyKBr86-FPCo9qvBDzf2KxdECNL28TmnA5_za1OZXE2dhULDmoCMUQZV05sxA-K-RreIVZp_XwaiQTG_ddwLsEOxN0ZSVFLQyILCQn2UCr6-NrtfBSTk4Fh1HrYivr95zwvFC-hzQaqlHmj_hdILHjd07XQokPteEKFeGqSNMQq7oKRGFROScdntbp4BVt6SY1OG0v_XoZA"/>
+<div class="absolute top-0 left-0 w-full h-1 bg-architectural-gold"></div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-baseline border-b border-outline-variant pb-4">
+<h3 class="font-headline-md text-headline-md">Batavian Floor Tiles</h3>
+<span class="font-label-caps text-label-caps text-architectural-gold">SIGNATURE SERIES</span>
+</div>
+<div class="grid grid-cols-2 gap-8 py-2">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">DIMENSIONS</p>
+<p class="font-body-md">300mm x 300mm x 25mm</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">LEAD TIME</p>
+<p class="font-body-md">6 - 8 Weeks</p>
+</div>
+</div>
+<button class="w-full bg-bone-cream text-charcoal-ink font-label-caps text-label-caps py-5 mt-4 hover:bg-architectural-gold transition-colors duration-300">REQUEST SAMPLE</button>
+</div>
+</div>
+<!-- Dutch Style Klompies -->
+<div class="reveal flex flex-col gap-6 md:mt-24">
+<div class="aspect-[4/5] relative overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="Editorial photograph of Dutch Style Klompies arranged in a herringbone pattern on a vertical feature wall. The brick-like tiles show a rich, weathered texture with deep ochre and charcoal tones. The lighting is moody and focused, creating high contrast between the tile joints and the clay surfaces, consistent with a cinematic architectural aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgFuJ6FYKgDQ-9dQPWzOu9rw5X7eJDP-QpFbFLK_VQVM2_GMB1Vr3FYMkwjAgcOqtAkNWZP-fE5WvVa_ljMJUkfVMhtkEvOl6PjF7GYZuIDqcOleWXndysIs7BOvntqLHHZjlykPck0ELiqQoyqiDfLOaIZuG5VLNqYJ236s-GsVlUCrPp4MblSGtHfityMB8ZmPm9Xvs5VTU9bedjEgum-FUWpvTHr8-LozdJSIwpngbFO5BkUmuE6jM3ua4dcxyc4kevsbAk-PA"/>
+<div class="absolute top-0 left-0 w-full h-1 bg-architectural-gold"></div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-baseline border-b border-outline-variant pb-4">
+<h3 class="font-headline-md text-headline-md">Dutch Style Klompies</h3>
+<span class="font-label-caps text-label-caps text-architectural-gold">HERITAGE RANGE</span>
+</div>
+<div class="grid grid-cols-2 gap-8 py-2">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">DIMENSIONS</p>
+<p class="font-body-md">230mm x 50mm x 20mm</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">LEAD TIME</p>
+<p class="font-body-md">4 - 6 Weeks</p>
+</div>
+</div>
+<button class="w-full bg-bone-cream text-charcoal-ink font-label-caps text-label-caps py-5 mt-4 hover:bg-architectural-gold transition-colors duration-300">REQUEST SAMPLE</button>
+</div>
+</div>
+<!-- Hexagon Shaped Tiles -->
+<div class="reveal flex flex-col gap-6">
+<div class="aspect-[4/5] relative overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="A geometric arrangement of hexagonal terracotta tiles displayed in a minimalist studio setting. The tiles are a deep, uniform charcoal grey with a slight satin sheen. The lighting is architectural and sharp, casting distinct shadows that emphasize the honeycomb pattern. The mood is modern, high-end, and perfectly aligned with a cinematic architectural journal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrGxPwDaRL9xbuiQKY7PwBsI2xmVgIdjgN79F8_Yty8l3PD2mYrHkkYPMfvzezlV0-AOSsDKxVPEma60iiB-uB-tOgEg0bz-vxzPAGl7Vy0jYaFHm4p-9fVs2557y-81mjWGEMXeTv8qvUEH_fz1Y8E_elvO6PrjUp9qwP2rgPiVYW_HewQjF3DHmLmZFro5a8WvKX6AUmuWYi9qg9Vt3eTBGCynebpwPUQ08gBZk04XzkzR8aIESFnqLgxtW_RaGCuidmgcYsfUs"/>
+<div class="absolute top-0 left-0 w-full h-1 bg-architectural-gold"></div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-baseline border-b border-outline-variant pb-4">
+<h3 class="font-headline-md text-headline-md">Hexagon Shaped Tiles</h3>
+<span class="font-label-caps text-label-caps text-architectural-gold">GEOMETRIC FORM</span>
+</div>
+<div class="grid grid-cols-2 gap-8 py-2">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">DIMENSIONS</p>
+<p class="font-body-md">150mm Side-to-Side</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">LEAD TIME</p>
+<p class="font-body-md">8 - 10 Weeks</p>
+</div>
+</div>
+<button class="w-full bg-bone-cream text-charcoal-ink font-label-caps text-label-caps py-5 mt-4 hover:bg-architectural-gold transition-colors duration-300">REQUEST SAMPLE</button>
+</div>
+</div>
+<!-- Accessories / Bullnose -->
+<div class="reveal flex flex-col gap-6 md:mt-24">
+<div class="aspect-[4/5] relative overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="Detailed close-up of bullnose edging and custom clay trim accessories. The image focuses on the curved edges and smooth finish of the pieces, styled against a backdrop of dark charcoal stone. High-contrast lighting captures the tactile quality and premium finish. The palette is muted with gold highlights, reflecting a prestigious and artisanal brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3-kmWSjvXLR8Pd-eXs848YryTH2-Hd9rOXZ5pXoy-UxSy30QgPPm12OqE-6SkTqtEdb1ensLwIUDp-EDZIipvuPJ3zMxHmQvPi1qxObIGYbBFD7bsH-LnEUMWhseOPpikemsAL5EMj6GjsXcwC38NhYZCp4Tl90S1Ucc79mD3UvpTV5_gUyQDBVz5psbN6Vv-n9Z_N9zxw2Tb0cED9aq5MBwa7Ca58Bu4hOzFxdoohB2OxHOeoCNfFVH1rM7RcYB7E1PQKFBsP9w"/>
+<div class="absolute top-0 left-0 w-full h-1 bg-architectural-gold"></div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-baseline border-b border-outline-variant pb-4">
+<h3 class="font-headline-md text-headline-md">Project Accessories</h3>
+<span class="font-label-caps text-label-caps text-architectural-gold">FINISHING DETAILS</span>
+</div>
+<div class="grid grid-cols-2 gap-8 py-2">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">DIMENSIONS</p>
+<p class="font-body-md">Custom Specifications</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">LEAD TIME</p>
+<p class="font-body-md">3 Weeks</p>
+</div>
+</div>
+<button class="w-full bg-bone-cream text-charcoal-ink font-label-caps text-label-caps py-5 mt-4 hover:bg-architectural-gold transition-colors duration-300">REQUEST SAMPLE</button>
+</div>
+</div>
+</section>
+<!-- Fired Clay Accessories - Wine Red Section -->
+<section class="mt-section-gap py-section-gap bg-heritage-wine relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]"></div>
+<div class="px-margin-desktop relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-5 flex flex-col justify-center">
+<span class="font-label-caps text-label-caps text-bone-cream/60 mb-4 block">CURATED HERITAGE</span>
+<h2 class="font-display-hero text-headline-lg text-bone-cream mb-8">Fired Clay Accessories</h2>
+<p class="font-body-lg text-bone-cream/80 mb-12">Designed for the world's most prestigious wine estates, our red-fired accessories offer an aged, sophisticated aesthetic that transcends trends.</p>
+<div class="flex flex-col gap-6">
+<div class="flex justify-between items-center border-b border-bone-cream/20 pb-4">
+<span class="font-label-caps text-label-caps text-bone-cream">VINTAGE TRIM</span>
+<span class="font-body-md text-bone-cream">$45.00 / UNIT</span>
+</div>
+<div class="flex justify-between items-center border-b border-bone-cream/20 pb-4">
+<span class="font-label-caps text-label-caps text-bone-cream">ESTATE COPING</span>
+<span class="font-body-md text-bone-cream">$82.00 / UNIT</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-7 reveal">
+<div class="relative">
+<div class="absolute -inset-4 border border-architectural-gold/30"></div>
+<img class="w-full h-[500px] object-cover relative z-10 grayscale-[0.2] contrast-125" data-alt="A series of handcrafted clay accessories for a wine estate, featuring deep burgundy and burnt sienna tones. The pieces are arranged on a dark oak surface, captured with soft, warm lighting that emphasizes their heritage feel. The composition is elegant and editorial, reminiscent of a high-end architectural magazine spread for a vineyard project." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArFlpM6s5gYSd7pOO3sk9xoZhtgMaR4ZtD41jbZwfU3qSHtu9H6TEuith7m-eLBYr9FD73bhvjsn526htWxLxn6vCzPum40NR7bYsj-MMv5Am9xZta96Q7POiMsobjsx-jWmje_Ih9x_kHhQea17SxIjqqO4dwBupO1KeFbfwXKDLCtSiRD5pnV28qkklS3-ctDsCY6snkYK7u3XlQ34DenPSNokAbbKR6wTU7o7FSXlZL1F5BwL-Fs_tJoW5dgnlo-7AOZbfBqwk"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Integrity Section -->
+<section class="px-margin-desktop py-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl">
+<span class="font-label-caps text-label-caps text-architectural-gold mb-4 block">SPECIFICATIONS</span>
+<h2 class="font-display-hero text-headline-lg">Technical Integrity</h2>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 border border-outline-variant px-6 py-3 font-label-caps text-label-caps hover:bg-on-surface hover:text-charcoal-ink transition-all">
+<span class="material-symbols-outlined text-sm">download</span> DOWNLOAD PDF SPECS
+                    </button>
+</div>
+</div>
+<div class="overflow-x-auto no-scrollbar">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-architectural-gold/50">
+<th class="py-6 font-label-caps text-label-caps text-on-surface-variant">TEST CRITERIA</th>
+<th class="py-6 font-label-caps text-label-caps text-on-surface-variant">STANDARD APPLIED</th>
+<th class="py-6 font-label-caps text-label-caps text-on-surface-variant">PERFORMANCE</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/30">
+<tr class="reveal hover:bg-surface-container transition-colors">
+<td class="py-8 font-headline-md text-body-lg">Water Absorption</td>
+<td class="py-8 font-body-md text-on-surface-variant italic">ASTM C373-18</td>
+<td class="py-8 font-label-caps text-label-caps text-architectural-gold">&lt; 0.5% (IMPERVIOUS)</td>
+</tr>
+<tr class="reveal hover:bg-surface-container transition-colors">
+<td class="py-8 font-headline-md text-body-lg">Breaking Strength</td>
+<td class="py-8 font-body-md text-on-surface-variant italic">ISO 10545-4</td>
+<td class="py-8 font-label-caps text-label-caps text-architectural-gold">&gt; 1300 N</td>
+</tr>
+<tr class="reveal hover:bg-surface-container transition-colors">
+<td class="py-8 font-headline-md text-body-lg">Slip Resistance</td>
+<td class="py-8 font-body-md text-on-surface-variant italic">DIN 51130</td>
+<td class="py-8 font-label-caps text-label-caps text-architectural-gold">R11 CATEGORY</td>
+</tr>
+<tr class="reveal hover:bg-surface-container transition-colors">
+<td class="py-8 font-headline-md text-body-lg">Frost Resistance</td>
+<td class="py-8 font-body-md text-on-surface-variant italic">EN ISO 10545-12</td>
+<td class="py-8 font-label-caps text-label-caps text-architectural-gold">FULLY RESISTANT</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Newsletter / CTA -->
+<section class="px-margin-desktop mb-section-gap">
+<div class="bg-surface-container p-16 md:p-24 flex flex-col items-center text-center relative overflow-hidden">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-architectural-gold"></div>
+<h2 class="font-display-hero text-headline-lg max-w-2xl mb-8">Ready to define your space with precision?</h2>
+<div class="flex flex-col md:flex-row gap-4 w-full max-w-xl">
+<input class="flex-1 bg-transparent border-b border-architectural-gold py-4 font-label-caps text-label-caps focus:outline-none focus:border-white transition-colors" placeholder="ENTER YOUR ARCHITECTURAL EMAIL" type="email"/>
+<button class="bg-architectural-gold text-charcoal-ink font-label-caps text-label-caps px-12 py-4 hover:bg-bone-cream transition-colors duration-500">SUBSCRIBE</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-charcoal-ink border-t border-architectural-gold flex flex-col gap-section-gap px-margin-desktop py-section-gap max-w-full">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12">
+<div class="font-display-hero text-display-hero text-on-surface uppercase tracking-tighter">LEO TILES</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-x-20 gap-y-8">
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-architectural-gold">COLLECTIONS</span>
+<a class="font-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">Products</a>
+<a class="font-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">Gallery</a>
+<a class="font-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">Guides</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-architectural-gold">STUDIO</span>
+<a class="font-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">About</a>
+<a class="font-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">Blog</a>
+<a class="font-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">Contact</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-architectural-gold">FOLLOW</span>
+<a class="font-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">Instagram</a>
+<a class="font-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">LinkedIn</a>
+<a class="font-body-md text-on-surface-variant hover:text-architectural-gold transition-colors duration-300" href="#">Pinterest</a>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-outline-variant/20">
+<p class="font-body-md text-on-surface-variant">© 2024 LEO TILES. ARTISAN PRECISION.</p>
+<div class="flex gap-8 mt-6 md:mt-0">
+<span class="font-label-caps text-[10px] text-on-surface-variant">PRIVACY POLICY</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant">TERMS OF SERVICE</span>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Scroll Reveal Observer
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Top Nav Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-4');
+                nav.classList.remove('py-6');
+                nav.style.backgroundColor = 'rgba(23,18,16,0.95)';
+            } else {
+                nav.classList.add('py-6');
+                nav.classList.remove('py-4');
+                nav.style.backgroundColor = 'rgba(23,18,16,0.7)';
+            }
+        });
+    </script>
+</body></html>

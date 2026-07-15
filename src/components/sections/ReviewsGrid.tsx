@@ -1,42 +1,35 @@
-import { Star } from "lucide-react";
+import { Quote } from "lucide-react";
 import Eyebrow from "@/components/ui/Eyebrow";
 import { reviews } from "@/data/reviews";
 import { siteConfig } from "@/data/site-config";
 
 export default function ReviewsGrid() {
   return (
-    <section className="bg-clay-900 pt-20 pb-24 lg:pt-20 lg:pb-26">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex flex-wrap items-end justify-between gap-10 mb-11">
-          <div>
-            <Eyebrow label="Customer Reviews" tone="dark" />
-            <h2 className="text-2xl lg:text-[28px] font-bold text-stone-50">What our customers say</h2>
-          </div>
-          <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2">
-              <span className="text-rust-500 text-base">★★★★★</span>
-              <span className="text-stone-200 text-sm">
-                {siteConfig.ratings.google} Google · {siteConfig.ratings.reviewCount}+ reviews
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-rust-500 text-base">★★★★★</span>
-              <span className="text-stone-200 text-sm">{siteConfig.ratings.facebook} Facebook</span>
-            </div>
-          </div>
+    <section className="py-24 lg:py-40 bg-warm-linen">
+      <div className="max-w-[1440px] mx-auto px-5 md:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-16 lg:mb-20">
+          <Eyebrow label="Reviews" className="text-center" />
+          <h2 className="font-display text-4xl lg:text-5xl leading-[1.1] text-charcoal-ash mb-6">
+            Architectural Acclaim.
+          </h2>
+          <p className="text-secondary">
+            {siteConfig.ratings.google}★ on Google · {siteConfig.ratings.reviewCount}+ verified reviews ·{" "}
+            {siteConfig.ratings.facebook}★ on Facebook
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8">
-          {reviews.map((review) => (
-            <div key={review.id} className="border-t border-clay-800 pt-6">
-              <div className="flex gap-0.5 mb-4 text-rust-500">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 fill-current" />
-                ))}
-              </div>
-              <p className="text-stone-100 text-[15.5px] italic leading-relaxed mb-4">&ldquo;{review.text}&rdquo;</p>
-              <div className="text-[13.5px] text-stone-400">
-                <span className="font-semibold text-rust-200">{review.name}</span> — {review.platform === "google" ? "Google" : "Facebook"} · {review.platformRating}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          {reviews.slice(0, 3).map((review) => (
+            <div key={review.id} className="bg-sand-bone p-8 lg:p-12 flex flex-col">
+              <Quote className="w-9 h-9 text-clay-deep fill-clay-deep mb-8" />
+              <p className="font-display text-xl lg:text-2xl italic leading-relaxed text-charcoal-ash mb-10 flex-1">
+                &ldquo;{review.text}&rdquo;
+              </p>
+              <div>
+                <p className="label-caps text-charcoal-ash">{review.name}</p>
+                <p className="label-caps text-[10px] text-mortar-gray mt-1">
+                  {review.platform === "google" ? "Google Review" : "Facebook Review"} · {review.platformRating}★
+                </p>
               </div>
             </div>
           ))}

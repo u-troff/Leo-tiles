@@ -38,7 +38,7 @@ export default function ServiceCard({ title, description, icon, slug, className 
       </h3>
       <p className="text-gray-500 text-sm leading-relaxed line-clamp-3">{description}</p>
 
-      {/* Bottom rule — grows on hover */}
+      {/* Bottom rule, grows on hover */}
       <div className="mt-5 h-px bg-stone-300 relative overflow-hidden">
         <div className="absolute inset-y-0 left-0 w-0 group-hover:w-full bg-rust-500 transition-all duration-300" />
       </div>

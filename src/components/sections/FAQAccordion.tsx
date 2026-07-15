@@ -4,16 +4,20 @@ import { homepageFAQs } from "@/data/faqs";
 
 export default function FAQAccordion() {
   return (
-    <section id="faq" className="py-16 lg:py-24 bg-stone-50">
-      <div className="max-w-7xl mx-auto px-4">
-        <Eyebrow label="FAQs" />
-        <h2 className="text-3xl lg:text-4xl font-bold text-clay-900 mb-12 max-w-2xl leading-tight">
-          Questions &amp; answers about handmade terracotta
-        </h2>
-        <div className="max-w-[880px]">
-          {homepageFAQs.map((faq, i) => (
-            <AccordionItem key={faq.question} question={faq.question} answer={faq.answer} defaultOpen={i === 0} />
-          ))}
+    <section id="faq" className="py-24 lg:py-40 bg-sand-bone">
+      <div className="max-w-[1440px] mx-auto px-5 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8">
+          <div className="lg:col-span-4">
+            <Eyebrow label="FAQs" />
+            <h2 className="font-display text-4xl lg:text-5xl leading-[1.1] text-charcoal-ash">
+              Questions &amp; answers about handmade terracotta.
+            </h2>
+          </div>
+          <div className="lg:col-span-7 lg:col-start-6">
+            {homepageFAQs.map((faq, i) => (
+              <AccordionItem key={faq.question} question={faq.question} answer={faq.answer} defaultOpen={i === 0} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

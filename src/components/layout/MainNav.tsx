@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ChevronDown, Menu, X, Flame, Phone } from "lucide-react";
+import { ChevronDown, Menu, X, ArrowRight } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 import { residentialServices } from "@/data/services-residential";
 import { serviceAreas } from "@/data/service-areas";
@@ -17,53 +17,45 @@ export default function MainNav() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-clay-900 border-b border-clay-800">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16 lg:h-[72px]">
+    <header className="sticky top-0 z-50 bg-warm-linen/85 backdrop-blur-md border-b border-mortar-gray/20">
+      <div className="max-w-[1440px] mx-auto px-5 md:px-8">
+        <div className="flex items-center justify-between h-[68px] lg:h-20">
 
           {/* ── Logo ─────────────────────────────────────────── */}
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 bg-rust-500 flex items-center justify-center group-hover:bg-rust-600 transition-colors">
-              <Flame className="w-5 h-5 text-white" />
-            </div>
-            <div className="flex flex-col leading-none">
-              <span className="text-[19px] font-bold text-stone-50 leading-tight">
-                {siteConfig.businessName.split(" ")[0]}
-              </span>
-              <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-rust-300">
-                Handmade Terracotta Tiles
-              </span>
-            </div>
+          <Link href="/" className="flex flex-col leading-none group">
+            <span className="font-display text-2xl lg:text-[26px] font-semibold text-primary tracking-tight">
+              LEO TILES
+            </span>
+            <span className="label-caps text-[9px] text-mortar-gray mt-0.5">
+              Handmade Terracotta · Est. {siteConfig.establishedYear}
+            </span>
           </Link>
 
           {/* ── Desktop Nav ───────────────────────────────────── */}
-          <nav className="hidden lg:flex items-center gap-7">
-            <Link href="/residential" className="nav-link text-sm font-medium text-stone-100/90 hover:text-rust-300 transition-colors">
+          <nav className="hidden lg:flex items-center gap-9">
+            <Link href="/residential" className="nav-link label-caps text-charcoal-ash hover:text-clay-deep transition-colors">
               Products
             </Link>
-            <Link href="/commercial" className="nav-link text-sm font-medium text-stone-100/90 hover:text-rust-300 transition-colors">
-              Accessories
+            <Link href="/work-gallery" className="nav-link label-caps text-charcoal-ash hover:text-clay-deep transition-colors">
+              Gallery
             </Link>
-            <Link href="/guides" className="nav-link text-sm font-medium text-stone-100/90 hover:text-rust-300 transition-colors">
+            <Link href="/guides" className="nav-link label-caps text-charcoal-ash hover:text-clay-deep transition-colors">
               Guides
-            </Link>
-            <Link href="/work-gallery" className="nav-link text-sm font-medium text-stone-100/90 hover:text-rust-300 transition-colors">
-              Work Gallery
             </Link>
 
             {/* Services Dropdown */}
             <div className="relative group">
-              <button className="nav-link flex items-center gap-1 text-sm font-medium text-stone-100/90 hover:text-rust-300 transition-colors">
+              <button className="flex items-center gap-1 label-caps text-charcoal-ash hover:text-clay-deep transition-colors">
                 Services
-                <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" />
+                <ChevronDown className="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180" />
               </button>
-              <div className="absolute top-full left-0 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="bg-clay-800 border border-clay-700 shadow-xl py-2 w-64">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                <div className="bg-warm-linen border border-mortar-gray/25 py-2 w-64">
                   {residentialServices.slice(0, 6).map((service) => (
                     <Link
                       key={service.slug}
                       href={`/services/${service.slug}`}
-                      className="block px-5 py-2.5 text-sm text-stone-100 hover:bg-clay-700 hover:text-rust-300 transition-colors border-l-2 border-transparent hover:border-rust-300"
+                      className="block px-5 py-2.5 text-sm text-charcoal-ash hover:bg-sand-bone hover:text-clay-deep transition-colors"
                     >
                       {service.title}
                     </Link>
@@ -74,17 +66,17 @@ export default function MainNav() {
 
             {/* Service Area Dropdown */}
             <div className="relative group">
-              <button className="nav-link flex items-center gap-1 text-sm font-medium text-stone-100/90 hover:text-rust-300 transition-colors">
+              <button className="flex items-center gap-1 label-caps text-charcoal-ash hover:text-clay-deep transition-colors">
                 Service Area
-                <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" />
+                <ChevronDown className="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180" />
               </button>
-              <div className="absolute top-full left-0 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="bg-clay-800 border border-clay-700 shadow-xl py-2 w-56">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                <div className="bg-warm-linen border border-mortar-gray/25 py-2 w-56">
                   {serviceAreas.map((area) => (
                     <Link
                       key={area.slug}
                       href={`/${area.slug}`}
-                      className="block px-5 py-2.5 text-sm text-stone-100 hover:bg-clay-700 hover:text-rust-300 transition-colors border-l-2 border-transparent hover:border-rust-300"
+                      className="block px-5 py-2.5 text-sm text-charcoal-ash hover:bg-sand-bone hover:text-clay-deep transition-colors"
                     >
                       {area.city}, {area.state}
                     </Link>
@@ -95,66 +87,48 @@ export default function MainNav() {
 
             {/* About Dropdown */}
             <div className="relative group">
-              <button className="nav-link flex items-center gap-1 text-sm font-medium text-stone-100/90 hover:text-rust-300 transition-colors">
-                About Us
-                <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" />
+              <button className="flex items-center gap-1 label-caps text-charcoal-ash hover:text-clay-deep transition-colors">
+                Heritage
+                <ChevronDown className="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180" />
               </button>
-              <div className="absolute top-full left-0 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="bg-clay-800 border border-clay-700 shadow-xl py-2 w-56">
-                  <Link
-                    href="/about-us"
-                    className="block px-5 py-2.5 text-sm text-stone-100 hover:bg-clay-700 hover:text-rust-300 transition-colors border-l-2 border-transparent hover:border-rust-300"
-                  >
-                    Company Overview
-                  </Link>
-                  <Link
-                    href="/blog"
-                    className="block px-5 py-2.5 text-sm text-stone-100 hover:bg-clay-700 hover:text-rust-300 transition-colors border-l-2 border-transparent hover:border-rust-300"
-                  >
-                    Blog
-                  </Link>
-                  <Link
-                    href="/wine-farms"
-                    className="block px-5 py-2.5 text-sm text-stone-100 hover:bg-clay-700 hover:text-rust-300 transition-colors border-l-2 border-transparent hover:border-rust-300"
-                  >
-                    Wine Farms
-                  </Link>
-                  <Link
-                    href="/designer-collaborations"
-                    className="block px-5 py-2.5 text-sm text-stone-100 hover:bg-clay-700 hover:text-rust-300 transition-colors border-l-2 border-transparent hover:border-rust-300"
-                  >
-                    Designer Collaborations
-                  </Link>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                <div className="bg-warm-linen border border-mortar-gray/25 py-2 w-56">
+                  {[
+                    { label: "Our Story", href: "/about-us" },
+                    { label: "Blog", href: "/blog" },
+                    { label: "Wine Farms", href: "/wine-farms" },
+                    { label: "Designer Collaborations", href: "/designer-collaborations" },
+                  ].map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="block px-5 py-2.5 text-sm text-charcoal-ash hover:bg-sand-bone hover:text-clay-deep transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>
 
-            <Link href="/contact-us" className="nav-link text-sm font-medium text-stone-100/90 hover:text-rust-300 transition-colors">
-              Contact Us
+            <Link href="/contact-us" className="nav-link label-caps text-charcoal-ash hover:text-clay-deep transition-colors">
+              Contact
             </Link>
           </nav>
 
           {/* ── Desktop CTA ───────────────────────────────────── */}
-          <div className="hidden lg:flex items-center gap-3">
-            <Link
-              href="/get-a-quote"
-              className="inline-flex items-center gap-2 bg-stone-50 text-clay-900 px-5 py-2.5 text-sm font-semibold hover:bg-stone-100 transition-colors rounded-none"
-            >
-              Get a Quote
-            </Link>
-            <a
-              href={`tel:${siteConfig.phoneRaw}`}
-              className="inline-flex items-center gap-2 text-rust-300 font-semibold px-2 py-2.5 text-sm hover:text-rust-200 transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              {siteConfig.phone}
-            </a>
-          </div>
+          <Link
+            href="/get-a-quote"
+            className="group hidden lg:inline-flex items-center bg-clay-deep text-warm-linen label-caps px-6 py-3.5 hover:bg-primary transition-colors"
+          >
+            Request Quote
+            <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
 
           {/* ── Mobile Menu Button ────────────────────────────── */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 text-stone-50"
+            className="lg:hidden p-2 text-charcoal-ash"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -165,62 +139,49 @@ export default function MainNav() {
       {/* ── Mobile Menu ───────────────────────────────────────── */}
       <div
         className={cn(
-          "lg:hidden fixed inset-0 top-[calc(72px+34px)] bg-clay-900 z-40 overflow-y-auto transition-transform duration-300",
+          "lg:hidden fixed inset-x-0 bottom-0 top-[68px] bg-warm-linen z-40 overflow-y-auto transition-transform duration-300",
           mobileOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
-        <nav className="px-4 py-6 space-y-0 divide-y divide-clay-800">
+        <nav className="px-5 py-6 divide-y divide-mortar-gray/20">
           <Link
             href="/get-a-quote"
-            className="flex items-center justify-center gap-2 my-3 bg-stone-50 text-clay-900 py-3.5 font-semibold text-sm hover:bg-stone-100 transition-colors"
+            className="flex items-center justify-center gap-2 mb-4 bg-clay-deep text-warm-linen py-4 label-caps hover:bg-primary transition-colors"
             onClick={() => setMobileOpen(false)}
           >
-            Get a Quote
+            Request Quote
+            <ArrowRight className="w-4 h-4" />
           </Link>
-          <Link
-            href="/residential"
-            className="flex items-center py-3.5 text-stone-100 font-medium text-sm hover:text-rust-300 transition-colors"
-            onClick={() => setMobileOpen(false)}
-          >
-            Products
-          </Link>
-          <Link
-            href="/commercial"
-            className="flex items-center py-3.5 text-stone-100 font-medium text-sm hover:text-rust-300 transition-colors"
-            onClick={() => setMobileOpen(false)}
-          >
-            Accessories
-          </Link>
-          <Link
-            href="/guides"
-            className="flex items-center py-3.5 text-stone-100 font-medium text-sm hover:text-rust-300 transition-colors"
-            onClick={() => setMobileOpen(false)}
-          >
-            Guides
-          </Link>
-          <Link
-            href="/work-gallery"
-            className="flex items-center py-3.5 text-stone-100 font-medium text-sm hover:text-rust-300 transition-colors"
-            onClick={() => setMobileOpen(false)}
-          >
-            Work Gallery
-          </Link>
+          {[
+            { label: "Products", href: "/residential" },
+            { label: "Gallery", href: "/work-gallery" },
+            { label: "Guides", href: "/guides" },
+          ].map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="flex items-center py-4 text-charcoal-ash font-display text-xl hover:text-clay-deep transition-colors"
+              onClick={() => setMobileOpen(false)}
+            >
+              {item.label}
+            </Link>
+          ))}
 
           <div>
             <button
               onClick={() => toggleDropdown("services")}
-              className="flex items-center justify-between w-full py-3.5 text-stone-100 font-medium text-sm"
+              className="flex items-center justify-between w-full py-4 text-charcoal-ash font-display text-xl"
             >
               Services
               <ChevronDown className={cn("w-4 h-4 transition-transform", activeDropdown === "services" && "rotate-180")} />
             </button>
             {activeDropdown === "services" && (
-              <div className="pb-3 pl-4 space-y-2 border-t border-clay-800 pt-2">
+              <div className="pb-3 pl-1 space-y-2">
                 {residentialServices.slice(0, 6).map((service) => (
                   <Link
                     key={service.slug}
                     href={`/services/${service.slug}`}
-                    className="block py-1.5 text-sm text-stone-300 hover:text-rust-300"
+                    className="block py-1.5 text-sm text-secondary hover:text-clay-deep"
                     onClick={() => setMobileOpen(false)}
                   >
                     {service.title}
@@ -233,18 +194,18 @@ export default function MainNav() {
           <div>
             <button
               onClick={() => toggleDropdown("areas")}
-              className="flex items-center justify-between w-full py-3.5 text-stone-100 font-medium text-sm"
+              className="flex items-center justify-between w-full py-4 text-charcoal-ash font-display text-xl"
             >
               Service Area
               <ChevronDown className={cn("w-4 h-4 transition-transform", activeDropdown === "areas" && "rotate-180")} />
             </button>
             {activeDropdown === "areas" && (
-              <div className="pb-3 pl-4 space-y-2 border-t border-clay-800 pt-2">
+              <div className="pb-3 pl-1 space-y-2">
                 {serviceAreas.map((area) => (
                   <Link
                     key={area.slug}
                     href={`/${area.slug}`}
-                    className="block py-1.5 text-sm text-stone-300 hover:text-rust-300"
+                    className="block py-1.5 text-sm text-secondary hover:text-clay-deep"
                     onClick={() => setMobileOpen(false)}
                   >
                     {area.city}, {area.state}
@@ -254,51 +215,22 @@ export default function MainNav() {
             )}
           </div>
 
-          <Link
-            href="/about-us"
-            className="flex items-center py-3.5 text-stone-100 font-medium text-sm hover:text-rust-300 transition-colors"
-            onClick={() => setMobileOpen(false)}
-          >
-            About Us
-          </Link>
-          <Link
-            href="/blog"
-            className="flex items-center py-3.5 text-stone-100 font-medium text-sm hover:text-rust-300 transition-colors"
-            onClick={() => setMobileOpen(false)}
-          >
-            Blog
-          </Link>
-          <Link
-            href="/wine-farms"
-            className="flex items-center py-3.5 text-stone-100 font-medium text-sm hover:text-rust-300 transition-colors"
-            onClick={() => setMobileOpen(false)}
-          >
-            Wine Farms
-          </Link>
-          <Link
-            href="/designer-collaborations"
-            className="flex items-center py-3.5 text-stone-100 font-medium text-sm hover:text-rust-300 transition-colors"
-            onClick={() => setMobileOpen(false)}
-          >
-            Designer Collaborations
-          </Link>
-          <Link
-            href="/contact-us"
-            className="flex items-center py-3.5 text-stone-100 font-medium text-sm hover:text-rust-300 transition-colors"
-            onClick={() => setMobileOpen(false)}
-          >
-            Contact Us
-          </Link>
-
-          <div className="pt-4">
-            <a
-              href={`tel:${siteConfig.phoneRaw}`}
-              className="flex w-full items-center justify-center gap-2 bg-rust-500 text-white py-3.5 font-semibold text-sm hover:bg-rust-600 transition-colors"
+          {[
+            { label: "Our Story", href: "/about-us" },
+            { label: "Blog", href: "/blog" },
+            { label: "Wine Farms", href: "/wine-farms" },
+            { label: "Designer Collaborations", href: "/designer-collaborations" },
+            { label: "Contact", href: "/contact-us" },
+          ].map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="flex items-center py-4 text-charcoal-ash font-display text-xl hover:text-clay-deep transition-colors"
+              onClick={() => setMobileOpen(false)}
             >
-              <Phone className="w-4 h-4" />
-              Call {siteConfig.phone}
-            </a>
-          </div>
+              {item.label}
+            </Link>
+          ))}
         </nav>
       </div>
     </header>

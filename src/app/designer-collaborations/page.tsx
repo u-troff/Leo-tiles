@@ -21,7 +21,7 @@ export default function DesignerCollaborationsPage() {
           </h1>
           <p className="text-stone-200 text-lg leading-relaxed max-w-2xl mb-4">
             Over 50 years, {siteConfig.businessName} has worked alongside interior designers and
-            architects across South Africa — some of them among the most respected names in the
+            architects across South Africa, some of them among the most respected names in the
             industry. Since we can&rsquo;t always ask for a formal testimonial, this page showcases
             the projects themselves.
           </p>

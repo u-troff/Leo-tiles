@@ -10,11 +10,11 @@ import { siteConfig } from "@/data/site-config";
 
 export const metadata: Metadata = {
   title: `About ${siteConfig.businessName}`,
-  description: `Learn about ${siteConfig.businessName} — a trusted, ${siteConfig.differentiator} terracotta tile manufacturer in Kraaifontein, Cape Town. Meet Mark Kelly and discover our values.`,
+  description: `Learn about ${siteConfig.businessName}, a trusted, ${siteConfig.differentiator} terracotta tile manufacturer in Kraaifontein, Cape Town. Meet Mark Kelly and discover our values.`,
 };
 
 const coreValues = [
-  { icon: Shield, title: "Craft", description: "Every tile is shaped, dried, and fired by hand — a process we have never industrialised." },
+  { icon: Shield, title: "Craft", description: "Every tile is shaped, dried, and fired by hand, a process we have never industrialised." },
   { icon: Heart, title: "Authenticity", description: "No two tiles are identical. The variation is the point, not a flaw to be engineered out." },
   { icon: Clock, title: "Patience", description: "Clay takes the time it takes. We don't rush production at the expense of quality." },
   { icon: Star, title: "Quality", description: "Every batch is kiln-fired to the same exacting standard that has defined our work for 50+ years." },
@@ -35,7 +35,7 @@ export default function AboutUsPage() {
               Handmade, Local, {siteConfig.differentiatorLabel}
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              {siteConfig.businessName} is more than a tile supplier — we are South Africa&apos;s
+              {siteConfig.businessName} is more than a tile supplier, we are South Africa&apos;s
               original handmade terracotta tile makers, committed to a craft that has been
               perfected over 50 years and all but lost everywhere else. Every tile that leaves our
               Kraaifontein kiln has been shaped, dried, and fired by hand.
@@ -79,12 +79,12 @@ export default function AboutUsPage() {
               </p>
               <p className="text-gray-600 mb-4 leading-relaxed">
                 Before {siteConfig.businessName} grew into what it is today, {siteConfig.founder.name.split(" ")[0]}{" "}
-                spent decades at the kiln, learning the trade the hard way — through trial, error,
+                spent decades at the kiln, learning the trade the hard way, through trial, error,
                 and an unwillingness to cut corners on a craft that demands patience. That hands-on
                 approach still shapes how every order is produced.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                &ldquo;I started making tiles because I loved the material — the way it ages, the
+                &ldquo;I started making tiles because I loved the material, the way it ages, the
                 way no two pieces are ever quite the same. Fifty years later, that&apos;s still
                 what gets me into the workshop every morning.&rdquo;
               </p>

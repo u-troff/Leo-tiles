@@ -6,7 +6,7 @@ import { siteConfig } from "@/data/site-config";
 
 export const metadata: Metadata = {
   title: "Guide Hub",
-  description: `Fifty years of handmade terracotta know-how from ${siteConfig.businessName} — inspiration for homeowners, technical guides for installers, and product reference sheets.`,
+  description: `Fifty years of handmade terracotta know-how from ${siteConfig.businessName}, inspiration for homeowners, technical guides for installers, and product reference sheets.`,
 };
 
 interface HubCard {
@@ -42,7 +42,7 @@ const inspirationCards: HubCard[] = [
   },
   {
     title: "Living with natural tone variation",
-    description: "Why no two handmade tiles fire exactly the same colour — and how to plan for it.",
+    description: "Why no two handmade tiles fire exactly the same colour, and how to plan for it.",
     image: "/images/design/dining-room-2.jpg",
     badge: "Homeowners",
     badgeClass: "bg-rust-500 text-stone-50",
@@ -67,7 +67,7 @@ const technicalCards: HubCard[] = [
   },
   {
     title: "Working out coverage: tiles per square metre",
-    description: "Roughly 9 tiles per m² at 300×300mm with a 25mm joint — and why we sell by the tile, not the box.",
+    description: "Roughly 9 tiles per m² at 300×300mm with a 25mm joint, and why we sell by the tile, not the box.",
     image: "/images/design/tile-texture.jpg",
     badge: "Installers",
     badgeClass: "bg-clay-900 text-stone-50",
@@ -84,7 +84,7 @@ const technicalCards: HubCard[] = [
 const productCards: HubCard[] = [
   {
     title: "Batavian Collection",
-    description: "Our signature hand-shaped range — sizes, tones and laying guide.",
+    description: "Our signature hand-shaped range, sizes, tones and laying guide.",
     image: "/images/design/tile-texture.jpg",
     badge: "Product",
     badgeClass: "bg-stone-600 text-stone-50",
@@ -92,14 +92,14 @@ const productCards: HubCard[] = [
   },
   {
     title: "Standard 300×300mm",
-    description: "Our most-ordered format, indoors and out — full specification sheet.",
+    description: "Our most-ordered format, indoors and out, full specification sheet.",
     image: "/images/design/terrace.jpg",
     badge: "Product",
     badgeClass: "bg-stone-600 text-stone-50",
   },
   {
     title: "Herringbone-cut",
-    description: "Pre-cut for herringbone laying patterns — batten sizes and offcut ratio.",
+    description: "Pre-cut for herringbone laying patterns, batten sizes and offcut ratio.",
     image: "/images/design/herringbone-install.jpg",
     badge: "Product",
     badgeClass: "bg-stone-600 text-stone-50",
@@ -138,7 +138,7 @@ export default function GuideHubPage() {
         <h1 className="text-3xl lg:text-5xl font-bold text-clay-900 mb-5 max-w-2xl leading-tight">Guide hub</h1>
         <p className="text-stone-700 text-lg leading-relaxed max-w-2xl">
           Whether you&rsquo;re choosing a floor for your home or laying one on site, these are the
-          questions we get asked most — answered plainly.
+          questions we get asked most, answered plainly.
         </p>
       </div>
 

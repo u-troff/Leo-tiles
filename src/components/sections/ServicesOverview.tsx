@@ -23,7 +23,7 @@ export default function ServicesOverview() {
             <em className="not-italic text-rust-500">& Everything You Need to Install Them</em>
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto text-sm leading-relaxed">
-            From signature floor tiles to the adhesive, grout, and sealant that complete the job —
+            From signature floor tiles to the adhesive, grout, and sealant that complete the job,
             all sourced from one kiln.
           </p>
         </div>

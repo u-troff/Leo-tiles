@@ -1,5 +1,4 @@
-import Image from "next/image";
-import SectionLogo from "@/components/ui/SectionLogo";
+import Eyebrow from "@/components/ui/Eyebrow";
 import AccordionItem from "@/components/ui/AccordionItem";
 import Button from "@/components/ui/Button";
 import { FAQ } from "@/data/faqs";
@@ -12,46 +11,25 @@ interface FAQSectionProps {
 
 export default function FAQSection({
   faqs,
-  title = "Questions & Answers About Handmade Terracotta",
-  subtitle = "Reliable Answers from South Africa's Original Tile Makers",
+  title = "Questions & answers about handmade terracotta.",
 }: FAQSectionProps) {
   return (
-    <section className="py-16 lg:py-24 bg-stone-100">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-
-          {/* Left — Photo */}
-          <div className="relative aspect-[4/3] overflow-hidden lg:sticky lg:top-24">
-            <Image
-              src="https://images.pexels.com/photos/6010260/pexels-photo-6010260.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
-              alt="Warm terracotta-tiled interior with handmade clay pottery"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-
-          {/* Right Content */}
-          <div>
-            <SectionLogo label="FAQs" />
-            <h2 className="font-serif text-3xl lg:text-4xl font-bold text-clay-900 mb-2 leading-tight">
+    <section className="py-24 lg:py-40 bg-sand-bone">
+      <div className="max-w-[1440px] mx-auto px-5 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8">
+          <div className="lg:col-span-4">
+            <Eyebrow label="FAQs" />
+            <h2 className="font-display text-4xl lg:text-5xl leading-[1.1] text-charcoal-ash mb-8">
               {title}
             </h2>
-            <p className="text-rust-500 font-medium text-sm mb-8 uppercase tracking-wider">
-              {subtitle}
-            </p>
-
-            <div className="space-y-0 border-t border-stone-300">
-              {faqs.map((faq, index) => (
-                <AccordionItem key={index} question={faq.question} answer={faq.answer} />
-              ))}
-            </div>
-
-            <div className="mt-8">
-              <Button href="/contact-us" variant="primary">
-                Ask Your Question
-              </Button>
-            </div>
+            <Button href="/contact-us" variant="outline" size="md" arrow>
+              Ask Your Question
+            </Button>
+          </div>
+          <div className="lg:col-span-7 lg:col-start-6">
+            {faqs.map((faq, index) => (
+              <AccordionItem key={index} question={faq.question} answer={faq.answer} defaultOpen={index === 0} />
+            ))}
           </div>
         </div>
       </div>

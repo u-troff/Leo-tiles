@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LEO TILES | Architectural Terracotta Heritage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#ffb59c",
+                        "secondary": "#645d56",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "on-secondary-fixed-variant": "#4c463f",
+                        "surface-dim": "#dbdad7",
+                        "outline": "#86736d",
+                        "on-primary-container": "#fff4f0",
+                        "on-primary-fixed": "#390c00",
+                        "secondary-fixed": "#ebe1d8",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "surface-bright": "#faf9f6",
+                        "primary": "#88452d",
+                        "surface-tint": "#904b33",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1a1c1a",
+                        "secondary-fixed-dim": "#cec5bc",
+                        "on-secondary-container": "#6a635c",
+                        "surface-container-highest": "#e3e2e0",
+                        "sand-bone": "#F2E8DF",
+                        "surface-container-low": "#f4f3f1",
+                        "mortar-gray": "#8C847E",
+                        "secondary-container": "#ebe1d8",
+                        "surface-variant": "#e3e2e0",
+                        "on-background": "#1a1c1a",
+                        "error": "#ba1a1a",
+                        "primary-container": "#a65d43",
+                        "surface-container": "#efeeeb",
+                        "on-primary-fixed-variant": "#73351e",
+                        "clay-deep": "#A65D43",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#54433e",
+                        "warm-linen": "#FAF9F6",
+                        "inverse-on-surface": "#f2f1ee",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#ffdbcf",
+                        "background": "#faf9f6",
+                        "charcoal-ash": "#2D2D2D",
+                        "surface": "#faf9f6",
+                        "tertiary-fixed": "#e4e2e1",
+                        "tertiary-container": "#717070",
+                        "inverse-surface": "#2f312f",
+                        "kiln-glow": "#D98E73",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "surface-container-high": "#e9e8e5",
+                        "tertiary": "#585858",
+                        "inverse-primary": "#ffb59c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#d9c2ba",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#1f1b16",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#f8f5f4"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "section-gap-mobile": "80px",
+                        "section-gap-desktop": "160px",
+                        "container-max": "1440px",
+                        "margin-mobile": "20px",
+                        "gutter": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["EB Garamond"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["EB Garamond"],
+                        "quote": ["EB Garamond"],
+                        "display-hero": ["EB Garamond"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "1.5", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "quote": ["24px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "display-hero": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-warm-linen text-charcoal-ash font-body-md overflow-x-hidden selection:bg-clay-deep selection:text-warm-linen">
+<nav class="fixed top-0 w-full z-50 bg-warm-linen/80 backdrop-blur-md border-b border-mortar-gray/20 h-20 flex items-center">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter w-full flex justify-between items-center">
+<a class="font-headline-md text-headline-md text-primary tracking-tight font-bold" href="#">LEO TILES</a>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-label-caps text-label-caps text-charcoal-ash hover:text-clay-deep transition-colors duration-300" href="#products">Products</a>
+<a class="font-label-caps text-label-caps text-charcoal-ash hover:text-clay-deep transition-colors duration-300" href="#gallery">Work Gallery</a>
+<a class="font-label-caps text-label-caps text-charcoal-ash hover:text-clay-deep transition-colors duration-300" href="#heritage">Heritage</a>
+</div>
+<button class="bg-clay-deep text-warm-linen font-label-caps text-label-caps px-6 py-3 hover:bg-primary transition-all duration-300 flex items-center group">
+                Request Quote
+                <span class="material-symbols-outlined ml-2 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</nav>
+<header class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+<!-- STITCH_SHADER_START:ANIMATION_8 class="absolute inset-0 w-full h-full opacity-40 mix-blend-multiply" -->
+<div class="absolute inset-0 w-full h-full opacity-40 mix-blend-multiply" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_8" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_8');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+
+varying vec2 v_texCoord;
+
+// Simplex noise function
+vec3 permute(vec3 x) { return mod(((x*34.0)+1.0)*x, 289.0); }
+
+float snoise(vec2 v){
+  const vec4 C = vec4(0.211324865405187, 0.366025403784439,
+           -0.577350269189626, 0.024390243902439);
+  vec2 i  = floor(v + dot(v, C.yy) );
+  vec2 x0 = v -   i + dot(i, C.xx);
+  vec2 i1;
+  i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+  vec4 x12 = x0.xyxy + C.xxzz;
+  x12.xy -= i1;
+  i = mod(i, 289.0);
+  vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
+  + i.x + vec3(0.0, i1.x, 1.0 ));
+  vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy),
+    dot(x12.zw,x12.zw)), 0.0);
+  m = m*m ;
+  m = m*m ;
+  vec3 x = 2.0 * fract(p * C.www) - 1.0;
+  vec3 h = abs(x) - 0.5;
+  vec3 ox = floor(x + 0.5);
+  vec3 a0 = x - ox;
+  m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );
+  vec3 g;
+  g.x  = a0.x  * x0.x  + h.x  * x0.y;
+  g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+  return 130.0 * dot(m, g);
+}
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 p = uv * 2.0 - 1.0;
+    p.x *= u_resolution.x / u_resolution.y;
+    
+    // Create multiple layers of moving noise
+    float n1 = snoise(p * 1.5 + u_time * 0.15);
+    float n2 = snoise(p * 3.0 - u_time * 0.1);
+    float n3 = snoise(p * 5.0 + u_time * 0.2);
+    
+    float combined = n1 * 0.6 + n2 * 0.3 + n3 * 0.1;
+    
+    // Terracotta-inspired palette
+    vec3 colorA = vec3(0.65, 0.36, 0.26); // Deep Terracotta
+    vec3 colorB = vec3(0.85, 0.55, 0.40); // Lighter Clay
+    vec3 colorC = vec3(0.95, 0.91, 0.87); // Warm Sand/Highlight
+    
+    // Mix colors based on noise
+    vec3 finalColor = mix(colorA, colorB, combined * 0.5 + 0.5);
+    finalColor = mix(finalColor, colorC, pow(max(0.0, combined), 3.0) * 0.4);
+    
+    // Add subtle vignetting
+    float vignette = 1.0 - length(p * 0.4);
+    finalColor *= vignette;
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_8 -->
+<div class="relative z-10 max-w-4xl px-margin-mobile text-center">
+<span class="font-label-caps text-label-caps text-primary mb-6 block tracking-[0.2em] reveal-on-scroll">50 YEARS OF CRAFT. TURNED BY HAND.</span>
+<h1 class="font-display-hero text-display-hero md:text-8xl text-charcoal-ash mb-12 reveal-on-scroll" style="transition-delay: 100ms">
+                Architectural <br/> Heritage in Clay.
+            </h1>
+<div class="flex flex-col md:flex-row gap-6 justify-center reveal-on-scroll" style="transition-delay: 200ms">
+<a class="bg-clay-deep text-warm-linen font-label-caps text-label-caps px-10 py-5 hover:bg-primary transition-all duration-300 flex items-center justify-center group" href="#products">
+                    Explore the Collection
+                    <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<a class="border border-charcoal-ash text-charcoal-ash font-label-caps text-label-caps px-10 py-5 hover:bg-charcoal-ash hover:text-warm-linen transition-all duration-300 flex items-center justify-center" href="#process">
+                    Our Process
+                </a>
+</div>
+</div>
+</header>
+<section class="py-section-gap-desktop max-w-container-max mx-auto px-margin-mobile md:px-gutter" id="heritage">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-6 reveal-on-scroll">
+<div class="aspect-[4/5] bg-sand-bone relative overflow-hidden">
+<img class="w-full h-full object-cover grayscale-[20%]" data-alt="A high-contrast, artistic photograph of stacks of raw terracotta tiles in various stages of drying inside a sun-drenched Cape Town kiln. The lighting creates deep shadows and warm highlights on the rough, earthy textures of the clay. The composition is architectural and minimalist, emphasizing the repeating patterns of the stacked tiles against a clean mortar-gray background. Soft daylight spills from above, illuminating the dust motes and highlighting the artisanal, handmade nature of each unique piece." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYBn6ArVEYpNUhmaHpDq5h96YWgyKlYgu1M33dtZDZAu41of_iTkasTFZpGlIASJZaUNSwXun8g2DEOSh8GKAzDAf__T7IEJd7thjM0u73THL8eeZ_P3zgCY9oXOYCjgKN8805CfjHAPW5xiO9eHwO4RHGzt3ckik_ZoQRUq5FA8d98s4mf2utMg3dR0ysoJnZf6YxPP84_z8F3cv5b9UezmAzPzQnoH7L3W32WviL-cIdnx6tEjGoVLX11pg2QH72Jodl8e9-TFs"/>
+</div>
+</div>
+<div class="md:col-span-5 md:col-start-8 reveal-on-scroll">
+<span class="font-label-caps text-label-caps text-primary mb-4 block">THE HERITAGE</span>
+<h2 class="font-headline-lg text-headline-lg text-charcoal-ash mb-8">Handcrafted in Cape Town since 1975.</h2>
+<p class="font-body-lg text-body-lg text-secondary mb-10 leading-relaxed">
+                    Leo Tiles began in Kraaifontein with little more than a kiln, a passion for clay, and a determination to do things the hard, honest way. Every tile is shaped, pressed, and dried by hand before it ever sees the kiln, preserving a legacy of Dutch-heritage craftsmanship.
+                </p>
+<div class="grid grid-cols-2 gap-8 pt-8 border-t border-mortar-gray/20">
+<div>
+<span class="block font-headline-md text-headline-md text-primary">18+</span>
+<span class="font-label-caps text-[10px] text-mortar-gray">Expert Artisans</span>
+</div>
+<div>
+<span class="block font-headline-md text-headline-md text-primary">50y</span>
+<span class="font-label-caps text-[10px] text-mortar-gray">Kiln Heritage</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-section-gap-desktop bg-sand-bone/30" id="products">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-2xl reveal-on-scroll">
+<span class="font-label-caps text-label-caps text-primary mb-4 block">SIGNATURE COLLECTION</span>
+<h2 class="font-headline-lg text-headline-lg text-charcoal-ash">Timeless geometries for modern architecture.</h2>
+</div>
+<a class="font-label-caps text-label-caps text-clay-deep flex items-center group reveal-on-scroll" href="#">
+                    View Catalog
+                    <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="group reveal-on-scroll">
+<div class="aspect-square bg-warm-linen mb-8 overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLuXFlYtotMKw2EoJYcSTayT5dP6_hDIIjpJBNIrZfl0aJGKFiHz0n37p3JeKO3DcxAvIBCzZKIKsEb1XJGbGoxtkaZZwq7srMIkVGytH5UF9KzBjgYu1fQxaIpJ__AQCmFjaOj3MlzIgH5NcIR3ST35lMQ6DO7IfR2IOr3cWblY6KDAsLdRByBkSeqXhcfnK7anjyVi2pzFyoa1U4GZhXCvPeJJKexm9TILoVMxfHjqe7JwjUQ3PJKrb6Y"/>
+<div class="absolute inset-0 bg-charcoal-ash/0 group-hover:bg-charcoal-ash/10 transition-colors duration-500"></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md mb-2">Batavian Floor Tiles</h3>
+<p class="font-label-caps text-mortar-gray">Standard 200x200mm • 15mm Depth</p>
+</div>
+</div>
+</div>
+<div class="group reveal-on-scroll" style="transition-delay: 200ms">
+<div class="aspect-square bg-warm-linen mb-8 overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLszPT80lot8rf5fOPLg_fS-fLdpYDkH159bs_3AOMU_yvYBFHVZ6QJX3mtXu7rI9309kPwtqO9kMQP0J59ErlN8NbXNjvR0XAPT3s_rn-qmQJ9tzrGJ81yCDfWZfcRai8PMbWzrtX-ZI-sEKEknwXmbP4ymEMs2PYDC_PEn_UbHOmbD6cHFcYgli0Zt6KkQfH2MPcwHKFAXtxYRS6y1z1r8fmPIGvMEOioePS_6EIgXBDEMrLYQHF5uEA"/>
+<div class="absolute inset-0 bg-charcoal-ash/0 group-hover:bg-charcoal-ash/10 transition-colors duration-500"></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md mb-2">Herringbone Pavers</h3>
+<p class="font-label-caps text-mortar-gray">Outdoor Grade • Slip Resistant</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-section-gap-desktop bg-charcoal-ash text-warm-linen" id="process">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-4 reveal-on-scroll">
+<span class="font-label-caps text-label-caps text-primary mb-4 block">THE PROCESS</span>
+<h2 class="font-headline-lg text-headline-lg mb-10">From Kiln to Courtyard.</h2>
+<p class="font-body-md text-tertiary-fixed-dim leading-relaxed mb-12">
+                        Unlike factory-made tiles, no two Leo Tiles are identical. The subtle variation in tone and texture is what gives them character and warmth.
+                    </p>
+</div>
+<div class="md:col-span-7 md:col-start-6 grid gap-16">
+<div class="flex gap-8 reveal-on-scroll">
+<span class="font-headline-md text-primary opacity-50">01</span>
+<div>
+<h4 class="font-headline-md text-2xl mb-2">Manual Shaping</h4>
+<p class="text-mortar-gray">Raw clay is wedged and pressed into wooden molds by hand, ensuring the structural integrity of the ceramic body.</p>
+</div>
+</div>
+<div class="flex gap-8 reveal-on-scroll">
+<span class="font-headline-md text-primary opacity-50">02</span>
+<div>
+<h4 class="font-headline-md text-2xl mb-2">Slow Drying</h4>
+<p class="text-mortar-gray">Tiles are air-dried in our Cape Town facility, allowing moisture to escape naturally to prevent cracking during firing.</p>
+</div>
+</div>
+<div class="flex gap-8 reveal-on-scroll">
+<span class="font-headline-md text-primary opacity-50">03</span>
+<div>
+<h4 class="font-headline-md text-2xl mb-2">Traditional Firing</h4>
+<p class="text-mortar-gray">Kiln temperatures are meticulously monitored to achieve the signature patina and iron-rich terracotta hues.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-section-gap-desktop bg-warm-linen overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="text-center mb-20 reveal-on-scroll">
+<span class="font-label-caps text-label-caps text-primary mb-4 block">REVIEWS</span>
+<h2 class="font-headline-lg text-headline-lg">Architectural Acclaim</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-sand-bone p-12 flex flex-col justify-between reveal-on-scroll">
+<span class="material-symbols-outlined text-primary text-4xl mb-8" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="font-quote text-quote text-charcoal-ash mb-12 leading-relaxed italic">
+                        "The quality of these handmade tiles is unlike anything in the big box stores. The warmth and variation brought our heritage renovation to life."
+                    </p>
+<div>
+<p class="font-label-caps text-label-caps text-charcoal-ash">ANIKA VAN DER BERG</p>
+<p class="font-label-caps text-[10px] text-mortar-gray">Heritage Architect</p>
+</div>
+</div>
+<div class="bg-sand-bone p-12 flex flex-col justify-between reveal-on-scroll" style="transition-delay: 150ms">
+<span class="material-symbols-outlined text-primary text-4xl mb-8" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="font-quote text-quote text-charcoal-ash mb-12 leading-relaxed italic">
+                        "Restoring a 1930s Cape Dutch home required tiles that matched the originals. Leo Tiles produced custom-sized pieces that were indistinguishable."
+                    </p>
+<div>
+<p class="font-label-caps text-label-caps text-charcoal-ash">JAMES OOSTERBROEK</p>
+<p class="font-label-caps text-[10px] text-mortar-gray">Restoration Specialist</p>
+</div>
+</div>
+<div class="bg-sand-bone p-12 flex flex-col justify-between reveal-on-scroll" style="transition-delay: 300ms">
+<span class="material-symbols-outlined text-primary text-4xl mb-8" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="font-quote text-quote text-charcoal-ash mb-12 leading-relaxed italic">
+                        "As a landscape designer, I always specify Leo Tiles for courtyard projects. They age beautifully and handle the South African sun perfectly."
+                    </p>
+<div>
+<p class="font-label-caps text-label-caps text-charcoal-ash">SARAH MITCHELL</p>
+<p class="font-label-caps text-[10px] text-mortar-gray">Landscape Studio</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-section-gap-desktop bg-primary text-warm-linen text-center relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] opacity-20 pointer-events-none"></div>
+<div class="relative z-10 max-w-2xl mx-auto px-margin-mobile reveal-on-scroll">
+<h2 class="font-headline-lg text-headline-lg mb-8">Ready to start your tile order?</h2>
+<p class="font-body-lg mb-12 opacity-90">Our artisans are ready to help you bring artisanal warmth to your next project. Request a custom quote today.</p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<button class="bg-warm-linen text-primary font-label-caps text-label-caps px-12 py-5 hover:bg-sand-bone transition-colors">Request a Quote</button>
+<button class="border border-warm-linen text-warm-linen font-label-caps text-label-caps px-12 py-5 hover:bg-warm-linen hover:text-primary transition-colors">+27 79 150 0160</button>
+</div>
+</div>
+</section>
+<footer class="bg-sand-bone dark:bg-charcoal-ash w-full py-section-gap-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter max-w-container-max mx-auto px-margin-mobile">
+<div class="md:col-span-4">
+<h3 class="font-headline-lg text-headline-lg text-primary mb-6">LEO TILES</h3>
+<p class="font-body-md text-body-md text-on-secondary-fixed-variant max-w-xs mb-10">
+                    Handcrafted terracotta heritage since 1975. Fired in Cape Town, loved worldwide.
+                </p>
+</div>
+<div class="md:col-span-2">
+<h4 class="font-label-caps text-label-caps text-charcoal-ash mb-6">COLLECTION</h4>
+<ul class="space-y-4">
+<li><a class="text-on-secondary-fixed-variant hover:text-clay-deep underline decoration-1 transition-all" href="#">Floor Tiles</a></li>
+<li><a class="text-on-secondary-fixed-variant hover:text-clay-deep underline decoration-1 transition-all" href="#">Pavers</a></li>
+<li><a class="text-on-secondary-fixed-variant hover:text-clay-deep underline decoration-1 transition-all" href="#">Custom Sizes</a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h4 class="font-label-caps text-label-caps text-charcoal-ash mb-6">COMPANY</h4>
+<ul class="space-y-4">
+<li><a class="text-on-secondary-fixed-variant hover:text-clay-deep underline decoration-1 transition-all" href="#">Our Story</a></li>
+<li><a class="text-on-secondary-fixed-variant hover:text-clay-deep underline decoration-1 transition-all" href="#">Sustainability</a></li>
+<li><a class="text-on-secondary-fixed-variant hover:text-clay-deep underline decoration-1 transition-all" href="#">Contact</a></li>
+</ul>
+</div>
+<div class="md:col-span-4">
+<h4 class="font-label-caps text-label-caps text-charcoal-ash mb-6">CONNECT</h4>
+<div class="flex gap-6 mb-10">
+<a class="text-on-secondary-fixed-variant hover:text-clay-deep transition-colors" href="#">Instagram</a>
+<a class="text-on-secondary-fixed-variant hover:text-clay-deep transition-colors" href="#">Pinterest</a>
+<a class="text-on-secondary-fixed-variant hover:text-clay-deep transition-colors" href="#">LinkedIn</a>
+</div>
+</div>
+<div class="md:col-span-12 pt-12 border-t border-mortar-gray/20 mt-12 flex flex-col md:flex-row justify-between gap-6">
+<p class="text-on-secondary-fixed-variant font-body-md text-body-md">© 1975 Leo Tiles. Handcrafted Architectural Heritage.</p>
+<div class="flex gap-8">
+<a class="text-on-secondary-fixed-variant text-sm hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-secondary-fixed-variant text-sm hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+        // Smooth scroll micro-interaction
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body></html>

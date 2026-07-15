@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface ButtonProps {
@@ -9,6 +10,7 @@ interface ButtonProps {
   className?: string;
   onClick?: () => void;
   type?: "button" | "submit";
+  arrow?: boolean;
 }
 
 export default function Button({
@@ -19,38 +21,47 @@ export default function Button({
   className,
   onClick,
   type = "button",
+  arrow = false,
 }: ButtonProps) {
+  // Sharp corners, no shadows, architectural precision.
   const base =
-    "inline-flex items-center justify-center font-semibold tracking-wide transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-none";
+    "group inline-flex items-center justify-center label-caps rounded-none transition-colors duration-300 focus:outline-none focus-visible:ring-1 focus-visible:ring-clay-deep focus-visible:ring-offset-2 focus-visible:ring-offset-warm-linen";
 
   const variants = {
-    primary:
-      "bg-rust-500 text-white hover:bg-rust-600 focus:ring-rust-500 shadow-md hover:shadow-lg hover:-translate-y-px",
-    secondary:
-      "bg-clay-800 text-white hover:bg-clay-900 focus:ring-clay-800 shadow-md hover:shadow-lg hover:-translate-y-px",
+    primary: "bg-clay-deep text-warm-linen hover:bg-primary",
+    secondary: "bg-charcoal-ash text-warm-linen hover:bg-primary",
     outline:
-      "border border-rust-500 text-rust-500 hover:bg-rust-500 hover:text-white focus:ring-rust-500",
+      "border border-charcoal-ash text-charcoal-ash hover:bg-charcoal-ash hover:text-warm-linen",
   };
 
   const sizes = {
-    sm: "px-4 py-2 text-sm",
-    md: "px-6 py-3 text-sm",
-    lg: "px-8 py-4 text-base",
+    sm: "px-6 py-3",
+    md: "px-8 py-4",
+    lg: "px-10 py-5",
   };
 
   const classes = cn(base, variants[variant], sizes[size], className);
 
+  const content = (
+    <>
+      {children}
+      {arrow && (
+        <ArrowRight className="ml-2.5 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+      )}
+    </>
+  );
+
   if (href) {
     return (
       <Link href={href} className={classes}>
-        {children}
+        {content}
       </Link>
     );
   }
 
   return (
     <button type={type} onClick={onClick} className={classes}>
-      {children}
+      {content}
     </button>
   );
 }
