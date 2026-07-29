@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import TopBar from "@/components/layout/TopBar";
 import MainNav from "@/components/layout/MainNav";
-import FloatingCTABanner from "@/components/layout/FloatingCTABanner";
 import Footer from "@/components/layout/Footer";
-import MobileBottomBar from "@/components/layout/MobileBottomBar";
+import RevealObserver from "@/components/ui/RevealObserver";
 import { siteConfig } from "@/data/site-config";
 
 export const metadata: Metadata = {
@@ -26,16 +24,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">
-        <TopBar />
+    <html lang="en" className="dark">
+      <body className="antialiased bg-charcoal-surface text-on-surface">
+        <div className="grain-overlay" aria-hidden="true" />
         <MainNav />
         <main>{children}</main>
-        <FloatingCTABanner />
         <Footer />
-        <MobileBottomBar />
+        <RevealObserver />
 
-        {/* JSON-LD Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

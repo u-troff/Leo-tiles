@@ -1,182 +1,106 @@
 import Link from "next/link";
-import { Flame, Phone, Mail, Facebook, Instagram } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
-import { residentialServices } from "@/data/services-residential";
-import { commercialServices } from "@/data/services-commercial";
 
 export default function Footer() {
   return (
-    <footer className="bg-clay-900 text-white">
-      {/* Top decorative bar */}
-      <div className="h-1 bg-rust-500" />
-
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-
-          {/* ── Brand Column ───────────────────────────────── */}
-          <div className="lg:col-span-1">
-            {/* Logo */}
-            <div className="flex items-center gap-2.5 mb-5">
-              <div className="w-9 h-9 bg-rust-500 flex items-center justify-center">
-                <Flame className="w-5 h-5 text-white" />
-              </div>
-              <div className="flex flex-col leading-none">
-                <span className="font-serif text-[18px] font-bold text-white leading-tight">
-                  {siteConfig.businessName.split(" ")[0]}
-                </span>
-                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-rust-400">
-                  Handmade Terracotta Tiles
-                </span>
-              </div>
-            </div>
-
-            <p className="text-white/50 text-sm mb-6 leading-relaxed">
-              Handmade terracotta, fired in {siteConfig.address.city}, {siteConfig.address.state}, South
-              Africa since {siteConfig.establishedYear}.
-            </p>
-
-            {/* Social icons */}
-            <div className="flex items-center gap-3 mb-6">
-              <a
-                href={siteConfig.socialLinks.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 bg-clay-800 border border-white/10 flex items-center justify-center hover:bg-rust-500 hover:border-rust-500 transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a
-                href={siteConfig.socialLinks.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 bg-clay-800 border border-white/10 flex items-center justify-center hover:bg-rust-500 hover:border-rust-500 transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a
-                href={`tel:${siteConfig.phoneRaw}`}
-                className="w-9 h-9 bg-clay-800 border border-white/10 flex items-center justify-center hover:bg-rust-500 hover:border-rust-500 transition-colors"
-                aria-label="Phone"
-              >
-                <Phone className="w-4 h-4" />
-              </a>
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className="w-9 h-9 bg-clay-800 border border-white/10 flex items-center justify-center hover:bg-rust-500 hover:border-rust-500 transition-colors"
-                aria-label="Email"
-              >
-                <Mail className="w-4 h-4" />
-              </a>
-            </div>
-
-            <a
-              href={`tel:${siteConfig.phoneRaw}`}
-              className="inline-flex items-center gap-2 bg-rust-500 text-white px-5 py-3 text-sm font-semibold hover:bg-rust-600 transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              {siteConfig.phone}
-            </a>
-
-            <p className="text-white/40 text-xs mt-4 leading-relaxed">
-              Office {siteConfig.officePhone}
-              <br />
-              <a href={`mailto:${siteConfig.secondaryEmail}`} className="hover:text-rust-400 transition-colors">
-                {siteConfig.secondaryEmail}
-              </a>
-            </p>
-          </div>
-
-          {/* ── Quick Links ────────────────────────────────── */}
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-rust-400 mb-5">
-              Quick Links
-            </p>
-            <ul className="space-y-2.5">
-              {[
-                { label: "Products", href: "/residential" },
-                { label: "Accessories & Services", href: "/commercial" },
-                { label: "Guide Hub", href: "/guides" },
-                { label: "Work Gallery", href: "/work-gallery" },
-                { label: "About Us", href: "/about-us" },
-                { label: "Blog", href: "/blog" },
-                { label: "Wine Farms", href: "/wine-farms" },
-                { label: "Designer Collaborations", href: "/designer-collaborations" },
-                { label: "Get a Quote", href: "/get-a-quote" },
-                { label: "Contact Us", href: "/contact-us" },
-              ].map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-white/50 text-sm hover:text-rust-400 transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* ── Residential Services ───────────────────────── */}
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-rust-400 mb-5">
-              Products
-            </p>
-            <ul className="space-y-2.5">
-              {residentialServices.map((service) => (
-                <li key={service.slug}>
-                  <Link
-                    href={`/services/${service.slug}`}
-                    className="text-white/50 text-sm hover:text-rust-400 transition-colors"
-                  >
-                    {service.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* ── Commercial Services ────────────────────────── */}
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-rust-400 mb-5">
-              Accessories & Services
-            </p>
-            <ul className="space-y-2.5">
-              {commercialServices.map((service) => (
-                <li key={service.slug}>
-                  <Link
-                    href={`/services/${service.slug}`}
-                    className="text-white/50 text-sm hover:text-rust-400 transition-colors"
-                  >
-                    {service.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+    <footer className="w-full pt-40 pb-20 px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-20 bg-charcoal-surface border-t border-ink-stroke relative">
+      <div className="md:col-span-6">
+        <div className="font-serif text-[48px] leading-[56px] text-architectural-gold mb-8">
+          LEO TILES
+        </div>
+        <p className="font-serif text-base text-on-surface-variant max-w-sm mb-12 leading-relaxed">
+          Handmade terracotta, fired in {siteConfig.address.city}, {siteConfig.address.state}, South
+          Africa since {siteConfig.establishedYear}.
+        </p>
+        <div className="flex gap-8 font-mono text-[10px] tracking-widest uppercase">
+          <a
+            href={siteConfig.socialLinks.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-architectural-gold transition-colors"
+          >
+            Instagram
+          </a>
+          <a
+            href={siteConfig.socialLinks.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-architectural-gold transition-colors"
+          >
+            Facebook
+          </a>
+          <a
+            href={`mailto:${siteConfig.email}`}
+            className="hover:text-architectural-gold transition-colors"
+          >
+            Email
+          </a>
         </div>
       </div>
 
-      {/* ── Bottom Bar ─────────────────────────────────────── */}
-      <div className="border-t border-white/8">
-        <div className="max-w-7xl mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/30">
-          <p>
-            &copy; {siteConfig.establishedYear}–{new Date().getFullYear()} {siteConfig.businessName}. Made
-            by hand in Cape Town.
-          </p>
-          <div className="flex items-center gap-5">
-            <Link href="/privacy-policy" className="hover:text-rust-400 transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="/terms-of-service" className="hover:text-rust-400 transition-colors">
-              Terms of Service
-            </Link>
-          </div>
-          <p>
-            Designed by{" "}
-            <Link href="https://u-flow.solutions" target="_blank" rel="noopener noreferrer" className="text-rust-400 font-medium">{siteConfig.agencyName}</Link>
-          </p>
+      <div className="md:col-span-3">
+        <div className="font-mono text-[12px] font-medium tracking-[0.1em] uppercase text-primary mb-10">
+          Explore
+        </div>
+        <div className="flex flex-col gap-6 font-serif text-base text-on-surface-variant">
+          <Link href="/residential" className="hover:text-architectural-gold transition-colors">
+            Products
+          </Link>
+          <Link href="/work-gallery" className="hover:text-architectural-gold transition-colors">
+            Past Projects
+          </Link>
+          <Link href="/guides" className="hover:text-architectural-gold transition-colors">
+            Guides
+          </Link>
+          <Link href="/wine-farms" className="hover:text-architectural-gold transition-colors">
+            Wine Farms
+          </Link>
+        </div>
+      </div>
+
+      <div className="md:col-span-3">
+        <div className="font-mono text-[12px] font-medium tracking-[0.1em] uppercase text-primary mb-10">
+          Company
+        </div>
+        <div className="flex flex-col gap-6 font-serif text-base text-on-surface-variant">
+          <Link href="/about-us" className="hover:text-architectural-gold transition-colors">
+            About Us
+          </Link>
+          <Link href="/blog" className="hover:text-architectural-gold transition-colors">
+            Blog
+          </Link>
+          <Link href="/contact-us" className="hover:text-architectural-gold transition-colors">
+            Contact
+          </Link>
+          <Link href="/get-a-quote" className="hover:text-architectural-gold transition-colors">
+            Get a Quote
+          </Link>
+        </div>
+      </div>
+
+      <div className="md:col-span-12 pt-20 border-t border-ink-stroke flex flex-col md:flex-row justify-between gap-8 font-mono text-[10px] text-on-surface-variant tracking-widest uppercase">
+        <div>
+          © {new Date().getFullYear()} {siteConfig.businessName.toUpperCase()} — Forged in kiln &amp;
+          stone
+        </div>
+        <div className="flex gap-8">
+          <Link href="/privacy-policy" className="hover:text-architectural-gold transition-colors">
+            Privacy
+          </Link>
+          <Link href="/terms-of-service" className="hover:text-architectural-gold transition-colors">
+            Terms
+          </Link>
+        </div>
+        <div>
+          Designed by{" "}
+          <a
+            href="https://u-flow.solutions"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-architectural-gold hover:text-primary transition-colors"
+          >
+            {siteConfig.agencyName}
+          </a>
         </div>
       </div>
     </footer>

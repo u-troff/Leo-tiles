@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 
 @import "tailwindcss";
 
 @theme inline {
-  /* ── Rust / Terracotta accent ─────────────────────────────── */
+  /* ── Rust / Terracotta accent (legacy pages) ──────────────── */
   --color-rust-50:  #fdf6ef;
   --color-rust-100: #f9e6d4;
   --color-rust-200: #f1c9a9;
@@ -15,7 +15,7 @@
   --color-rust-800: #512113;
   --color-rust-900: #3b160c;
 
-  /* ── Clay / Dark Ink ──────────────────────────────────────── */
+  /* ── Clay / Dark Ink (legacy pages) ───────────────────────── */
   --color-clay-50:  #faf6f1;
   --color-clay-100: #f2e8dc;
   --color-clay-200: #e2d0b8;
@@ -27,7 +27,7 @@
   --color-clay-800: #40301f;
   --color-clay-900: #241a12;
 
-  /* ── Stone / Warm Neutral ──────────────────────────────────── */
+  /* ── Stone / Warm Neutral (legacy pages) ──────────────────── */
   --color-stone-50:  #f4e8d8;
   --color-stone-100: #ead6bd;
   --color-stone-200: #dcc6a6;
@@ -39,25 +39,102 @@
   --color-stone-800: #3c2e20;
   --color-stone-900: #2a2016;
 
+  /* ── Design 1 — Stitch dark luxury ────────────────────────── */
+  --color-charcoal-surface: #0A0A0A;
+  --color-architectural-gold: #C5A059;
+  --color-ink-stroke: #333333;
+  --color-bone-cream: #F7EFE3;
+  --color-kiln-terracotta: #924429;
+  --color-background: #131313;
+  --color-surface: #131313;
+  --color-surface-container: #201f1f;
+  --color-surface-container-low: #1c1b1b;
+  --color-surface-container-high: #2a2a2a;
+  --color-surface-container-highest: #353534;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-on-surface: #e5e2e1;
+  --color-on-surface-variant: #c5c7c1;
+  --color-primary: #ffffff;
+
+  /* ── Spacing (Stitch) ─────────────────────────────────────── */
+  --spacing-margin-mobile: 24px;
+  --spacing-margin-desktop: 80px;
+  --spacing-gutter: 32px;
+  --spacing-section-gap: 120px;
+
   /* ── Typography ──────────────────────────────────────────── */
-  --font-sans:   'Libre Franklin', system-ui, -apple-system, sans-serif;
-  --font-serif:  'Libre Franklin', system-ui, -apple-system, sans-serif;
+  --font-sans:   'JetBrains Mono', ui-monospace, monospace;
+  --font-serif:  'EB Garamond', Georgia, 'Times New Roman', serif;
+  --font-mono:   'JetBrains Mono', ui-monospace, monospace;
+  --font-display: 'EB Garamond', Georgia, 'Times New Roman', serif;
+  --font-legacy: 'Libre Franklin', system-ui, -apple-system, sans-serif;
 }
 
 /* ── Base ─────────────────────────────────────────────────── */
 body {
-  font-family: var(--font-sans);
-  background-color: #f4e8d8;
-  color: #1a1714;
+  font-family: var(--font-serif);
+  background-color: #0A0A0A;
+  color: #e5e2e1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ── Hero Ken Burns crossfade ─────────────────────────────── */
+::selection {
+  background-color: #C5A059;
+  color: #0A0A0A;
+}
+
+/* ── Grain overlay ────────────────────────────────────────── */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ── Reveal on scroll ─────────────────────────────────────── */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Scrolling watermark text ─────────────────────────────── */
+.scrolling-text {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: scroll-marquee 30s linear infinite;
+}
+@keyframes scroll-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── Magnetic button ──────────────────────────────────────── */
+.magnetic-btn {
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* ── Ken Burns ────────────────────────────────────────────── */
 @keyframes kenburns {
   0%   { transform: scale(1.0) translate(0, 0); }
   100% { transform: scale(1.09) translate(-1%, -1%); }
 }
+.animate-kenburns {
+  animation: kenburns 20s ease-out forwards;
+}
+
 @keyframes heroFade1 {
   0%, 38%, 100% { opacity: 1; }
   46%, 92%      { opacity: 0; }
@@ -68,28 +145,23 @@ body {
 }
 
 /* ── Scrollbar utilities ──────────────────────────────────── */
-.scrollbar-hide::-webkit-scrollbar { display: none; }
-.scrollbar-hide {
+.scrollbar-hide::-webkit-scrollbar,
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.scrollbar-hide,
+.no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
-/* ── Mobile bottom bar spacer ─────────────────────────────── */
-@media (max-width: 1023px) {
-  body { padding-bottom: 56px; }
-}
-
-/* ── Entrance animations ──────────────────────────────────── */
+/* ── Entrance animations (legacy) ─────────────────────────── */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(22px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
-
 @keyframes scaleIn {
   from { opacity: 0; transform: scale(0.96); }
   to   { opacity: 1; transform: scale(1); }
@@ -105,12 +177,13 @@ body {
   animation: scaleIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-/* Staggered delay helpers */
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
-.delay-500 { animation-delay: 500ms; }
+.delay-100 { animation-delay: 100ms; transition-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; transition-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; transition-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; transition-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; transition-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; transition-delay: 600ms; }
+.delay-800 { animation-delay: 800ms; transition-delay: 800ms; }
 
 /* ── Decorative underline for nav ─────────────────────────── */
 .nav-link {
@@ -122,8 +195,8 @@ body {
   bottom: -2px;
   left: 0;
   width: 0;
-  height: 1.5px;
-  background-color: var(--color-rust-500);
-  transition: width 0.25s ease;
+  height: 1px;
+  background-color: #C5A059;
+  transition: width 0.35s ease;
 }
 .nav-link:hover::after { width: 100%; }

@@ -1,70 +1,70 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import Image from "next/image";
-import Button from "@/components/ui/Button";
 import { siteConfig } from "@/data/site-config";
 
 export default function HeroSection() {
+  const imgRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Activate hero reveals immediately
+    document.querySelectorAll("section:first-of-type .reveal-up").forEach((el) => {
+      el.classList.add("active");
+    });
+
+    const onScroll = () => {
+      const scrolled = window.pageYOffset;
+      if (imgRef.current && scrolled < window.innerHeight * 1.2) {
+        imgRef.current.style.transform = `scale(1.05) translateY(${scrolled * 0.15}px)`;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <section className="relative h-[820px] overflow-hidden bg-clay-900">
-      {/* ── Crossfading Ken Burns background ──────────────────── */}
-      <div className="absolute inset-0">
-        <Image
-          src="/images/design/pool-deck.jpg"
-          alt="Poolside deck laid with handmade terracotta tiles"
-          fill
-          priority
-          className="object-cover"
-          style={{ animation: "kenburns 22s ease-in-out infinite alternate, heroFade1 16s ease-in-out infinite" }}
-        />
-        <Image
-          src="/images/design/terrace.jpg"
-          alt="Garden terrace laid with handmade terracotta tiles"
-          fill
-          className="object-cover"
-          style={{ animation: "kenburns 22s ease-in-out infinite alternate-reverse, heroFade2 16s ease-in-out infinite" }}
-        />
+    <section className="relative h-screen w-full flex items-center overflow-hidden">
+      <div className="absolute inset-0 z-0">
         <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(20,13,8,0.35) 0%, rgba(20,13,8,0) 30%, rgba(20,13,8,0.15) 55%, rgba(20,13,8,0.78) 100%)",
-          }}
-        />
+          ref={imgRef}
+          className="absolute inset-0 scale-105 will-change-transform"
+          style={{ transform: "scale(1.05)" }}
+        >
+          <Image
+            src="/images/design/terrace.jpg"
+            alt="Handmade terracotta tiles on a Cape terrace"
+            fill
+            priority
+            className="object-cover grayscale opacity-60"
+            sizes="100vw"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal-surface via-transparent to-charcoal-surface/40" />
       </div>
 
-      {/* ── Content ────────────────────────────────────────────── */}
-      <div className="absolute left-4 right-4 lg:left-14 lg:right-14 bottom-10 lg:bottom-16">
-        <div className="text-stone-100 text-[13.5px] uppercase tracking-[0.2em] font-semibold mb-4">
-          50+ Years of Craft · Family-Owned
+      <div className="relative z-10 w-full px-margin-mobile md:px-margin-desktop">
+        <div className="max-w-4xl">
+          <span className="font-mono text-[12px] font-medium tracking-[0.3em] uppercase text-architectural-gold block mb-6 reveal-up">
+            Established {siteConfig.establishedYear}
+          </span>
+          <h1 className="font-serif text-[36px] leading-[42px] md:text-[84px] md:leading-[92px] font-medium tracking-[-0.02em] text-primary mb-8 reveal-up delay-200">
+            Formed in Earth, <br />
+            <span className="italic font-normal">Fired in Flame.</span>
+          </h1>
+          <p className="font-serif text-[20px] leading-8 text-on-surface-variant max-w-lg mb-12 reveal-up delay-400">
+            South Africa&rsquo;s original handmade terracotta tile makers. Every tile mixed, pressed,
+            and shaped by hand in our Cape Town kiln.
+          </p>
         </div>
-        <h1 className="text-stone-50 text-[40px] lg:text-[58px] font-bold leading-[1.08] tracking-[-0.5px] max-w-[760px]">
-          Turn your house into a <span className="text-rust-300">picturesque home</span>.
-        </h1>
-        <p className="text-stone-100/90 text-base lg:text-lg font-medium leading-snug mt-4 mb-8 max-w-[620px]">
-          South Africa&rsquo;s original handmade terracotta tile makers — crafted by hand since 1975.
-        </p>
-        <div className="flex flex-wrap items-center gap-6 lg:gap-10">
-          <Button href="/get-a-quote" variant="secondary" size="lg" className="!bg-stone-50 !text-clay-900 hover:!bg-stone-100">
-            Get a Quote
-          </Button>
-          <a
-            href={`tel:${siteConfig.phoneRaw}`}
-            className="font-bold text-[15.5px] text-stone-50 border-b-2 border-stone-50 pb-1"
-          >
-            Call Now →
-          </a>
-          <div className="flex gap-8 ml-1">
-            {[
-              { value: `${siteConfig.ratings.google}★`, label: "Google Rating" },
-              { value: `${siteConfig.ratings.reviewCount}+`, label: "Verified Reviews" },
-              { value: "Est. 1975", label: "Years of Craft" },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <div className="text-stone-50 text-[22px] font-bold leading-none">{stat.value}</div>
-                <div className="text-stone-200 text-[12.5px] mt-1">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
+      </div>
+
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 reveal-up delay-800">
+        <span className="font-mono text-[10px] tracking-widest text-primary/40 uppercase">
+          Scroll to Explore
+        </span>
+        <div className="w-px h-16 bg-gradient-to-b from-architectural-gold to-transparent" />
       </div>
     </section>
   );
