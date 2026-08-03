@@ -1,31 +1,52 @@
+"use client";
+
+import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Star } from "lucide-react";
-import { wineFarmCases, upcomingWineFarms } from "@/data/wine-farms";
+import { ChevronDown, Star } from "lucide-react";
+import {
+  featuredWineEstates,
+  guildEstates,
+  wineRegions,
+  tileTypeFilters,
+  type WineRegion,
+  type TileTypeFilter,
+} from "@/data/wine-farms";
+import { cn } from "@/lib/utils";
 
 export default function WineFarmsShowcase() {
+  const [region, setRegion] = useState<WineRegion>("All");
+  const [tileType, setTileType] = useState<TileTypeFilter>("All");
+
+  const filteredGuild = useMemo(() => {
+    return guildEstates.filter((estate) => {
+      const regionOk = region === "All" || estate.location === region;
+      const tileOk = tileType === "All" || estate.tileType === tileType;
+      return regionOk && tileOk;
+    });
+  }, [region, tileType]);
+
   return (
     <>
       {/* Hero */}
-      <header className="relative h-[70vh] min-h-[560px] md:h-[921px] md:min-h-0 flex items-end justify-start overflow-hidden">
+      <header className="relative h-[70vh] min-h-[560px] md:h-[85vh] flex items-end justify-start overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/design/terrace.jpg"
-            alt="Vineyard estate terrace with artisanal terracotta paving at golden hour"
+            alt="Vineyard estate terrace at sunset overlooking Cape mountains"
             fill
             priority
             className="object-cover"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-charcoal-surface" />
-          <div className="absolute inset-0 bg-charcoal-surface/30" />
+          <div className="absolute inset-0 bg-gradient-to-b from-charcoal-surface/20 via-transparent to-charcoal-surface" />
         </div>
-        <div className="relative z-10 px-margin-mobile md:px-margin-desktop pb-16 md:pb-section-gap max-w-4xl reveal-up">
+        <div className="relative z-10 px-margin-mobile md:px-margin-desktop pb-16 md:pb-24 max-w-4xl reveal-up">
           <p className="font-mono text-[12px] font-medium tracking-[0.1em] uppercase text-architectural-gold mb-4">
             Curated Collections
           </p>
-          <h1 className="font-serif text-[40px] leading-[1.05] md:text-[84px] md:leading-[90px] font-medium tracking-[-0.04em] text-bone-cream mb-6">
-            The Vineyard Heritage
+          <h1 className="font-serif text-[40px] leading-[1.05] md:text-[72px] lg:text-[84px] md:leading-[90px] font-medium tracking-[-0.04em] text-bone-cream mb-6">
+            The Vineyard Heritage Catalog
           </h1>
           <p className="font-serif text-[18px] leading-7 text-on-surface-variant max-w-2xl">
             Where ancient terroir meets architectural precision. Explore our bespoke tile
@@ -34,212 +55,191 @@ export default function WineFarmsShowcase() {
         </div>
       </header>
 
-      <div className="space-y-0 py-section-gap px-margin-mobile md:px-margin-desktop bg-charcoal-surface">
-        {/* La Colombe — split left */}
-        {wineFarmCases
-          .filter((f) => f.layout === "split-left")
-          .map((farm) => (
-            <section
-              key={farm.slug}
-              className="grid grid-cols-12 gap-gutter group items-center mb-section-gap reveal-up"
-            >
-              <div className="col-span-12 md:col-span-7 overflow-hidden">
-                <div className="aspect-[16/9] bg-surface-container relative overflow-hidden">
-                  <Image
-                    src={farm.image}
-                    alt={farm.alt}
-                    fill
-                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 58vw"
-                  />
-                </div>
+      {/* Featured case studies */}
+      <div className="py-section-gap px-margin-mobile md:px-margin-desktop bg-charcoal-surface space-y-section-gap">
+        {featuredWineEstates.map((farm) => {
+          const imageBlock = (
+            <div className="col-span-12 md:col-span-7 overflow-hidden">
+              <div className="aspect-[16/9] bg-surface-container relative overflow-hidden rounded-sm">
+                <Image
+                  src={farm.image}
+                  alt={farm.alt}
+                  fill
+                  className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 58vw"
+                />
               </div>
-              <div className="col-span-12 md:col-span-5 md:pl-16 mt-8 md:mt-0">
-                <div className="border-t border-architectural-gold w-24 mb-8" />
-                {farm.rating && (
-                  <div className="flex items-center gap-1 mb-4">
-                    {Array.from({ length: farm.rating }).map((_, i) => (
-                      <Star
-                        key={i}
-                        className="w-4 h-4 fill-architectural-gold text-architectural-gold"
-                      />
-                    ))}
-                  </div>
-                )}
-                <h2 className="font-serif text-[36px] leading-[40px] md:text-[48px] md:leading-[52px] text-bone-cream mb-6">
-                  {farm.name}
-                </h2>
-                <p className="font-serif text-base text-on-surface-variant mb-8 leading-relaxed text-justify">
-                  {farm.description}
-                </p>
-                {farm.tags && (
-                  <div className="flex flex-wrap gap-4">
-                    {farm.tags.map((tag, i) => (
-                      <span
-                        key={tag}
-                        className={
-                          i === 0
-                            ? "font-mono text-[10px] tracking-widest uppercase bg-[#6B1E2B] text-bone-cream px-3 py-1"
-                            : "font-mono text-[10px] tracking-widest uppercase bg-surface-container-highest text-architectural-gold px-3 py-1"
-                        }
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </section>
-          ))}
+            </div>
+          );
 
-        {/* Val d'Or — heritage wine banner */}
-        {wineFarmCases
-          .filter((f) => f.layout === "heritage-banner")
-          .map((farm) => (
-            <section
-              key={farm.slug}
-              className="grid grid-cols-12 gap-gutter bg-[#6B1E2B] p-8 md:p-16 lg:p-24 items-center mb-section-gap reveal-up"
+          const textBlock = (
+            <div
+              className={cn(
+                "col-span-12 md:col-span-5 mt-8 md:mt-0",
+                farm.layout === "image-left" ? "md:pl-12 lg:pl-16" : "md:pr-12 lg:pr-16"
+              )}
             >
-              <div className="col-span-12 md:col-span-5 order-2 md:order-1">
-                <p className="font-mono text-[12px] font-medium tracking-[0.1em] uppercase text-bone-cream/60 mb-4">
-                  Heritage Project
-                </p>
-                <h2 className="font-serif text-[36px] leading-[40px] md:text-[48px] md:leading-[52px] text-bone-cream mb-6">
-                  {farm.name}
-                </h2>
-                <div className="border-b border-bone-cream/20 w-full mb-8" />
-                {farm.quote && (
-                  <p className="font-serif text-[18px] leading-7 text-bone-cream/80 mb-10 italic">
-                    &ldquo;{farm.quote}&rdquo;
-                  </p>
-                )}
-                {farm.ctaHref && (
+              <div className="border-t border-architectural-gold w-24 mb-8" />
+              {farm.rating && (
+                <div className="flex items-center gap-1 mb-4">
+                  {Array.from({ length: farm.rating }).map((_, i) => (
+                    <Star
+                      key={i}
+                      className="w-4 h-4 fill-architectural-gold text-architectural-gold"
+                    />
+                  ))}
+                </div>
+              )}
+              <h2 className="font-serif text-[36px] leading-[40px] md:text-[48px] md:leading-[52px] text-bone-cream mb-6">
+                {farm.name}
+              </h2>
+              <p className="font-serif text-base text-on-surface-variant mb-8 leading-relaxed">
+                {farm.description}
+              </p>
+
+              {farm.meta && (
+                <div className="flex flex-col gap-4 border-l border-architectural-gold/30 pl-6 mb-8">
+                  {farm.meta.map((item) => (
+                    <div key={item.label}>
+                      <p className="font-mono text-[10px] tracking-widest uppercase text-architectural-gold">
+                        {item.label}
+                      </p>
+                      <p className="font-serif text-base text-bone-cream">{item.value}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <div className="flex flex-wrap gap-4">
+                {farm.primaryCta && (
                   <Link
-                    href={farm.ctaHref}
-                    className="inline-block bg-bone-cream text-[#6B1E2B] px-10 py-4 font-mono text-[12px] font-medium tracking-widest uppercase hover:bg-architectural-gold hover:text-charcoal-surface transition-all"
+                    href={farm.primaryCta.href}
+                    className="inline-block bg-[#6B1E2B] text-bone-cream px-8 py-3.5 font-mono text-[12px] font-medium tracking-widest uppercase hover:bg-architectural-gold hover:text-charcoal-surface transition-colors"
                   >
-                    {farm.ctaLabel ?? "View Project Details"}
+                    {farm.primaryCta.label}
+                  </Link>
+                )}
+                {farm.secondaryCta && (
+                  <Link
+                    href={farm.secondaryCta.href}
+                    className="inline-block border border-architectural-gold text-architectural-gold px-8 py-3.5 font-mono text-[12px] font-medium tracking-widest uppercase hover:bg-architectural-gold hover:text-charcoal-surface transition-colors"
+                  >
+                    {farm.secondaryCta.label}
                   </Link>
                 )}
               </div>
-              <div className="col-span-12 md:col-span-7 order-1 md:order-2">
-                <div className="aspect-square relative overflow-hidden bg-black/20">
-                  <Image
-                    src={farm.image}
-                    alt={farm.alt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 58vw"
-                  />
-                </div>
-              </div>
-            </section>
-          ))}
+            </div>
+          );
 
-        {/* Delaire Graff — split with meta */}
-        {wineFarmCases
-          .filter((f) => f.layout === "split-right")
-          .map((farm) => (
+          return (
             <section
               key={farm.slug}
-              className="grid grid-cols-12 gap-gutter group items-center mb-section-gap reveal-up"
+              className="grid grid-cols-12 gap-gutter group items-center reveal-up"
             >
-              <div className="col-span-12 md:col-span-7 overflow-hidden">
-                <div className="aspect-[16/9] bg-surface-container relative overflow-hidden">
-                  <Image
-                    src={farm.image}
-                    alt={farm.alt}
-                    fill
-                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 58vw"
-                  />
-                </div>
-              </div>
-              <div className="col-span-12 md:col-span-5 md:pl-16 mt-8 md:mt-0">
-                <div className="border-t border-architectural-gold w-24 mb-8" />
-                <h2 className="font-serif text-[36px] leading-[40px] md:text-[48px] md:leading-[52px] text-bone-cream mb-6">
-                  {farm.name}
-                </h2>
-                <p className="font-serif text-base text-on-surface-variant mb-8 leading-relaxed text-justify">
-                  {farm.description}
-                </p>
-                {farm.meta && (
-                  <div className="flex flex-col gap-4 border-l border-architectural-gold/30 pl-6 mb-8">
-                    {farm.meta.map((item) => (
-                      <div key={item.label}>
-                        <p className="font-mono text-[10px] tracking-widest uppercase text-architectural-gold">
-                          {item.label}
-                        </p>
-                        <p className="font-serif text-base text-bone-cream">{item.value}</p>
-                      </div>
-                    ))}
-                  </div>
-                )}
-                {farm.ctaHref && (
-                  <Link
-                    href={farm.ctaHref}
-                    className="inline-flex font-mono text-[12px] font-medium tracking-widest uppercase text-architectural-gold hover:text-bone-cream transition-colors"
-                  >
-                    View Full Case Study →
-                  </Link>
-                )}
-              </div>
+              {farm.layout === "image-left" ? (
+                <>
+                  {imageBlock}
+                  {textBlock}
+                </>
+              ) : (
+                <>
+                  {textBlock}
+                  {imageBlock}
+                </>
+              )}
             </section>
-          ))}
-
-        {/* Coming soon */}
-        <section className="pt-8 md:pt-section-gap reveal-up">
-          <div className="mb-16 text-center">
-            <h3 className="font-serif text-[28px] md:text-[32px] text-bone-cream mb-4">
-              The Future of Heritage
-            </h3>
-            <p className="font-mono text-[12px] font-medium tracking-[0.1em] uppercase text-on-surface-variant">
-              Upcoming Installations &amp; Collaborations
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {upcomingWineFarms.map((farm) => (
-              <div key={farm.name} className="group">
-                <div className="relative aspect-[4/5] mb-6 overflow-hidden">
-                  <Image
-                    src={farm.image}
-                    alt={farm.alt}
-                    fill
-                    className="object-cover grayscale contrast-125 brightness-75 group-hover:grayscale-[50%] group-hover:brightness-90 transition-all duration-500"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-charcoal-surface/40 backdrop-blur-sm">
-                    <span className="font-mono text-[12px] font-medium tracking-[0.3em] uppercase text-bone-cream">
-                      {farm.season}
-                    </span>
-                  </div>
-                </div>
-                <h4 className="font-serif text-[24px] text-bone-cream mb-2">{farm.name}</h4>
-                <p className="font-mono text-[10px] tracking-widest uppercase text-architectural-gold">
-                  {farm.subtitle}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="pt-section-gap text-center reveal-up">
-          <h2 className="font-serif text-[32px] md:text-[48px] text-bone-cream mb-4 max-w-2xl mx-auto">
-            Is your wine farm missing from this list?
-          </h2>
-          <p className="font-serif text-[18px] text-on-surface-variant mb-10 max-w-xl mx-auto">
-            We&rsquo;d love to hear from you — whether it&rsquo;s a new cellar, tasting room, or
-            courtyard project.
-          </p>
-          <Link
-            href="/get-a-quote"
-            className="inline-block bg-architectural-gold text-charcoal-surface px-12 py-5 font-mono text-[12px] font-medium tracking-widest uppercase hover:bg-bone-cream transition-colors"
-          >
-            Start a Conversation
-          </Link>
-        </section>
+          );
+        })}
       </div>
+
+      {/* Guild of Heritage */}
+      <section className="bg-[#6B1E2B] px-margin-mobile md:px-margin-desktop py-section-gap reveal-up">
+        <div className="max-w-[1920px] mx-auto">
+          <div className="mb-10 md:mb-12">
+            <p className="font-mono text-[12px] font-medium tracking-[0.1em] uppercase text-architectural-gold mb-3">
+              Heritage Project
+            </p>
+            <h2 className="font-serif text-[36px] leading-[40px] md:text-[48px] md:leading-[52px] text-bone-cream">
+              The Guild of Heritage
+            </h2>
+          </div>
+
+          {/* Filters */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-12 p-4 md:p-5 bg-charcoal-surface/40 border border-architectural-gold/20">
+            <label className="flex-1 relative">
+              <span className="sr-only">Region</span>
+              <select
+                value={region}
+                onChange={(e) => setRegion(e.target.value as WineRegion)}
+                className="w-full appearance-none bg-charcoal-surface border border-architectural-gold/40 text-bone-cream font-mono text-[12px] tracking-widest uppercase px-5 py-4 pr-12 focus:outline-none focus:border-architectural-gold cursor-pointer"
+              >
+                {wineRegions.map((r) => (
+                  <option key={r} value={r}>
+                    {r === "All" ? "Region — All" : r}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-architectural-gold" />
+            </label>
+
+            <label className="flex-1 relative">
+              <span className="sr-only">Tile Type</span>
+              <select
+                value={tileType}
+                onChange={(e) => setTileType(e.target.value as TileTypeFilter)}
+                className="w-full appearance-none bg-charcoal-surface border border-architectural-gold/40 text-bone-cream font-mono text-[12px] tracking-widest uppercase px-5 py-4 pr-12 focus:outline-none focus:border-architectural-gold cursor-pointer"
+              >
+                {tileTypeFilters.map((t) => (
+                  <option key={t} value={t}>
+                    {t === "All" ? "Tile Type — All" : t}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-architectural-gold" />
+            </label>
+          </div>
+
+          {/* Grid */}
+          {filteredGuild.length === 0 ? (
+            <p className="font-serif text-bone-cream/70 text-center py-20">
+              No estates match these filters.
+            </p>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+              {filteredGuild.map((estate) => (
+                <Link
+                  key={estate.slug}
+                  href={`/wine-farms/${estate.slug}`}
+                  className="group block"
+                >
+                  <div className="relative aspect-[4/3] mb-4 overflow-hidden rounded-sm bg-charcoal-surface/30">
+                    <Image
+                      src={estate.image}
+                      alt={estate.alt}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    />
+                  </div>
+                  <h3 className="font-serif text-[22px] md:text-[24px] text-bone-cream group-hover:text-architectural-gold transition-colors">
+                    {estate.name}
+                  </h3>
+                  <p className="font-serif text-sm text-bone-cream/60 mt-1">{estate.location}</p>
+                </Link>
+              ))}
+            </div>
+          )}
+
+          <div className="mt-14 md:mt-16 text-center">
+            <Link
+              href="/work-gallery"
+              className="inline-block bg-[#5a1820] border border-architectural-gold text-bone-cream px-12 py-5 font-mono text-[12px] font-medium tracking-widest uppercase hover:bg-architectural-gold hover:text-charcoal-surface transition-colors"
+            >
+              View All Projects
+            </Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
